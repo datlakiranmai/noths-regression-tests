@@ -12,9 +12,11 @@ Before do
   Capybara.app_host = APP_HOST
   Capybara.default_driver = :selenium
   Capybara.default_max_wait_time = 20
+
   Capybara.register_driver :selenium do |app|
     $driver=Capybara::Selenium::Driver.new(app, :browser => :chrome)
   end
+  Capybara.current_session.current_window.resize_to(1000,1500)
 end
 
 After do

@@ -26,6 +26,7 @@ Feature: Login
 
   @2.03
   Scenario: Customer is able to successfully login to notonthehighstreet via wishlist
+    And I navigate to home page
     When I tap on the link wish lists in footer
     And I go for sign in from wishlist page
     And I sign in with my new credentials

@@ -59,3 +59,8 @@ end
 When(/^I hover my account via header$/) do
   @home_page.hover_myaccounts
 end
+
+And(/^I navigate to home page$/) do
+  @home_page = HomePage.new
+  @home_page.navigate
+end

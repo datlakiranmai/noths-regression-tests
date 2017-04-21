@@ -25,3 +25,8 @@ gem 'rspec-expectations'
 
 gem 'rspec-rails', '~> 3.0.0'
 gem 'capybara-rails'
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'browsermob-proxy', '~> 0.2.0'
+gem 'poltergeist'
+gem 'phantomjs', :require => 'phantomjs/poltergeist'

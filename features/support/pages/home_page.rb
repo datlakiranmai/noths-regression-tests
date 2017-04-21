@@ -16,8 +16,12 @@ class HomePage < SitePrism::Page
   element :info, '.message.info.with_icon'
   element :new_customer, '#button_new_customer'
 
+  #QA Env down
+  element :goodness_msg, '.message>img'
+
   def navigate(link=nil)
     visit(link)
+    #raise "Currently, We have trouble accessing QA Env #{ENV['ENV_ID']}" if goodness_msg.exist
   end
 
   def hover_myaccounts

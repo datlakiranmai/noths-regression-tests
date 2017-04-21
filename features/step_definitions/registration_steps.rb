@@ -4,13 +4,13 @@ And(/^I enter in my details in sign up form$/) do
 end
 
 And(/^I click (.*) button$/) do |button_name|
+  puts "User email address is #{@signup_page.email_address}"
   @signup_page.click_on_button(button_name)
 end
 
 Then(/^I should register successfully$/) do
   name="#{@signup_page.first_name} #{@signup_page.last_name}"
   expect(@home_page.signed_in_user.text.downcase).to have_text(name)
-  puts "User email address is #{@signup_page.email_address}"
 end
 
 When(/^I go for (.*) from wishlist page$/) do |button_name|

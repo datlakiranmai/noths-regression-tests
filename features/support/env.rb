@@ -17,7 +17,7 @@ Before do
     config.run_server = false
     config.default_driver = (ENV['DRIVER'] || 'chrome').to_sym
     # config.javascript_driver = :chrome
-    config.default_max_wait_time = 10
+    config.default_max_wait_time = 20
   end
 
   Capybara.register_driver :headless do |app|

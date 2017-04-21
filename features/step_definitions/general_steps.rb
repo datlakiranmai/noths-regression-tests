@@ -45,7 +45,6 @@ When(/^I tap on the link (.*) in footer$/) do |link_name|
 end
 
 
-
 And(/^I sign out from my account$/) do
   steps %Q{
   When I navigate to My accounts page

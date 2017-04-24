@@ -4,7 +4,7 @@ And(/^I enter in my details in sign up form$/) do
 end
 
 And(/^I click (.*) button$/) do |button_name|
-  puts "User email address is #{@signup_page.email_address}"
+  puts "User email address is #{$email_address}"
   @signup_page.click_on_button(button_name)
 end
 

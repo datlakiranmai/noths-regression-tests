@@ -16,20 +16,19 @@ Before do
     Capybara.app_host = APP_HOST
     config.run_server = false
     config.default_driver = (ENV['DRIVER'] || 'chrome').to_sym
-    # config.javascript_driver = :chrome
-    config.default_max_wait_time = 20
+    config.default_max_wait_time = 10
   end
 
   Capybara.register_driver :headless do |app|
     options = {
-      js_errors: true,
+      js_errors: false,
       timeout: 120,
       debug: false,
       phantomjs_options: ['--load-images=no', '--disk-cache=false'],
-      inspector: true
+      inspector: true,
+      window_size: [3000,3000]
     }
-
-    Capybara::Poltergeist::Driver.new(app, options)
+    $driver=Capybara::Poltergeist::Driver.new(app, options)
   end
 
   Capybara.register_driver :chrome do |app|
@@ -38,7 +37,16 @@ Before do
 end
 
 After do
+  # entries = $driver.manage.logs.get(:browser)
+  # puts "log entries are #{entries}"
+  CognitoIdentityProviderPool.delete_identity($email_address)
   $driver.quit if ENV['DRIVER'].nil?
 end
+
+After('@legacy') do
+  CognitoUserTable.delete_user(6)
+end
+
+
 
 

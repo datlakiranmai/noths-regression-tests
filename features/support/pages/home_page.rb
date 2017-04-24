@@ -2,13 +2,14 @@ require 'site_prism'
 
 class HomePage < SitePrism::Page
   include Capybara::DSL
+  include Helper
 
   element :register_button, '.register_link.last.button_medium_mobile'
   element :signin_button, '.sign_in_link.button_medium_mobile'
   #element :signed_in_user, '.title.my_account_link.mobile_hide'
   element :signed_in_user, '.title_container.my_account_title'
   element :favourite_inactive_btn, '#favourites_heart_inactive'
-  elements :footer_link, '.expandable.links>li>a'
+  elements :footer_link, '.n-links-list__link'
   element :sign_out_btn, '.cta_button.sign_out_button.submit.button.secondary.medium'
 
   #Welcome Screen
@@ -39,7 +40,7 @@ class HomePage < SitePrism::Page
       when 'Signin'
         signin_button.click
       when 'Favourite'
-        favourite_inactive_btn.click
+          favourite_inactive_btn.click
       when 'Sign out'
         sign_out_btn.click
       when 'Continue'

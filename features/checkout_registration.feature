@@ -24,7 +24,7 @@ Feature: Checkout_registration
 
   @5.02
   Scenario: Customer should be able to purchase a gift voucher as a registered user
-    When I tap on the link gift vouchers in footer
+    And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
     And I checkout gift voucher
     And I click on Continue

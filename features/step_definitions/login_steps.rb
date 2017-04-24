@@ -3,12 +3,12 @@ And(/^I enter my login credentials:$/) do |table|
   # table is a table.hashes.keys # => [:username, :password]
   table.raw.each do |key, value|
     if key == 'user_name' then
-      @username = value
+      $email_address = value
     else
       @password = value
     end
   end
-  @signin_page.signin_credentials(@username, @password)
+  @signin_page.signin_credentials($email_address, @password)
 end
 
 Then(/^I should login successfully as (.*)$/) do |user_name|
@@ -18,7 +18,7 @@ end
 
 And(/^I sign in with my new credentials$/) do
   @signin_page = LoginPage.new
-  @signin_page.signin_credentials(@signup_page.email_address, @signup_page.password)
+  @signin_page.signin_credentials($email_address, @signup_page.password)
 end
 
 Then(/^I should login successfully$/) do

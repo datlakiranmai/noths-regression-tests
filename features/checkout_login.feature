@@ -23,7 +23,8 @@ Feature: Checkout_login
 
   @3.02
   Scenario: Customer should be able to purchase a product as a customer
-    When I tap on the link gift vouchers in footer
+    When I navigate to home page
+    And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
     And I checkout gift voucher
     And I sign in with my new credentials

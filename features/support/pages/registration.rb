@@ -68,9 +68,9 @@ class Registration < SitePrism::Page
 
   def enter_user_details
     random_name
-    @email_address = "#{@random_name}@sharklasers.com"
-    email_field.set @email_address
-    email_confirmation_field.set @email_address
+    $email_address = "#{@random_name}@sharklasers.com"
+    email_field.set $email_address
+    email_confirmation_field.set $email_address
     @first_name="first#{@random_name}"
     @last_name="last#{@random_name}"
     first_name_field.set @first_name
@@ -85,9 +85,9 @@ class Registration < SitePrism::Page
 
   def enter_your_details_in_checkout
     random_name
-    @email_address="#{@random_name}@sharklasers.com"
-    email_field.set @email_address
-    email_confirmation_field.set @email_address
+    $email_address="#{@random_name}@sharklasers.com"
+    email_field.set $email_address
+    email_confirmation_field.set $email_address
     @first_name="first#{@random_name}"
     @last_name="last#{@random_name}"
     first_name_field.set @first_name

@@ -2,7 +2,6 @@ require 'site_prism'
 
 class HomePage < SitePrism::Page
   include Capybara::DSL
-  include Helper
 
   element :register_button, '.register_link.last.button_medium_mobile'
   element :signin_button, '.sign_in_link.button_medium_mobile'

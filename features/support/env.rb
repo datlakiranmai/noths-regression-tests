@@ -16,7 +16,9 @@ Before do
     Capybara.app_host = APP_HOST
     config.run_server = false
     config.default_driver = (ENV['DRIVER'] || 'chrome').to_sym
-    config.default_max_wait_time = 10
+    config.default_max_wait_time = 20
+    config.match = :prefer_exact
+    config.javascript_driver = :webkit_debug
   end
 
   Capybara.register_driver :headless do |app|
@@ -34,19 +36,13 @@ Before do
   Capybara.register_driver :chrome do |app|
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome)
   end
+
 end
+
 
 After do
-  # entries = $driver.manage.logs.get(:browser)
-  # puts "log entries are #{entries}"
-  CognitoIdentityProviderPool.delete_identity($email_address)
+  #CognitoIdentityProviderPool.delete_identity($email_address) unless $email_address.nil?
   $driver.quit if ENV['DRIVER'].nil?
 end
-
-After('@legacy') do
-  CognitoUserTable.delete_user(6)
-end
-
-
 
 

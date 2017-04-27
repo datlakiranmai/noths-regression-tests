@@ -6,10 +6,10 @@
 #  Background:
 #    Given I am on Home page
 #
-#  @legacy @6.01
-#  Scenario:   Legacy Customer is able to successfully login to notonthehighstreet
+#  @7.01
+#  Scenario:   Customer is able to successfully login to notonthehighstreet
 #    When I click on Signin
-#    And I verify sadhana.blueline995@gmail.com exist in noths database
+#    #And I verify sadhana.blueline995@gmail.com exist in cognito pool
 #    And I enter my login credentials:
 #      | user_name | sadhana.blueline995@gmail.com |
 #      | password  | Newlife2017                   |

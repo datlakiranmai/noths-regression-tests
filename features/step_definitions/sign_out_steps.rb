@@ -8,3 +8,4 @@ end
 And(/^I should see the message (.*)$/) do |message|
   expect(@home_page.info).to have_text(message)
 end
+

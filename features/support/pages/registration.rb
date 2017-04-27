@@ -1,6 +1,8 @@
 require 'site_prism'
 
 class Registration < SitePrism::Page
+  include Capybara::Poltergeist
+  include Poltergeist
 
   attr_reader :email_address, :password, :first_name, :last_name
 
@@ -50,7 +52,11 @@ class Registration < SitePrism::Page
   def click_on_button(button_name)
     case button_name
       when 'Submit'
-        submit_button.click
+        if headless?
+          submit_button.click
+        else
+          submit_button.click
+        end
       when 'Continue'
         continue_button.click
       when 'Add address'
@@ -78,9 +84,9 @@ class Registration < SitePrism::Page
     @password = "password"
     password_field.set "password"
     password_confirm_field.set "password"
-    # postcode_field.set "TW9 2NQ"
-    # find_address_link.click
-    # choose_address_input.select("Antony Roberts Estate Agents, 3 Kew Road, Richmond")
+   postcode_field.set "TW9 2NQ"
+   find_address_link.click
+   choose_address_input.select("Antony Roberts Estate Agents, 3 Kew Road, Richmond")
   end
 
   def enter_your_details_in_checkout

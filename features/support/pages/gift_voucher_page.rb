@@ -1,4 +1,6 @@
 class Gift_Voucher < SitePrism::Page
+  include Poltergeist
+
   elements :voucher_amount, '.amount-fields.input>label'
   element :gift_card_to, '#gift_card_to'
   element :gift_card_from, '#gift_card_from'
@@ -9,7 +11,11 @@ class Gift_Voucher < SitePrism::Page
   elements :checkout_and_subscribe_button, '.submit.button.base.primary.medium'
 
   def enter_gift_voucher_form
-    voucher_amount.first.click
+    if headless?
+      try_until(20) {  voucher_amount.first.trigger("click") }
+    else
+      voucher_amount.first.click
+    end
     gift_card_to.set 'automation user 01'
     gift_card_from.set 'automation user 02'
     card_email.set 'giftvoucher01@sharklasers.com'
@@ -20,5 +26,4 @@ class Gift_Voucher < SitePrism::Page
     terms_and_condition.click
     checkout_and_subscribe_button.first.click
   end
-
 end

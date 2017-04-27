@@ -3,7 +3,7 @@
  end
 
  And(/^I should be taken to (.*) page$/) do |pagename|
-   expect(@mydetails_page.my_details_page).to have_text(pagename.upcase)
+   @mydetails_page.check_page_name(pagename)
  end
 
  And(/^I choose (.*) from my account section$/) do |option|

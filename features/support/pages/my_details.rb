@@ -1,5 +1,6 @@
 require 'site_prism'
 class MyDetails < SitePrism::Page
+  include Poltergeist
 
   attr_reader :my_details_address
 
@@ -8,7 +9,20 @@ class MyDetails < SitePrism::Page
   element :my_details_address, '#user_email'
 
   def click_on(button_name)
-    my_details_options.select { |option| option.text == button_name }.first.click
+    if headless?
+      my_details_options.select { |option| option.text == button_name }.first.trigger("click")
+    else
+      my_details_options.select { |option| option.text == button_name }.first.click
+    end
+
+  end
+
+  def check_page_name(pagename)
+    if headless?
+      sleep 50
+      page.driver.save_screenshot('screenshot/page_title.png')
+      try_until(30) { my_details_page.text.eql?(pagename.upcase) }
+    end
   end
 
 end

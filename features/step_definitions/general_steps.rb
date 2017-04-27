@@ -63,3 +63,4 @@ And(/^I navigate to home page$/) do
   @home_page = HomePage.new
   @home_page.navigate
 end
+

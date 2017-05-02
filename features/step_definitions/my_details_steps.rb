@@ -14,3 +14,4 @@
    puts @mydetails_page.my_details_address.value
    expect(@mydetails_page.my_details_address.value).to have_text(@signup_page.email_address)
  end
+

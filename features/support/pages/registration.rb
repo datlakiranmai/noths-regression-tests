@@ -84,9 +84,9 @@ class Registration < SitePrism::Page
     @password = "password"
     password_field.set "password"
     password_confirm_field.set "password"
-   postcode_field.set "TW9 2NQ"
-   find_address_link.click
-   choose_address_input.select("Antony Roberts Estate Agents, 3 Kew Road, Richmond")
+   # postcode_field.set "TW9 2NQ"
+   # find_address_link.click
+   # choose_address_input.select("Antony Roberts Estate Agents, 3 Kew Road, Richmond")
   end
 
   def enter_your_details_in_checkout

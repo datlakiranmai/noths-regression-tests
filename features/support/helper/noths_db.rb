@@ -7,7 +7,7 @@ class CognitoUserTable
     def connect_to_noths_db
       Mysql2::Client.new(
         :host => hostname,
-        :port => '3306', :database => database ,
+        :port => '3306', :database => database,
         :username => username,
         :password => password)
     end
@@ -25,7 +25,7 @@ class CognitoUserTable
     end
 
     def hostname
-       JSON.parse(consul_api_hostname).select{|key| return key['Address']}
+      JSON.parse(consul_api_hostname).select { |key| return key['Address'] }
     end
 
     def username
@@ -38,20 +38,28 @@ class CognitoUserTable
 
 
     def user_id(user_name)
-      results=connect_to_noths_db.query("SELECT id FROM users WHERE email = '#{user_name}'") if user_exists?(user_name)
-      results.each {|i| return i['id']}
+      results=connect_to_noths_db.query("SELECT id FROM users WHERE email = '#{user_name}'") if user_exists_in_user_table?(user_name)
+      results.each { |i| return i['id'] }
     end
 
     def delete_user(id)
       connect_to_noths_db.query("DELETE from cognito_accounts where user_id = #{id}")
     end
 
-    def query_user(email_address)
+    def queryuser_in_cognitoAccounts_table?(user_id)
+      connect_to_noths_db.query("SELECT * FROM cognito_accounts WHERE user_id=#{user_id}")
+    end
+
+    def queryuser_in_user_table(email_address)
       connect_to_noths_db.query("SELECT * FROM users WHERE email='#{email_address}'")
     end
 
-    def user_exists?(user_name)
-      return true if query_user(user_name).count == 1
+    def user_exists_in_user_table?(user_name)
+      return true if queryuser_in_user_table(user_name).count == 1
+    end
+
+    def user_exists_in_cognitoAccounts_table?(user_id)
+      return true if queryuser_in_cognitoAccounts_table?(user_id).count == 1
     end
   end
 end

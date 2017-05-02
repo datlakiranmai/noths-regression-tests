@@ -20,7 +20,7 @@ class MyDetails < SitePrism::Page
   def check_page_name(pagename)
     if headless?
       sleep 50
-      page.driver.save_screenshot('screenshot/page_title.png')
+      page.driver.save_screenshot('screenshot/page_title.png', :full => true)
       try_until(30) { my_details_page.text.eql?(pagename.upcase) }
     end
   end

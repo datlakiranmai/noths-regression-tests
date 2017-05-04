@@ -23,7 +23,7 @@ Before do
 
   Capybara.register_driver :headless do |app|
     options = {
-      js_errors: true,
+      js_errors: false,
       timeout: 120,
       debug: false,
       phantomjs_options: ['--load-images=no', '--disk-cache=false'],
@@ -41,7 +41,7 @@ end
 
 
 After do
-  CognitoIdentityProviderPool.delete_identity($email_address) unless $email_address.nil?
+  CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?
   $driver.quit if ENV['DRIVER'].nil?
 end
 

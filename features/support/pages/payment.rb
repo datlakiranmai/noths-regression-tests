@@ -2,7 +2,6 @@ require 'capybara'
 
 class Payment < SitePrism::Page
 
-
   element :payment_option, '#payment_medium_payment_form_credit_card'
   element :credit_card_type, '#checkout_credit_card_type'
   element :credit_card_number, '#checkout_credit_card_number'
@@ -16,7 +15,6 @@ class Payment < SitePrism::Page
   def select_card_type
     payment_option.click
   end
-
 
   def submit_payment
     credit_card_type.select 'Visa Debit or Electron'

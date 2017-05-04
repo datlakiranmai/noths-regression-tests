@@ -27,14 +27,3 @@ Feature: Registration
     And I navigate to My accounts page
     And I should be taken to My details page
     And I should see the my email address in my accounts page
-
-#  @1.03
-#  Scenario: Customer is able is successfully register in site via wishlist
-#    When I tap on the link wish lists in footer
-#    And I go for sign up from wishlist page
-#    And I enter in my details in sign up form
-#    And I click Submit button
-#    Then I should register successfully
-#    And I navigate to My accounts page
-#    And I should be taken to My details page
-#    And I should see the my email address in my accounts page

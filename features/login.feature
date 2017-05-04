@@ -23,11 +23,3 @@ Feature: Login
     Then I should login successfully
     And I should be taken to My details page
     And I should see the my email address in my accounts page
-
-#  @2.03
-#  Scenario: Customer is able to successfully login to notonthehighstreet via wishlist
-#    And I navigate to home page
-#    When I tap on the link wish lists in footer
-#    And I go for sign in from wishlist page
-#    And I sign in with my new credentials
-#    Then I should login successfully

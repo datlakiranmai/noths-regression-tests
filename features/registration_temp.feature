@@ -6,7 +6,7 @@ Feature: Temporary Registration
   Background:
     Given I am on Home page
 
-  @7.01
+  @wip @7.01
   Scenario: Customer is able is successfully register in site via header
     When I click on Register
     And I enter in my details in sign up form

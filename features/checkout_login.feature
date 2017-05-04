@@ -12,7 +12,7 @@ Feature: Checkout_login
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with my new credentials
-    #And I enter in my address details
+    And I enter in my address details
     Then I should see my name as delivery recipient
     And  I should see Antony Roberts Estate Agents as my delivery address
     And I should see the my email address in summary section
@@ -28,7 +28,7 @@ Feature: Checkout_login
     And I enter my details in gift voucher form
     And I checkout gift voucher
     And I sign in with my new credentials
-    #And I enter in my address details
+    And I enter in my address details
     And I should see the my email address in summary section
     And I provide the payment details
     Then I should see order confirmation page

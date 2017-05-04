@@ -1,46 +1,49 @@
-# Regression Acceptance tests
+# Notonthehighstreet Authentication E2E
 
-Usage:
-cucumber env=high-dog features/registration.feature
+**Set up**
 
+1. Git clone https://github.com/notonthehighstreet/notonthehighstreet-end2end.git
 
-**Prerequisite**:
+2. Go to project directory from terminal i.e cd notonthehighstreet-end2end
 
-Best Practice:  Use environment variables for Authentication
+3. Run **bundle install** this command will install all gems to the system that are listed in Gemfile as well as their dependencies.
 
-https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials
-
-Establish secure tunnel to access internal QA Environment 
-
-https://notonthehighstreet.atlassian.net/wiki/display/QA/SauceLabs
-
-Please refer config-> cucumber.yml file for Browser option(BROWSER_OPT)
+4. From the same directory run any of the following cucumber test exceution command on desired QA environment.
 
 
-**Execution**: 
+**Execution Commands**: 
 
-By using cucumber command 
+**Selenium  webdriver chrome profile**
 
-To run locally
+To run entire test suite
 
-    ex BROWSER_OPT=FIREFOX_OSX_10 ENV_ID="shared" TEST_ENV="local" bundle exec cucumber features --tag @3.04
+    ENV_ID="QA_ENV_NAME" cucumber features/ --tag ~@wip
             
-    
-To run in Sauce Cloud
-    
-     ex BROWSER_OPT=FIREFOX_OSX_10 ENV_ID="shared" bundle exec cucumber features --tag @3.04
-     
+To run individual cucumber features   
+ 
+   ex  ENV_ID="QA_ENV_NAME" cucumber features/login.feature
+   
+To run individual test scenarios
+
+   ex ENV_ID="QA_ENV_NAME" cucumber features --tag @1.01
+   
+   
+
+**Headless( NO GUI ) profile**
+To run entire test suite
+
+    ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features/ --tag ~@wip
             
+To run individual cucumber features   
+ 
+   ex  ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features/login.feature
+   
+To run individual test scenarios
 
-By using rake task and run just one test scenario(Currently runs on four browser profiles concurrently) 
-
-     ENV_ID='Shared' TEST_NO=@1.01(optional) rake :all
-
-
-By using rake task and run all the scenarios in the feature(Currently runs on four browser profiles concurrently) 
-
-     ENV_ID='Shared' rake :all
-
-
-
-
+   ex ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features --tag @1.01
+   
+   
+**Possible Test failure causes:**
+   
+   1. Sporadic test failures might happen if QA Environment encounters bad gateway errors. 
+   2. 

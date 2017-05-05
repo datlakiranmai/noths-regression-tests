@@ -54,6 +54,7 @@ class Registration < SitePrism::Page
       when 'Submit'
         if headless?
           submit_button.click
+          puts Capybara::Poltergeist::JavascriptError.message
         else
           submit_button.click
         end

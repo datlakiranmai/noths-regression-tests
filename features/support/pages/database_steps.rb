@@ -18,5 +18,5 @@ end
 
 
 And(/^I should see user created in cognito account table$/) do
-  expect(CognitoUserTable.queryuser_in_cognitoAccounts_table?(CognitoUserTable.user_id($email_address)).to eq(true))
+  expect(CognitoUserTable.user_exists_in_cognito_table?(CognitoUserTable.user_id($email_address))).to eq(true)
 end

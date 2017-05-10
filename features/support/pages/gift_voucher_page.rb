@@ -12,7 +12,8 @@ class Gift_Voucher < SitePrism::Page
 
   def enter_gift_voucher_form
     if headless?
-      try_until(20) {  voucher_amount.first.trigger("click") }
+      sleep 10
+         voucher_amount.first.trigger("click")
     else
       voucher_amount.first.click
     end

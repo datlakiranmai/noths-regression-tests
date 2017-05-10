@@ -5,7 +5,7 @@ module Poltergeist
     return true if Capybara.current_driver == :headless
   end
 
-  def try_until(timeout=30, poll_interval=1, &block)
+  def try_until(timeout=30, &block)
     start_time=Time.now
     last_error=nil
     until (duration = Time.now - start_time) > timeout
@@ -16,8 +16,9 @@ module Poltergeist
       rescue => e
         last_error=e
       end
-      sleep poll_interval
+      sleep 1
     end
     raise "Timeout waiting for #{duration} but #{last_error}"
   end
 end
+

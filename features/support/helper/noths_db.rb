@@ -46,7 +46,7 @@ class CognitoUserTable
       connect_to_noths_db.query("DELETE from cognito_accounts where user_id = #{id}")
     end
 
-    def queryuser_in_cognitoAccounts_table?(user_id)
+    def queryuser_in_cognitoAccounts_table(user_id)
       connect_to_noths_db.query("SELECT * FROM cognito_accounts WHERE user_id=#{user_id}")
     end
 
@@ -56,6 +56,10 @@ class CognitoUserTable
 
     def user_exists_in_user_table?(user_name)
       return true if queryuser_in_user_table(user_name).count == 1
+    end
+
+    def user_exists_in_cognito_table?(user_id)
+      return true if queryuser_in_cognitoAccounts_table(user_id).count == 1
     end
 
     def user_exists_in_cognitoAccounts_table?(user_id)

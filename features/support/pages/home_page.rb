@@ -1,4 +1,5 @@
 require 'site_prism'
+require 'rspec/expectations'
 
 class HomePage < SitePrism::Page
   include Capybara::DSL
@@ -20,7 +21,11 @@ class HomePage < SitePrism::Page
 
 
   def navigate(link=nil)
-    visit(link)
+    begin
+       visit(link)
+    rescue Net::ReadTimeout
+      retry
+    end
     raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be dead!" unless page.has_css?('.sign_in_link.button_medium_mobile')
   end
 
@@ -67,5 +72,3 @@ class HomePage < SitePrism::Page
     end
   end
 end
-
-

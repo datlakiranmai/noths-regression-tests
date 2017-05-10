@@ -1,9 +1,7 @@
 require 'selenium-webdriver'
-require 'sauce_whisk'
 require 'capybara'
 require 'Capybara/Cucumber'
 require 'rspec/expectations'
-require 'pry'
 require 'phantomjs'
 require 'capybara/poltergeist'
 
@@ -23,7 +21,7 @@ Before do
 
   Capybara.register_driver :headless do |app|
     options = {
-      js_errors: false,
+      js_errors: true,
       timeout: 120,
       debug: false,
       phantomjs_options: ['--load-images=no', '--disk-cache=false'],
@@ -34,7 +32,9 @@ Before do
   end
 
   Capybara.register_driver :chrome do |app|
-    $driver=Capybara::Selenium::Driver.new(app, browser: :chrome)
+    client = Selenium::WebDriver::Remote::Http::Default.new
+    client.read_timeout = 120
+    $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client)
   end
 
 end

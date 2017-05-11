@@ -12,6 +12,7 @@ class HomePage < SitePrism::Page
   element :favourite_inactive_btn, '#favourites_heart_inactive'
   elements :footer_link, '.n-links-list__link'
   element :sign_out_btn, '.cta_button.sign_out_button.submit.button.secondary.medium'
+  elements :banner_img, '.desktop_only.desktop_banner'
 
 
   #Welcome Screen
@@ -22,7 +23,7 @@ class HomePage < SitePrism::Page
 
   def navigate(link=nil)
     begin
-       visit(link)
+      visit(link)
     rescue Net::ReadTimeout
       retry
     end
@@ -41,6 +42,14 @@ class HomePage < SitePrism::Page
     signed_in_user.click
   end
 
+  def home_page?
+     page.has_css?('.desktop_only.desktop_banner')
+  end
+
+  def get_desktop_banners_count
+    all('.desktop_only.desktop_banner').count
+  end
+
   def click_on(button_name)
     case button_name
       when 'Register'
@@ -57,7 +66,7 @@ class HomePage < SitePrism::Page
         if headless?
           try_until(20) { sign_out_btn.trigger('click') }
         else
-        sign_out_btn.click
+          sign_out_btn.click
         end
       when 'Continue'
         new_customer.click

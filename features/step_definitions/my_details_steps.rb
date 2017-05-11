@@ -3,7 +3,8 @@
  end
 
  And(/^I should be taken to (.*) page$/) do |pagename|
-   @mydetails_page.check_page_name(pagename)
+   #@mydetails_page.check_page_name(pagename)
+   expect(@mydetails_page.my_details_page.text.eql?(pagename.upcase))
  end
 
  And(/^I choose (.*) from my account section$/) do |option|

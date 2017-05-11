@@ -64,3 +64,8 @@ And(/^I navigate to home page$/) do
   @home_page.navigate
 end
 
+
+And(/^I should be redirected to home page$/) do
+  expect(@home_page.home_page?).to eq(true)
+  expect(@home_page.get_desktop_banners_count).to be > (1)
+end

@@ -41,7 +41,7 @@ end
 
 
 After do
-  CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?
+  #CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?
   $driver.quit if ENV['DRIVER'].nil?
 end
 

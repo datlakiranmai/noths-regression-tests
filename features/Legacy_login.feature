@@ -7,7 +7,7 @@ Feature: Login
   Background:
     Given I am on Home page
 
-  @wip @legacy @6.01
+  @temp @legacy @6.01
   Scenario:   Legacy Customer is able to successfully login to notonthehighstreet
     When I click on Signin
     And I verify sadhana.blueline995@gmail.com exist in noths database

@@ -1,5 +1,4 @@
 And(/^I enter my details in gift voucher form$/) do
-  @app.gift_voucher = Gift_Voucher.new
   @app.gift_voucher.enter_gift_voucher_form
 end
 

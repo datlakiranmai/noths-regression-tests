@@ -14,7 +14,7 @@ module Noths
       end
 
       def login
-        @pages[:signin_page] ||= Noths::PageObjects::Pages::SignInPage::SignInPage.new
+        @pages[:signin_page] ||= Noths::PageObjects::Pages::LoginPage::LoginPage.new
       end
 
       def registration

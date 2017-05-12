@@ -4,13 +4,6 @@ end
 
 Given /^I am on Home page$/ do
   @app.home.navigate
-  if headless?
-    page.driver.network_traffic do |request|
-      request.response_parts.uniq(&:url).each do |response|
-        puts "\n Responce URL #{response.url}: \n Status"
-      end
-    end
-  end
 end
 
 When(/^I click on (.*)$/) do |button_name|

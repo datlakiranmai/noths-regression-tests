@@ -8,7 +8,7 @@
  end
 
  And(/^I choose (.*) from my account section$/) do |option|
-    @app.mydetails_page.click_on(option)
+    @app.my_details.click_on(option)
  end
 
  And(/^I should see the my email address in my accounts page$/) do

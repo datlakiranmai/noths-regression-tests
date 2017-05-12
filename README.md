@@ -15,35 +15,29 @@
 
 **Selenium  webdriver chrome profile**
 
-To run entire test suite
+To run the entire test suite
 
     ENV_ID="QA_ENV_NAME" cucumber features/ --tag ~@wip
             
-To run individual cucumber features   
+To run an individual cucumber features   
  
    ex  ENV_ID="QA_ENV_NAME" cucumber features/login.feature
    
-To run individual test scenarios
+To run an individual test scenarios
 
    ex ENV_ID="QA_ENV_NAME" cucumber features --tag @1.01
    
    
 
 **Headless( NO GUI ) profile**
-To run entire test suite
+To run the entire test suite
 
     ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features/ --tag ~@wip
             
-To run individual cucumber features   
+To run an individual cucumber features   
  
    ex  ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features/login.feature
    
-To run individual test scenarios
+To run an individual test scenarios
 
    ex ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features --tag @1.01
-   
-   
-**Possible Test failure causes:**
-   
-   1. Sporadic test failures might happen if QA Environment encounters bad gateway errors. 
-   2. 

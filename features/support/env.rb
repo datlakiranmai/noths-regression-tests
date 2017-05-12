@@ -26,7 +26,7 @@ Before do
       debug: false,
       phantomjs_options: ['--load-images=no', '--disk-cache=false'],
       inspector: true,
-      window_size: [3000,3000]
+      window_size: [3000, 3000]
     }
     $driver=Capybara::Poltergeist::Driver.new(app, options)
   end
@@ -36,7 +36,7 @@ Before do
     client.read_timeout = 120
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client)
   end
-
+  @app ||= Noths::PageObjects::Application.new
 end
 
 

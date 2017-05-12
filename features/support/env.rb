@@ -14,7 +14,7 @@ Before do
     Capybara.app_host = APP_HOST
     config.run_server = false
     config.default_driver = (ENV['DRIVER'] || 'chrome').to_sym
-    config.default_max_wait_time = 20
+    config.default_max_wait_time = 60
     config.match = :prefer_exact
     config.javascript_driver = :webkit_debug
   end

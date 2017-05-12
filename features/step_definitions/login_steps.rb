@@ -16,10 +16,10 @@ end
 
 
 And(/^I sign in with my new credentials$/) do
-  @app.login.signin_credentials($email_address, @signup_page.password)
+  @app.login.signin_credentials($email_address, @app.registration.password)
 end
 
 Then(/^I should login successfully$/) do
-  name="#{@app.login.first_name} #{@app.login.last_name}"
-  expect(@app.login.signed_in_user.text.downcase).to have_text(name)
+  name="#{@app.registration.first_name} #{@app.registration.last_name}"
+  expect(@app.home.signed_in_user.text.downcase).to have_text(name)
 end

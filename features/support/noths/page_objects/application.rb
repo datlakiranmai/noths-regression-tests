@@ -40,6 +40,10 @@ module Noths
       def wishlist
         @pages[:wishlist] ||= Noths::PageObjects::Pages::Wishlist::Wishlist.new
       end
+
+      def order_confirmation
+        @pages[:order_confirmation] ||= Noths::PageObjects::Pages::OrderConfirmation::OrderConfirmation.new
+      end
     end
   end
 end

@@ -31,7 +31,7 @@ end
 
 
 Then(/^I should see my name as delivery recipient$/) do
-  expect(@app.your_order.delivery_recipient.text.downcase).to have_text("#{@app.login.first_name} #{@app.login.last_name}")
+  expect(@app.your_order.delivery_recipient.text.downcase).to have_text("#{@app.registration.first_name} #{@app.registration.last_name}")
 end
 
 Then(/^I expect to see Thank you for your order, (.*)$/) do |user_name|
@@ -42,7 +42,7 @@ end
 
 
 Then(/^I should see order confirmation page$/) do
-  expect(@app.order_confirmation.title_order_completed).to have_text("Thank you for your order, #{@app.login.first_name.capitalize} #{@app.login.last_name.capitalize}")
+  expect(@app.order_confirmation.title_order_completed).to have_text("Thank you for your order, #{@app.registration.first_name.capitalize} #{@app.registration.last_name.capitalize}")
   expect(@app.order_confirmation.thank_you_for_order).to have_text("ORDER COMPLETED")
   expect(@app.order_confirmation.order_completed_status).to have_text("YOUR ORDER HAS BEEN SUCCESSFUL")
 end

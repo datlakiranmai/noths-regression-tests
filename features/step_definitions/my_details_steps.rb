@@ -15,4 +15,3 @@
    puts @app.my_details.my_details_address.value
    expect(@app.my_details.my_details_address.value).to have_text(@app.registration.email_address)
  end
-

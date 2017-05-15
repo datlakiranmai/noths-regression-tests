@@ -46,5 +46,3 @@ Then(/^I should see order confirmation page$/) do
   expect(@app.order_confirmation.thank_you_for_order).to have_text("ORDER COMPLETED")
   expect(@app.order_confirmation.order_completed_status).to have_text("YOUR ORDER HAS BEEN SUCCESSFUL")
 end
-
-

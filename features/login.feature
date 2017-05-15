@@ -9,7 +9,8 @@ Feature: Login
 
   @no_poltergeist @2.01
   Scenario: Customer is able to successfully login to notonthehighstreet
-    When I click on Signin
+    When I navigate to home page
+    And I click on Signin
     And I sign in with my new credentials
     Then I should login successfully
     And I should be taken to My details page

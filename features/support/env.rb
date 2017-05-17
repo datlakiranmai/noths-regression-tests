@@ -21,7 +21,7 @@ Before do
 
   Capybara.register_driver :headless do |app|
     options = {
-      js_errors: true,
+      js_errors: false,
       timeout: 120,
       debug: false,
       phantomjs_options: ['--load-images=no', '--disk-cache=false'],
@@ -36,7 +36,7 @@ Before do
     client.read_timeout = 120
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, desired_capabilities: {
       "chromeOptions" => {
-       "args" => %w{ no-sandbox }
+       "args" => %w{ no-sandbox start-fullscreen }
      }
     })
   end

@@ -8,7 +8,12 @@ RUN apt-get update \
     && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | tee -a /etc/apt/sources.list \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && apt-get update \
-    && apt-get -y install google-chrome-stable xvfb
+    && apt-get -y install google-chrome-stable xvfb build-essential chrpath \
+       libssl-dev libxft-dev libfontconfig1 libfontconfig1-dev \
+    && wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
+    && tar xjvf phantomjs-2.1.1-linux-x86_64.tar.bz2 \
+    && mv phantomjs-2.1.1-linux-x86_64 /opt/ \
+    && ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin
 
 WORKDIR /service
 

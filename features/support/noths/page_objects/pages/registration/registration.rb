@@ -43,6 +43,12 @@ module Noths
           element :existing_customer_signin, "#button_existing_customer"
 
 
+          #error message
+          element :error_title, '.error_messages_title'
+          element :error_message, '.error_message'
+          element :info_message, '.message.info.with_icon>p'
+
+
           def enter_address_manually
             address_manual.click
             address1.set "Flat"
@@ -104,6 +110,21 @@ module Noths
             password_field.set "password"
             password_confirm_field.set "password"
           end
+
+
+          def enter_existing_user_details(email_address, password)
+            random_name
+            email_field.set email_address
+            email_confirmation_field.set email_address
+            @first_name="first#{@random_name}"
+            @last_name="last#{@random_name}"
+            first_name_field.set @first_name
+            last_name_field.set @last_name
+            @password = password
+            password_field.set @password
+            password_confirm_field.set @password
+          end
+
 
           def enter_address_details
             guest_user_postcode_field.set "TW9 2NQ"

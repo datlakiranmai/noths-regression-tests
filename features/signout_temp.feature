@@ -6,7 +6,7 @@ Feature: Temporary Sign out
     Given I am on Home page
     When I click on Signin
     And I enter my login credentials:
-      | user_name | 1494597471@sharklasers.com |
+      | user_name | 1494941299@sharklasers.com |
       | password  | password                   |
     Then I should login successfully
 

@@ -29,3 +29,24 @@ end
 And(/^I Continue to next page$/) do
   @app.registration.click_on_button('Continue')
 end
+
+
+And(/^I enter in existing details in your details form$/) do |table|
+  # table is a table.hashes.keys # => [:user_name, :1494856618@sharklasers.com]
+  table.raw.each do |key, value|
+    if key == 'user_name' then
+      $email_address = value
+    else
+      @password = value
+    end
+  end
+  @app.registration.enter_existing_user_details($email_address, @password)
+end
+
+Then(/^I should see error message saying (.*)$/) do |error_title|
+  expect(@app.registration.error_title.text.downcase).to eq(error_title.downcase)
+end
+
+And(/^I should see info message saying (.*)$/) do |info_message|
+  expect(@app.registration.info_message.text.downcase).to eq(info_message.downcase)
+end

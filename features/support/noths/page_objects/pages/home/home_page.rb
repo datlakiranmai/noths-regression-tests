@@ -8,6 +8,7 @@ module Noths
         class HomePage < SitePrism::Page
           include Capybara::DSL
           include Poltergeist
+          include Mobile
 
           element :register_button, '.register_link.last.button_medium_mobile'
           element :signin_button, '.sign_in_link.button_medium_mobile'
@@ -24,6 +25,9 @@ module Noths
           element :info, '.message.info.with_icon'
           element :new_customer, '#button_new_customer'
 
+          #mobile
+          elements :mobile_buttons, '.n-button.n-button--medium.n-button--primary.n-button--full-width'
+
 
           def navigate(link=nil)
             begin
@@ -31,7 +35,7 @@ module Noths
             rescue Net::ReadTimeout
               retry
             end
-            raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be dead!" unless page.has_css?('.sign_in_link.button_medium_mobile')
+            #raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be dead!" unless page.has_css?('.sign_in_link.button_medium_mobile')
           end
 
           def hover_myaccounts
@@ -59,7 +63,11 @@ module Noths
               when 'Register'
                 register_button.click
               when 'Signin'
-                signin_button.click
+                if mobile?
+                  mobile_buttons.first.click
+                else
+                  signin_button.click
+                end
               when 'Favourite'
                 if headless?
                   page.driver.click(1731.5, 73)

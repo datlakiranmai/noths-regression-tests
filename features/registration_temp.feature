@@ -6,13 +6,14 @@ Feature: Temporary Registration
   Background:
     Given I am on Home page
 
-  @temp @7.01
+  @temp @mobile @7.01
   Scenario: Customer is able is successfully register in site via header
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
     Then I should see user created in cognito
     And I should see user created in user table
+    And I should see user password in user table is empty
     And I should see user created in cognito account table
 
 
@@ -24,4 +25,5 @@ Feature: Temporary Registration
     And I click Submit button
     Then I should see user created in cognito
     And I should see user created in user table
+    And I should see user password in user table is empty
     And I should see user created in cognito account table

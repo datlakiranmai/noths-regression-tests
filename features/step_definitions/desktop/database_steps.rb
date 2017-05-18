@@ -20,3 +20,7 @@ end
 And(/^I should see user created in cognito account table$/) do
   expect(CognitoUserTable.user_exists_in_cognito_table?(CognitoUserTable.user_id($email_address))).to eq(true)
 end
+
+And(/^I should see user password in user table is empty$/) do
+  expect(CognitoUserTable.get_password_field_value($email_address)).to be_nil
+end

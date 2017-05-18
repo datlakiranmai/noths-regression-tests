@@ -65,6 +65,11 @@ class CognitoUserTable
     def user_exists_in_cognitoAccounts_table?(user_id)
       return true if queryuser_in_cognitoAccounts_table?(user_id).count == 1
     end
+
+    def get_password_field_value(email_address)
+      results=connect_to_noths_db.query("select encrypted_password_scrypt from users where email='#{email_address}'")
+      results.each { |i| return i['encrypted_password_scrypt'] }
+    end
   end
 end
 

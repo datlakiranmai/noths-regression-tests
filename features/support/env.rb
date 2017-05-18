@@ -36,12 +36,20 @@ Before do
     client.read_timeout = 120
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client)
   end
+
+  Capybara.register_driver :mobile do |app|
+    client = Selenium::WebDriver::Remote::Http::Default.new
+    client.read_timeout = 120
+    $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client)
+  end
+
+  page.driver.browser.manage.window.resize_to(375, 667)
   @app ||= Noths::PageObjects::Application.new
 end
 
 
 After do
-  #CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?
+  CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?
   $driver.quit if ENV['DRIVER'].nil?
 end
 

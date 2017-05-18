@@ -13,6 +13,7 @@ Feature: Temporary Registration
     And I click Submit button
     Then I should see user created in cognito
     And I should see user created in user table
+    And I should see user password in user table
     And I should see user created in cognito account table
 
 
@@ -24,4 +25,5 @@ Feature: Temporary Registration
     And I click Submit button
     Then I should see user created in cognito
     And I should see user created in user table
+    And I should see user password in user table
     And I should see user created in cognito account table

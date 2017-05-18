@@ -36,7 +36,12 @@ Before do
     client.read_timeout = 120
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client)
   end
+
+
+
+
   @app ||= Noths::PageObjects::Application.new
+
 end
 
 

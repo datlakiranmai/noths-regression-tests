@@ -36,7 +36,7 @@ Before do
     client.read_timeout = 120
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, desired_capabilities: {
       "chromeOptions" => {
-       "args" => %w{ no-sandbox start-fullscreen }
+       "args" => %w{ no-sandbox start-fullscreen disable-impl-side-painting }
      }
     })
   end

@@ -5,6 +5,7 @@ module Noths
       module AddToBasket
         class AddToBasket < SitePrism::Page
           include Poltergeist
+          include Helper
           elements :proceed_to_checkout, '.button.primary.medium.proceed_to_checkout_button'
           element :add_to_basket_button, '#add_to_cart'
           element :checkout_button, '.button.large.primary.checkout'
@@ -12,11 +13,19 @@ module Noths
 
           def add_the_product_in_basket
             if headless?
-              try_until(20) { add_to_basket_button.click }
+              if alert_present?
+                try_until(20) { page.accept_confirm { add_to_basket_button.click } }
+              else
+                try_until(20) { add_to_basket_button.click }
+              end
             else
               add_to_basket_button.click
             end
-            checkout_button.click
+            if alert_present?
+              page.accept_confirm { checkout_button.click }
+            else
+              checkout_button.click
+            end
             proceed_to_checkout.first.click
           end
         end
@@ -24,6 +33,3 @@ module Noths
     end
   end
 end
-
-
-

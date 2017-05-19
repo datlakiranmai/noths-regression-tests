@@ -16,7 +16,6 @@ Feature: Temporary Login
     Then I should login successfully
     And I should be redirected to home page
 
-
   @temp @8.02
   Scenario: Customer is able to successfully login to notonthehighstreet via favourites
     When I click on Favourite

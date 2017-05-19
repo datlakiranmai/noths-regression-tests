@@ -11,7 +11,7 @@ module Noths
 
 
           def signin_credentials(username, password)
-            wait_until_login_email_visible(10)
+            wait_until_login_email_visible(30)
             login_email.set username
             login_pwd.set password
             signin_button.click

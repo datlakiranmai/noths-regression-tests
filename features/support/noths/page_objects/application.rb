@@ -44,6 +44,10 @@ module Noths
       def order_confirmation
         @pages[:order_confirmation] ||= Noths::PageObjects::Pages::OrderConfirmation::OrderConfirmation.new
       end
+
+      def mobile
+        @pages[:mobile] ||= Noths::PageObjects::Pages::MobileLoginPage::MobileLoginPage.new
+      end
     end
   end
 end

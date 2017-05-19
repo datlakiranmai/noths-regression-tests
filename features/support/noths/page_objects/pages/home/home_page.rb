@@ -27,7 +27,8 @@ module Noths
 
           #mobile
           elements :mobile_buttons, '.n-button.n-button--medium.n-button--primary.n-button--full-width'
-
+          element :sign_in_fav, '#favourites-list-sign-in'
+          element :sign_up_fav, '#favourites-list-register'
 
           def navigate(link=nil)
             begin
@@ -61,7 +62,11 @@ module Noths
           def click_on(button_name)
             case button_name
               when 'Register'
-                register_button.click
+                if mobile?
+                  mobile_buttons.last.click
+                else
+                  register_button.click
+                end
               when 'Signin'
                 if mobile?
                   mobile_buttons.first.click
@@ -74,6 +79,10 @@ module Noths
                 else
                   favourite_inactive_btn.click
                 end
+              when 'Favourites SignIn'
+                sign_in_fav.click
+              when 'Favourite Register'
+                sign_up_fav.click
               when 'Sign out'
                 if headless?
                   try_until(20) { sign_out_btn.trigger('click') }

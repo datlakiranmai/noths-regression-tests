@@ -11,7 +11,7 @@ Feature: Temporary Login
   Scenario:   Customer is able to successfully login to notonthehighstreet
     When I click on Signin
     And I enter my login credentials:
-      | user_name | 1494941299@sharklasers.com |
+      | user_name | 1495205045@sharklasers.com |
       | password  | password                   |
     Then I should login successfully
     And I should be redirected to home page
@@ -21,7 +21,7 @@ Feature: Temporary Login
     When I click on Favourite
     When I click on Signin
     And I enter my login credentials:
-      | user_name | 1494941299@sharklasers.com |
+      | user_name | 1495205045@sharklasers.com |
       | password  | password                   |
     Then I should login successfully
     And I should be redirected to home page

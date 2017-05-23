@@ -28,7 +28,7 @@ module Noths
               when 'my accounts'
                 my_accounts.click
               when 'my shopping'
-                my_accounts.click
+                my_shopping.click
               when 'signout'
                 sign_out.click
             end

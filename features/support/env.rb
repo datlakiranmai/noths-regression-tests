@@ -5,6 +5,7 @@ require 'rspec/expectations'
 require 'phantomjs'
 require 'capybara/poltergeist'
 
+
 ENV['ENV_ID'] ||= 'dev'
 
 APP_HOST="http://www.public.#{ENV['ENV_ID']}.qa.noths.com"
@@ -14,7 +15,6 @@ Before do
     Capybara.app_host = APP_HOST
     config.run_server = false
     config.default_driver = (ENV['DRIVER'] || 'chrome').to_sym
-
     config.default_max_wait_time = 60
     config.match = :prefer_exact
     config.javascript_driver = :webkit_debug
@@ -22,7 +22,7 @@ Before do
 
   Capybara.register_driver :headless do |app|
     options = {
-      js_errors: false,
+      js_errors: true,
       timeout: 120,
       debug: false,
       phantomjs_options: ['--load-images=no', '--disk-cache=false'],

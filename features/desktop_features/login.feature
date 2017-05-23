@@ -7,7 +7,7 @@ Feature: Login
     Given I register as a new user
     And I sign out from my account
 
-  @no_poltergeist @2.01
+  @e2e @no_poltergeist @2.01
   Scenario: Customer is able to successfully login to notonthehighstreet
     When I navigate to home page
     And I click on Signin
@@ -16,7 +16,7 @@ Feature: Login
     And I should be taken to My details page
     And I should see the my email address in my accounts page
 
-  @no_poltergeist @2.02
+  @e2e @no_poltergeist @2.02
   Scenario: Customer is able to successfully login to notonthehighstreet via favourites
     When I click on Favourite
     When I click on Signin

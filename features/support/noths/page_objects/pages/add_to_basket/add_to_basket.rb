@@ -24,7 +24,7 @@ module Noths
             if alert_present?
               page.accept_confirm { checkout_button.click }
             else
-              checkout_button.click
+              checkout_button.click if headless? || chrome?
             end
             proceed_to_checkout.first.click
           end

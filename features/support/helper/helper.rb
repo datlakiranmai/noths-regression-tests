@@ -5,8 +5,12 @@ module Helper
       puts "Alert present! Switched to alert."
       true
     rescue
-      puts "No alert present."
       return false
     end
   end
+
+  def chrome?
+    return true if Capybara.current_driver == :chrome
+  end
+
 end

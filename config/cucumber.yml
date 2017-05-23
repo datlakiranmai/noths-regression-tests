@@ -1,0 +1,8 @@
+
+<% html_report = '--format progress --format html --out=features_report.html' %>
+<% rerun = '-f rerun --out rerun.txt' %>
+
+e2e: 'features --guess <%= html_report %> --tag @1.01 <%= rerun %>'
+mobile:  "DRIVER='mobile' features <%= html_report %> --tag @mobile <%= rerun %>"
+headless: "DRIVER='headless' features <%= html_report %> --tag @mobile <%= rerun %>"
+rerun: '--guess @rerun.txt'

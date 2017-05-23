@@ -46,7 +46,7 @@ module Noths
       end
 
       def mobile
-        @pages[:mobile] ||= Noths::PageObjects::Pages::MobileLoginPage::MobileLoginPage.new
+        @pages[:mobile_features] ||= Noths::PageObjects::Pages::MobileLoginPage::MobileLoginPage.new
       end
     end
   end

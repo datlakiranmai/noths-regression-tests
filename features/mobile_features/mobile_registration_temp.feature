@@ -6,25 +6,33 @@ Feature: Temporary Registration
   Background:
     Given I am on Home page
 
-  @mobile @13.01
+  @mobile @mobile_demo @13.01
   Scenario: Customer is able is successfully register in site via header
     When I navigate to my accounts
     And I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-    And I navigate to my accounts
-    And I click link to go to my details
-    And I should be taken to My details page
-    Then I should see the my email address in my accounts page
+    Then I should see user created in cognito
+    And I should see user created in user table
+    And I should see user password in user table is empty
+    And I should see user created in cognito account table
+#    And I navigate to my accounts
+#    And I click link to go to my details
+#    And I should be taken to My details page
+#    Then I should see the my email address in my accounts page
 
 
-  @mobile  @13.02
+  @mobile @mobile_demo @13.02
   Scenario: Customer is able is successfully register in site via favourites
     When I click on Favourite
     And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button
-    And I navigate to my accounts
-    And I click link to go to my details
-    And I should be taken to My details page
-    Then I should see the my email address in my accounts page
+    Then I should see user created in cognito
+    And I should see user created in user table
+    And I should see user password in user table is empty
+    And I should see user created in cognito account table
+#    And I navigate to my accounts
+#    And I click link to go to my details
+#    And I should be taken to My details page
+#    Then I should see the my email address in my accounts page

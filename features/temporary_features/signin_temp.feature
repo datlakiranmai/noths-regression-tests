@@ -7,21 +7,21 @@ Feature: Temporary Login
   Background:
     Given I am on Home page
 
-  @temp @8.01
+  @demo @8.01
   Scenario:   Customer is able to successfully login to notonthehighstreet
     When I click on Signin
     And I enter my login credentials:
-      | user_name | 1495205045@sharklasers.com |
-      | password  | password                   |
+      | user_name | clair@friday.com |
+      | password  | clair@friday.com |
     Then I should login successfully
     And I should be redirected to home page
 
-  @temp @8.02
+  @demo @8.02
   Scenario: Customer is able to successfully login to notonthehighstreet via favourites
     When I click on Favourite
     When I click on Signin
     And I enter my login credentials:
-      | user_name | 1495205045@sharklasers.com |
-      | password  | password                   |
+      | user_name | clair@friday.com |
+      | password  | clair@friday.com |
     Then I should login successfully
     And I should be redirected to home page

@@ -6,7 +6,7 @@ Feature: Temporary Registration
   Background:
     Given I am on Home page
 
-  @temp @7.01
+  @demo @7.01
   Scenario: Customer is able is successfully register in site via header
     When I click on Register
     And I enter in my details in sign up form
@@ -17,7 +17,7 @@ Feature: Temporary Registration
     And I should see user created in cognito account table
 
 
-  @temp  @7.02
+  @demo  @7.02
   Scenario: Customer is able is successfully register in site via favourites
     When I click on Favourite
     And I click on Register

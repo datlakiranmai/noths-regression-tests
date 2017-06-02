@@ -43,7 +43,11 @@ Before do
     client.read_timeout = 120
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client)
   end
-  page.driver.browser.manage.window.resize_to(375, 667) if Capybara.current_driver == :mobile
+   if Capybara.current_driver == :mobile
+     page.driver.browser.manage.window.resize_to(375, 667)
+   else
+     page.driver.browser.manage.window.maximize
+   end
   @app ||= Noths::PageObjects::Application.new
 end
 

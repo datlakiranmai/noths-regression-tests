@@ -25,7 +25,7 @@ To run individual cucumber features
    
 To run individual test scenarios
 
-     ex ENV_ID="QA_ENV_NAME" cucumber features --tag @1.01
+     ex ENV_ID="QA_ENV_NAME" cucumber features --guess --tag @1.01
    
    
 
@@ -41,7 +41,7 @@ To run individual cucumber features
    
 To run individual test scenarios
 
-    ex ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features --tag @1.01
+    ex ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features --guess --tag @1.01
    
    
 **Possible Test failure causes:**

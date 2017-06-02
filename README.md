@@ -21,11 +21,11 @@ To run entire test suite
          
 To run individual cucumber features   
  
-   ex  ENV_ID="QA_ENV_NAME" cucumber features/login.feature
+     ex  ENV_ID="QA_ENV_NAME" cucumber features/login.feature
    
 To run individual test scenarios
 
-   ex ENV_ID="QA_ENV_NAME" cucumber features --tag @1.01
+     ex ENV_ID="QA_ENV_NAME" cucumber features --tag @1.01
    
    
 
@@ -37,11 +37,11 @@ To run entire test suite
             
 To run individual cucumber features   
  
-   ex  ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features/login.feature
+    ex  ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features/login.feature
    
 To run individual test scenarios
 
-   ex ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features --tag @1.01
+    ex ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber features --tag @1.01
    
    
 **Possible Test failure causes:**

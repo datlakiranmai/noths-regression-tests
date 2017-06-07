@@ -12,6 +12,7 @@ module Noths
 
           def mm_popup
             if mobile?
+
               within_frame(find('#mmContentOffer')) do
                 mention_me_popup.click if page.has_css?('#mmCloseButton')
               end

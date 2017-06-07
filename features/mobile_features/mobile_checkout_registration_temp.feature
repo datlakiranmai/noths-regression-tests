@@ -43,7 +43,7 @@ Feature: Mobile Checkout_registration temporary
     And I add the product in my basket
     And I click on Continue
     And I enter in existing details in your details form
-      | user_name | youhello@gmail.com |
+      | user_name | 1496669633@sharklasers.com |
       | password  | password           |
     And I Continue to next page
     Then I should see error message saying Please check your details before continuing
@@ -57,7 +57,7 @@ Feature: Mobile Checkout_registration temporary
     And I checkout gift voucher
     And I click on Continue
     And I enter in existing details in your details form
-      | user_name | youhello@gmail.com |
+      | user_name | 1496669633@sharklasers.com |
       | password  | password           |
     And I Continue to next page
     Then I should see error message saying Please check your details before continuing

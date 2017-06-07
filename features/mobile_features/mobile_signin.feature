@@ -11,7 +11,7 @@ Feature: Login_mobile
     When I navigate to my accounts
     When I click on Signin
     And I enter my login credentials:
-      | user_name | 1495542281@sharklasers.com |
+      | user_name | 1496669633@sharklasers.com |
       | password  | password           |
     And I navigate to my accounts
     And I click link to go to my details
@@ -24,7 +24,7 @@ Feature: Login_mobile
     When I click on Favourite
     When I click on Favourites SignIn
     And I enter my login credentials:
-      | user_name | 1495542281@sharklasers.com |
+      | user_name | 1496669633@sharklasers.com |
       | password  | password           |
     And I navigate to my accounts
     And I click link to go to my details

@@ -22,7 +22,7 @@ Before do
 
   Capybara.register_driver :headless do |app|
     options = {
-      js_errors: true,
+      js_errors: false,
       timeout: 120,
       debug: false,
       phantomjs_options: ['--load-images=no', '--disk-cache=false'],
@@ -45,8 +45,10 @@ Before do
   end
    if Capybara.current_driver == :mobile
      page.driver.browser.manage.window.resize_to(375, 667)
-   else
+   elsif Capybara.current_driver == :chrome
      page.driver.browser.manage.window.maximize
+   elsif Capybara.current_driver == :headless
+     nil
    end
   @app ||= Noths::PageObjects::Application.new
 end
@@ -56,5 +58,3 @@ After do
   #CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?
   $driver.quit if ENV['DRIVER'].nil?
 end
-
-

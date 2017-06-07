@@ -29,6 +29,7 @@ module Noths
           elements :mobile_buttons, '.n-button.n-button--medium.n-button--primary.n-button--full-width'
           element :sign_in_fav, '#favourites-list-sign-in'
           element :sign_up_fav, '#favourites-list-register'
+          element :signin_checkout, '.button.primary.large.existing_mobile_customer_link'
 
           def navigate(link=nil)
             begin

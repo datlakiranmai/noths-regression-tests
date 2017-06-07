@@ -21,7 +21,6 @@ Feature: Checkout_registration temporary
 
   @temp @10.02
   Scenario: Customer should be able to purchase a gift voucher as a registered user
-    When I navigate to my accounts
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
     And I checkout gift voucher
@@ -39,7 +38,7 @@ Feature: Checkout_registration temporary
     And I add the product in my basket
     And I click on Continue
     And I enter in existing details in your details form
-      | user_name | 1494929736@sharklasers.com |
+      | user_name | 1496680229@sharklasers.com |
       | password  | password                   |
     And I Continue to next page
     Then I should see error message saying Please check your details before continuing
@@ -53,7 +52,7 @@ Feature: Checkout_registration temporary
     And I checkout gift voucher
     And I click on Continue
     And I enter in existing details in your details form
-      | user_name | 1494929736@sharklasers.com |
+      | user_name | 1496680229@sharklasers.com |
       | password  | password                   |
     And I Continue to next page
     Then I should see error message saying Please check your details before continuing

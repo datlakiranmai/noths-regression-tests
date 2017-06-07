@@ -11,9 +11,9 @@ Feature: Checkout_signin temporary
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I enter my login credentials:
-      | user_name | clair@friday.com |
-      | password  | clair@friday.com |
-    And I enter in my address details
+      | user_name |1496680229@sharklasers.com |
+      | password  | password             |
+    #And I enter in my address details
     Then I should see my name as delivery recipient
     And  I should see Antony Roberts Estate Agents as my delivery address
     And I should see the my email address in summary section
@@ -30,13 +30,13 @@ Feature: Checkout_signin temporary
     And I enter my details in gift voucher form
     And I checkout gift voucher
     And I enter my login credentials:
-      | user_name | 1496396785@sharklasers.com |
-      | password  | password                   |
-    And I enter in my address details
-    Then I should see my name as delivery recipient
-    And  I should see Antony Roberts Estate Agents as my delivery address
-    And I should see the my email address in summary section
-    When I continue with my delivery address
-    And I specify my card type
+      | user_name | 1496680229@sharklasers.com |
+      | password  | password             |
+    #And I enter in my address details
+    #Then I should see my name as delivery recipient
+    #And  I should see Antony Roberts Estate Agents as my delivery address
+    #And I should see the my email address in summary section
+    #When I continue with my delivery address
+    #And I specify my card type
     And I provide the payment details
     Then I should see order confirmation page

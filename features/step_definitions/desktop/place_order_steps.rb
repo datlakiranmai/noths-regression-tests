@@ -36,12 +36,14 @@ end
 
 Then(/^I should see (.*) message$/) do |message|
 #@app.order_confirmation.mm_popup
-expect(@app.order_confirmation.title_order_completed).to have_text("#{message}, #{@app.registration.first_name.capitalize} #{@app.registration.last_name.capitalize}")
+#expect(@app.order_confirmation.title_order_completed).to have_text("#{message}, #{@app.registration.first_name.capitalize} #{@app.registration.last_name.capitalize}")
 expect(@app.order_confirmation.order_completed_status).to have_text("YOUR ORDER HAS BEEN SUCCESSFUL")
 end
 
 
 Then(/^I should see order confirmation page$/) do
+  #puts "firstname #{@app.registration.first_name}"
+  #puts "lastname #{@app.registration.last_name}"
 expect(@app.order_confirmation.title_order_completed).to have_text("Thank you for your order, #{@app.registration.first_name.capitalize} #{@app.registration.last_name.capitalize}")
 expect(@app.order_confirmation.thank_you_for_order).to have_text("ORDER COMPLETED")
 expect(@app.order_confirmation.order_completed_status).to have_text("YOUR ORDER HAS BEEN SUCCESSFUL")

@@ -2,9 +2,7 @@
 <% html_report = '--format progress --format html --out=features_report.html' %>
 <% rerun = '-f rerun --out rerun.txt' %>
 
-e2e: 'features --guess <%= html_report %> --tag @e2e <%= rerun %>'
-mobile:  "DRIVER='mobile' features <%= html_report %> --tag @mobile <%= rerun %>"
-headless: "DRIVER='headless' features <%= html_report %> --tag @mobile <%= rerun %>"
-demo: 'features --guess <%= html_report %> --tag @demo <%= rerun %>'
-mobile_demo: "DRIVER='mobile' features --guess <%= html_report %> --tag @mobile_demo <%= rerun %>"
+e2e: 'features --guess <%= html_report %> --tag @e2e'
+mobile:  "DRIVER='mobile' features <%= html_report %> --tag @mobile"
+headless: "DRIVER='headless' features --tag @e2e <%= html_report %>"
 rerun: '--guess @rerun.txt'

@@ -1,6 +1,6 @@
 require 'selenium-webdriver'
 require 'capybara'
-require 'Capybara/Cucumber'
+require 'capybara/cucumber'
 require 'rspec/expectations'
 require 'phantomjs'
 require 'capybara/poltergeist'
@@ -35,7 +35,11 @@ Before do
   Capybara.register_driver :chrome do |app|
     client = Selenium::WebDriver::Remote::Http::Default.new
     client.read_timeout = 120
-    $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client)
+    $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, desired_capabilities: {
+      "chromeOptions" => {
+       "args" => %w{ no-sandbox start-fullscreen disable-impl-side-painting }
+     }
+    })
   end
 
   Capybara.register_driver :mobile do |app|

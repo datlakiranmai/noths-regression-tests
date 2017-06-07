@@ -15,15 +15,16 @@
 
 **Selenium  webdriver chrome profile**
 
-To run entire test suite
-    
+
+To run the entire test suite
+
      ex ENV_ID="QA_ENV_NAME" cucumber -p e2e || ENV_ID="QA_ENV_NAME" cucumber -p rerun
-         
-To run individual cucumber features   
+            
+To run an individual cucumber features   
  
      ex  ENV_ID="QA_ENV_NAME" cucumber --guess features/desktop/login.feature
    
-To run individual test scenarios
+To run an individual test scenarios
 
      ex ENV_ID="QA_ENV_NAME" cucumber features --guess --tag @1.01
      
@@ -48,25 +49,23 @@ To run individual test scenarios
 
 **Headless( NO GUI ) profile**
 
-To run entire test suite
+To run the entire test suite
 
     ex ENV_ID="QA_ENV_NAME" cucumber --guess -p headless || cucumber -p rerun
             
-To run individual cucumber features   
+To run an individual cucumber features   
  
     ex  ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber --guess features/login.feature
    
-To run individual test scenarios
+To run an individual test scenarios
 
     ex ENV_ID="QA_ENV_NAME" DRIVER="headless" cucumber --guess features --guess --tag @1.01
-   
-   
+      
 **Possible Test failure causes:**
    
    1. Sporadic test failures might happen if QA Environment encounters bad gateway errors. 
    2. Headless profile has got couple of known test failures due to inconsistent redirection behaviour.
    3. Sporadic test failures might happen(rarely) due to race condition/driver issues. 
-   
    
    *  --guess - We have 2 different step definitions(desktop and mobile) that are the same, Cucumber does not know which one to run. Using the --guess flag forces Cucumber to pick the most likely one. 
    The cucumber rake tasks use the --strict flag, and will fail if you have ambigious steps.

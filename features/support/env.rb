@@ -49,10 +49,6 @@ Before do
   end
    if Capybara.current_driver == :mobile
      page.driver.browser.manage.window.resize_to(375, 667)
-   elsif Capybara.current_driver == :chrome
-     page.driver.browser.manage.window.maximize
-   elsif Capybara.current_driver == :headless
-     nil
    end
   @app ||= Noths::PageObjects::Application.new
 end

@@ -112,10 +112,9 @@ module Noths
           end
 
 
-          def enter_existing_user_details(email_address, password)
-            random_name
-            email_field.set email_address
-            email_confirmation_field.set email_address
+          def enter_existing_user_details
+            email_field.set $email_address
+            email_confirmation_field.set $email_address
             @first_name="first#{@random_name}"
             @last_name="last#{@random_name}"
             first_name_field.set @first_name

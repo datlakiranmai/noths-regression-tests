@@ -6,3 +6,4 @@ e2e: 'features --guess <%= html_report %> --tag @e2e'
 mobile:  "DRIVER='mobile' features <%= html_report %> --tag @mobile"
 headless: "DRIVER='headless' features --tag @e2e <%= html_report %>"
 rerun: '--guess @rerun.txt'
+e2e_coginito_check: 'features --guess <%= html_report %> --tag @e2e_coginito_check'

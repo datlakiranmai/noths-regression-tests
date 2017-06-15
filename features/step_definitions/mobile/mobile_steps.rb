@@ -14,3 +14,5 @@ Then(/^I should see (.*) and (.*) buttons$/) do |signin_btn,register_btn|
   expect(@app.home.mobile_buttons.first.text).to eq(signin_btn.upcase)
   expect(@app.home.mobile_buttons.last.text).to eq(register_btn.upcase)
 end
+
+

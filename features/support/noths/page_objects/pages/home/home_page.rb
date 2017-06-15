@@ -1,5 +1,6 @@
 require 'site_prism'
 require 'rspec/expectations'
+require 'nokogiri'
 
 module Noths
   module PageObjects
@@ -31,6 +32,10 @@ module Noths
           element :sign_up_fav, '#favourites-list-register'
           element :signin_checkout, '.button.primary.large.existing_mobile_customer_link'
 
+
+          #admin
+          elements :site_features, '#new_feature'
+
           def navigate(link=nil)
             begin
               visit(link)
@@ -39,6 +44,27 @@ module Noths
             end
             #raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be dead!" unless page.has_css?('.sign_in_link.button_medium_mobile')
           end
+
+
+          def navigate_to_admin
+            visit('admin/session/new')
+          end
+
+          def navigate_to_site_features
+            visit('admin/features')
+          end
+
+          def turn_cognito_flag(flag_status)
+            usecognito= all('#new_feature').select {|l| l[:action].include? 'use_cognito_auth/preview'}
+            usecognito[0].find('#new_feature>input').click
+            sleep 1
+          end
+
+          def check_cognito_flag(status)
+            page_source = page.body
+            status == 'ON' ? page_source.include?('"useCognitoAuth":true') : page_source.include?('"useCognitoAuth":false')
+          end
+
 
           def hover_myaccounts
             if headless?

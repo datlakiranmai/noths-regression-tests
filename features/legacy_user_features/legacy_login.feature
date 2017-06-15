@@ -11,7 +11,6 @@ Feature: Legacy Login
     And I navigate to home page
     And I check my cognito flag is ON
 
-
   @legacy @8.01
   Scenario:   Legacy Customer is able to successfully login to notonthehighstreet
     When I click on Signin

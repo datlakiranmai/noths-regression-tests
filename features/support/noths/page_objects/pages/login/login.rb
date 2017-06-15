@@ -10,8 +10,7 @@ module Noths
           element :login_pwd, '#password'
           element :signin_button, '#button_existing_customer'
           element :admin_signin_button, '#admin_log_in_button'
-
-
+          
           def signin_credentials(username, password)
             wait_until_login_email_visible(30)
             login_email.set username

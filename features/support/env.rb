@@ -10,9 +10,6 @@ ENV['ENV_ID'] ||= 'dev'
 
 APP_HOST="http://www.public.#{ENV['ENV_ID']}.qa.noths.com"
 
-
-
-
 Before do
   Capybara.configure do |config|
     Capybara.app_host = APP_HOST

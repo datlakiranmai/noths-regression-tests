@@ -21,7 +21,6 @@ Feature: User registration with a already existing email address
     Then I should see error message saying Please check your details before continuing
     And I should see info message saying To use this email address simply sign in before continuing.
 
-
   @legacy @9.02
   Scenario: Customer should see 'user already exists' message if existing email address is used (gift voucher)
     And I tap on the link gift vouchers in footer
@@ -33,7 +32,6 @@ Feature: User registration with a already existing email address
     Then I should see error message saying Please check your details before continuing
     And I should see info message saying To use this email address simply sign in before continuing.
 
-
   @legacy @9.03
   Scenario: Customer is able is successfully register in site via header
     When I click on Register
@@ -41,7 +39,6 @@ Feature: User registration with a already existing email address
     And I click Submit button
     Then I should see error message saying Please check your details before continuing
     And I should see info message saying To use this email address simply sign in before continuing.
-
 
   @legacy @9.04
   Scenario: Customer is able is successfully register in site via favourites

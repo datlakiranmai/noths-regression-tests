@@ -45,7 +45,6 @@ module Noths
             #raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be dead!" unless page.has_css?('.sign_in_link.button_medium_mobile')
           end
 
-
           def navigate_to_admin
             visit('admin/session/new')
           end
@@ -64,7 +63,6 @@ module Noths
             page_source = page.body
             status == 'ON' ? page_source.include?('"useCognitoAuth":true') : page_source.include?('"useCognitoAuth":false')
           end
-
 
           def hover_myaccounts
             if headless?

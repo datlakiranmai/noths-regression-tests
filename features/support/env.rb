@@ -4,7 +4,12 @@ require 'capybara/cucumber'
 require 'rspec/expectations'
 require 'phantomjs'
 require 'capybara/poltergeist'
+require 'allure-cucumber'
 
+
+AllureCucumber.configure do |c|
+  c.output_dir = "output/dir"
+end
 
 ENV['ENV_ID'] ||= 'dev'
 

@@ -26,7 +26,7 @@ Feature: Legacy Checkout login
     Then I should see order confirmation page
 
   @legacy @7.02
-  Scenario: Customer should be able to purchase a product as a customer
+  Scenario: Customer should be able to purchase a gift voucher as a customer
     When I navigate to home page
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form

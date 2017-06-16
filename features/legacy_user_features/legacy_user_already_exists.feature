@@ -33,7 +33,7 @@ Feature: User registration with a already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
 
   @legacy @9.03
-  Scenario: Customer is able is successfully register in site via header
+  Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via header)
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
@@ -41,7 +41,7 @@ Feature: User registration with a already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
 
   @legacy @9.04
-  Scenario: Customer is able is successfully register in site via favourites
+  Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via favourites)
     When I click on Favourite
     And I click on Register
     And I enter in my details in sign up form

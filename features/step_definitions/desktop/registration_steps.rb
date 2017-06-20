@@ -1,4 +1,3 @@
-
 And(/^I enter in my details in sign up form$/) do
   @app.registration.enter_user_details
 end
@@ -41,4 +40,10 @@ end
 
 And(/^I should see info message saying (.*)$/) do |info_message|
   expect(@app.registration.info_message.text.downcase).to eq(info_message.downcase)
+end
+
+
+And(/^I should see password text field input should get cleared up$/) do
+  expect(@app.registration.password_field.value).to eq('')
+  expect(@app.registration.password_confirm_field.value).to eq('')
 end

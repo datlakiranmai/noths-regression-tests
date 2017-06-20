@@ -35,10 +35,11 @@ module Noths
 
           #admin
           elements :site_features, '#new_feature'
+          element :cms_sign_out, '#ext-gen160'
 
           def navigate(link=nil)
             begin
-              visit(link)
+                visit(link)
             rescue Net::ReadTimeout
               retry
             end
@@ -54,9 +55,12 @@ module Noths
           end
 
           def turn_cognito_flag(flag_status)
-            usecognito= all('#new_feature').select {|l| l[:action].include? 'use_cognito_auth/preview'}
+            usecognito= all('#new_feature').select {|l| l[:action].include? 'use_cognito_auth/preview' }
             usecognito[0].find('#new_feature>input').click
             sleep 1
+            visit('admin#home')
+            cms_sign_out.click
+
           end
 
           def check_cognito_flag(status)

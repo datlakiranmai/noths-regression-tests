@@ -7,11 +7,7 @@ Feature: User registeration with a already existing email address
     Given I register as a new user
     And I sign out from my account
 
-<<<<<<< HEAD:features/desktop_features/user_already_exists.feature
-  @e2e @6.01
-=======
   @e2e @7.01
->>>>>>> master:features/mononoth/desktop/e2e_features_mononoth/user_already_exists.feature
   Scenario: Customer should see 'user already exists' message if existing email address is used (Standard products)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -22,12 +18,7 @@ Feature: User registeration with a already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-<<<<<<< HEAD:features/desktop_features/user_already_exists.feature
-
-  @e2e @6.02
-=======
   @e2e @7.02
->>>>>>> master:features/mononoth/desktop/e2e_features_mononoth/user_already_exists.feature
   Scenario: Customer should see 'user already exists' message if existing email address is used (gift voucher)
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form

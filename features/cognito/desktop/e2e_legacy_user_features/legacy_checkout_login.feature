@@ -25,11 +25,7 @@ Feature: Legacy Checkout login
     And I provide the payment details
     Then I should see order confirmation page
 
-<<<<<<< HEAD:features/legacy_user_features/legacy_checkout_login.feature
-  @legacy @7.02
-=======
   @legacy @16.02
->>>>>>> master:features/cognito/desktop/e2e_legacy_user_features/legacy_checkout_login.feature
   Scenario: Customer should be able to purchase a gift voucher as a customer
     When I navigate to home page
     And I tap on the link gift vouchers in footer

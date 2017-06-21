@@ -35,11 +35,16 @@ module Noths
 
           #admin
           elements :site_features, '#new_feature'
+          element :cms_sign_out, '#ext-gen160'
 
           def navigate(link=nil)
             begin
+<<<<<<< HEAD
               visit(link)
               raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be DEAD!" unless page.has_css?('.sign_in_link.button_medium_mobile')
+=======
+                visit(link)
+>>>>>>> master
             rescue Net::ReadTimeout
               retry
             end
@@ -58,6 +63,8 @@ module Noths
             usecognito= all('#new_feature').select {|l| l[:action].include? 'use_cognito_auth/preview'}
             usecognito[0].find('#new_feature>input').click
             sleep 1
+            visit('admin#home')
+            cms_sign_out.click
           end
 
           def check_cognito_flag(status)

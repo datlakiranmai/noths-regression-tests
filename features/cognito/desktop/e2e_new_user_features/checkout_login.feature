@@ -1,17 +1,16 @@
-Feature: Legacy Checkout login
-
+Feature: Checkout_login
   As a customer
   I have added a product to my basket
   I want to signin during checkout process
 
   Background:
-    Given I register as a new user
-    And I sign out from my account
-    And I enable the cognito flag ON as admin
+    Given I enable the cognito flag ON as admin
     And I navigate to home page
     And I check my cognito flag is ON
+    And I register as a new user
+    And I sign out from my account
 
-  @legacy @7.01
+  @cog_e2e @23.01
   Scenario: Customer should be able to purchase a product as a customer
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -25,8 +24,8 @@ Feature: Legacy Checkout login
     And I provide the payment details
     Then I should see order confirmation page
 
-  @legacy @7.02
-  Scenario: Customer should be able to purchase a gift voucher as a customer
+  @cog_e2e @23.02
+  Scenario: Customer should be able to purchase a product as a customer
     When I navigate to home page
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form

@@ -4,7 +4,15 @@ require 'capybara/cucumber'
 require 'rspec/expectations'
 require 'phantomjs'
 require 'capybara/poltergeist'
+require 'allure-cucumber'
 
+include AllureCucumber::DSL
+
+AllureCucumber.configure do |c|
+  c.output_dir = "output/dir"
+  c.issue_prefix    = '@JIRA++'
+
+end
 
 ENV['ENV_ID'] ||= 'dev'
 
@@ -37,8 +45,8 @@ Before do
     client.read_timeout = 120
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, desired_capabilities: {
       "chromeOptions" => {
-       "args" => %w{ no-sandbox start-fullscreen disable-impl-side-painting }
-     }
+        "args" => %w{ no-sandbox start-fullscreen disable-impl-side-painting }
+      }
     })
   end
 
@@ -47,14 +55,18 @@ Before do
     client.read_timeout = 120
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client)
   end
-   if Capybara.current_driver == :mobile
-     page.driver.browser.manage.window.resize_to(375, 667)
-   end
+  if Capybara.current_driver == :mobile
+    page.driver.browser.manage.window.resize_to(375, 667)
+  end
   @app ||= Noths::PageObjects::Application.new
 end
 
 
-After do
+After do |scenario|
+  if scenario.failed?
+    path=save_screenshot("output/dir/#{scenario.name}.png")
+    AllureCucumber::DSL.attach_file("[FAILED]-#{scenario.name}", File.open(File.expand_path(path)))
+  end
   #CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?
   $driver.quit if ENV['DRIVER'].nil?
 end

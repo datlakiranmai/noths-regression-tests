@@ -39,7 +39,12 @@ module Noths
 
           def navigate(link=nil)
             begin
+<<<<<<< HEAD
+              visit(link)
+              raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be DEAD!" unless page.has_css?('.sign_in_link.button_medium_mobile')
+=======
                 visit(link)
+>>>>>>> master
             rescue Net::ReadTimeout
               retry
             end

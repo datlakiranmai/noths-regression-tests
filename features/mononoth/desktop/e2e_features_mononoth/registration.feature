@@ -6,7 +6,7 @@ Feature: Registration
   Background:
     Given I am on Home page
 
-  @e2e @1.01
+  @Attachment @JIRA++AUTH-432 @e2e  @1.01
   Scenario: Customer is able is successfully register in site via header
     When I click on Register
     And I enter in my details in sign up form

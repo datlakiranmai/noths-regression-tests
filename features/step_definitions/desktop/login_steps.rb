@@ -23,3 +23,19 @@ Then(/^I should login successfully$/) do
   name="#{@app.registration.first_name} #{@app.registration.last_name}"
   expect(@app.home.signed_in_user.text.downcase).to have_text(name)
 end
+
+And(/^I sign in with invalid password$/) do
+  @app.login.signin_credentials($email_address, "inval23")
+end
+
+Then(/^I should see error message (.*)$/) do |error_msg|
+  expect(@app.login.sign_in_error_msg.text).to eq(error_msg)
+end
+
+And(/^I should see sign in password textfield input should get cleared up$/) do
+  expect(@app.login.login_pwd.text).to eq('')
+end
+
+Then(/^I should see sign in failure with message (.*)$/) do |error_msg|
+  expect(@app.login.checkout_sign_in_error_msg.text).to eq(error_msg)
+end

@@ -10,12 +10,17 @@ module Noths
           element :login_pwd, '#password'
           element :signin_button, '#button_existing_customer'
           element :admin_signin_button, '#admin_log_in_button'
+
+          #error_messages
+          element :sign_in_error_msg, '.error_message'
+          element :checkout_sign_in_error_msg, '.message.error.with_icon'
           
           def signin_credentials(username, password)
             wait_until_login_email_visible(30)
             login_email.set username
             login_pwd.set password
             signin_button.click
+            sleep 2
           end
 
           def admin_signin_credentials

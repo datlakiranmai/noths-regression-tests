@@ -16,6 +16,7 @@ Feature: Login
     And I click on Signin
     And I sign in with my new credentials
     Then I should login successfully
+    And I navigate to My accounts page
     And I should be taken to My details page
     And I should see the my email address in my accounts page
 
@@ -25,5 +26,6 @@ Feature: Login
     When I click on Signin
     And I sign in with my new credentials
     Then I should login successfully
+    And I navigate to My accounts page
     And I should be taken to My details page
     And I should see the my email address in my accounts page

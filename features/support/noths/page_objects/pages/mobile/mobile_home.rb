@@ -8,11 +8,11 @@ module Noths
           include Poltergeist
           include Mobile
 
-          element :my_accounts, '#accordion-1>a'
+          element :my_accounts, '.title.my_account_link.mobile_hide'
           element :my_shopping, '#accordion-2>a'
           element :sign_in_fav, '#favourites-list-sign-in'
-          elements :footer_links, '.n-links-list__link'
-          element :sign_out, '.n-button.n-button--medium.n-button--secondary'
+          elements :footer_links, '.gc-links-list__link'
+          element :sign_out, '.gc-button.gc-button--medium.gc-button--secondary'
           element :info_signout, '.message.info.with_icon'
           element :signin_checkout, '.button.primary.large.existing_mobile_customer_link'
 
@@ -27,7 +27,9 @@ module Noths
           def click_on(button_name)
             case button_name
               when 'my accounts'
+                sleep 2
                 my_accounts.click
+                sleep 2
               when 'my shopping'
                 my_shopping.click
               when 'signout'

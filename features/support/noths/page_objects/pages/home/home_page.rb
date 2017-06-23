@@ -16,7 +16,7 @@ module Noths
           #element :signed_in_user, '.title.my_account_link.mobile_hide'
           element :signed_in_user, '.title_container.my_account_title'
           element :favourite_inactive_btn, '#favourites_heart_inactive'
-          elements :footer_link, '.n-links-list__link'
+          elements :footer_link, '.gc-links-list__link'
           element :sign_out_btn, '.cta_button.sign_out_button.submit.button.secondary.medium'
           elements :banner_img, '.desktop_only.desktop_banner'
 
@@ -27,7 +27,7 @@ module Noths
           element :new_customer, '#button_new_customer'
 
           #mobile
-          elements :mobile_buttons, '.n-button.n-button--medium.n-button--primary.n-button--full-width'
+          elements :mobile_buttons,'.gc-button.gc-button--medium.gc-button--primary.gc-button--full-width'
           element :sign_in_fav, '#favourites-list-sign-in'
           element :sign_up_fav, '#favourites-list-register'
           element :signin_checkout, '.button.primary.large.existing_mobile_customer_link'
@@ -40,7 +40,7 @@ module Noths
           def navigate(link=nil)
             begin
               visit(link)
-              raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be DEAD!" unless page.has_css?('.sign_in_link.button_medium_mobile')
+                #raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be DEAD!" unless page.has_css?('.sign_in_link.button_medium_mobile')
             rescue Net::ReadTimeout
               retry
             end
@@ -56,11 +56,18 @@ module Noths
           end
 
           def turn_cognito_flag(flag_status)
-            usecognito= all('#new_feature').select {|l| l[:action].include? 'use_cognito_auth/preview'}
+            usecognito= all('#new_feature').select { |l| l[:action].include? 'use_cognito_auth/preview' }
             usecognito[0].find('#new_feature>input').click
             sleep 1
-            visit('admin#home')
-            cms_sign_out.click
+            if mobile?
+              page.driver.browser.manage.window.maximize
+              visit('admin#home')
+              cms_sign_out.click
+              page.driver.browser.manage.window.resize_to(375, 667)
+            else
+              visit('admin#home')
+              cms_sign_out.click
+            end
           end
 
           def check_cognito_flag(status)
@@ -92,12 +99,14 @@ module Noths
             case button_name
               when 'Register'
                 if mobile?
+                  puts "inside mobile"
                   mobile_buttons.last.click
                 else
                   register_button.click
                 end
               when 'Signin'
                 if mobile?
+                  puts "inside mobile"
                   mobile_buttons.first.click
                 else
                   signin_button.click

@@ -11,7 +11,7 @@ Feature: Legacy Checkout login
     And I navigate to home page
     And I check my cognito flag is ON
 
-  @legacy @16.01
+  @legacy @26.01
   Scenario: Customer should be able to purchase a product as a customer
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -25,7 +25,7 @@ Feature: Legacy Checkout login
     And I provide the payment details
     Then I should see order confirmation page
 
-  @legacy @16.02
+  @legacy @26.02
   Scenario: Customer should be able to purchase a gift voucher as a customer
     When I navigate to home page
     And I tap on the link gift vouchers in footer

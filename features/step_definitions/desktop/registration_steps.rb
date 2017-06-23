@@ -47,3 +47,4 @@ And(/^I should see password text field input should get cleared up$/) do
   expect(@app.registration.password_field.value).to eq('')
   expect(@app.registration.password_confirm_field.value).to eq('')
 end
+

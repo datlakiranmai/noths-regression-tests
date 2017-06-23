@@ -11,7 +11,7 @@ Feature: Legacy Login
     And I navigate to home page
     And I check my cognito flag is ON
 
-  @legacy @17.01
+  @legacy @27.01
   Scenario:   Legacy Customer is able to successfully login to notonthehighstreet
     When I click on Signin
     And I sign in with my new credentials
@@ -20,7 +20,7 @@ Feature: Legacy Login
     And I should be taken to My details page
     And I should see the my email address in my accounts page
 
-  @legacy @17.02
+  @legacy @27.02
   Scenario: Customer is able to successfully login to notonthehighstreet via favourites
     When I click on Favourite
     When I click on Signin

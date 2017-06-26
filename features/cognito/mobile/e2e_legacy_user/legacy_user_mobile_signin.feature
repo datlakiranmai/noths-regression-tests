@@ -10,7 +10,7 @@ Feature: Login_mobile
     And I navigate to home page
     And I check my cognito flag is ON
 
-  @mobile_legacy @37.01
+  @mobile_legacy @57.01
   Scenario: Customer is able to successfully login to notonthehighstreet (standard product)
     When I navigate to my accounts
     And I click on Signin
@@ -20,7 +20,7 @@ Feature: Login_mobile
     And I should be taken to My details page
     Then I should see the my email address in my accounts page
 
-  @mobile_legacy @37.02
+  @mobile_legacy @57.02
   Scenario: Customer is able to successfully login to notonthehighstreet (gift voucher)
     When I click on Favourite
     And I click on Favourites SignIn

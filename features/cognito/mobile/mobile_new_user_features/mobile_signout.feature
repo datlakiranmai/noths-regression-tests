@@ -8,7 +8,7 @@ Feature: Mobile Temporary Sign out
     And I check my cognito flag is ON
     And I register as a new user via mobile
 
-  @cog_mobile_e2e @49.01
+  @cog_mobile_e2e @69.01
   Scenario: Sign out
     And I navigate to my accounts
     And I choose to signout

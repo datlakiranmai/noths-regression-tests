@@ -10,7 +10,7 @@ Feature: Sign In failure
     And I register as a new user
     And I sign out from my account
 
-  @cog_e2e @40.01
+  @wip @cog_e2e @40.01
   Scenario: Password field data should get cleared when user signs in with invalid password (checkout standard products)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -18,7 +18,7 @@ Feature: Sign In failure
     Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
     And I should see sign in password textfield input should get cleared up
 
-  @cog_e2e @40.02
+  @wip @cog_e2e @40.02
   Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form

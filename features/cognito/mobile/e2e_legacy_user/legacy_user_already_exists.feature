@@ -11,7 +11,7 @@ Feature: User registration with a already existing email address
     And I navigate to home page
     And I check my cognito flag is ON
 
-  @mobile_legacy @35.01
+  @mobile_legacy @55.01
   Scenario: Customer should see 'user already exists' message if existing email address is used (Standard products)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -21,7 +21,7 @@ Feature: User registration with a already existing email address
     Then I should see error message saying Please check your details before continuing
     And I should see info message saying To use this email address simply sign in before continuing.
 
-  @mobile_legacy @35.02
+  @mobile_legacy @55.02
   Scenario: Customer should see 'user already exists' message if existing email address is used (gift voucher)
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
@@ -32,7 +32,7 @@ Feature: User registration with a already existing email address
     Then I should see error message saying Please check your details before continuing
     And I should see info message saying To use this email address simply sign in before continuing.
 
-  @mobile_legacy @35.03
+  @mobile_legacy @55.03
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via header)
     When I click on Register
     And I enter in my details in sign up form
@@ -40,7 +40,7 @@ Feature: User registration with a already existing email address
     Then I should see error message saying Please check your details before continuing
     And I should see info message saying To use this email address simply sign in before continuing.
 
-  @mobile_legacy @35.04
+  @mobile_legacy @55.04
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via favourites)
     When I click on Favourite
     And I click on Register

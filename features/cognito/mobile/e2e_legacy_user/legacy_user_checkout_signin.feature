@@ -10,7 +10,7 @@ Feature: Mobile signin temporary
     And I navigate to home page
     And I check my cognito flag is ON
 
-  @mobile_legacy @36.01
+  @mobile_legacy @56.01
   Scenario: Customer should be able to purchase a product as a registered user
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -22,7 +22,7 @@ Feature: Mobile signin temporary
     And I provide the payment details
     Then I should see Thank you for your order message
 
-  @mobile_legacy @36.02
+  @mobile_legacy @56.02
   Scenario: Customer should be able to purchase a gift voucher as a registered user
     When I navigate to my shopping
     And  I click link to go to gift vouchers

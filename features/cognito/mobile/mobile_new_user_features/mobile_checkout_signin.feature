@@ -10,7 +10,7 @@ Feature: Mobile signin temporary
     And I register as a new user via mobile
     And I signout from my account
 
-  @cog_mobile_e2e @46.01
+  @cog_mobile_e2e @66.01
   Scenario: Customer should be able to purchase a product as a registered user
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -23,7 +23,7 @@ Feature: Mobile signin temporary
     Then I should see Thank you for your order message
 
 
-  @cog_mobile_e2e @46.02
+  @cog_mobile_e2e @66.02
   Scenario: Customer should be able to purchase a gift voucher as a registered user
     When I navigate to my shopping
     And  I click link to go to gift vouchers

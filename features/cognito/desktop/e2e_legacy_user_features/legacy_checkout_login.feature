@@ -11,8 +11,11 @@ Feature: Legacy Checkout login
     And I navigate to home page
     And I check my cognito flag is ON
 
+
   @legacy @26.01
   Scenario: Customer should be able to purchase a product as a customer
+    And I should see user created in user table
+    And I should see user password in user table is not empty
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with my new credentials
@@ -24,9 +27,15 @@ Feature: Legacy Checkout login
     And I specify my card type
     And I provide the payment details
     Then I should see order confirmation page
+    Then I should see user created in cognito
+    And I should see user created in cognito account table
+
+
 
   @legacy @26.02
   Scenario: Customer should be able to purchase a gift voucher as a customer
+    And I should see user created in user table
+    And I should see user password in user table is not empty
     When I navigate to home page
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
@@ -36,3 +45,5 @@ Feature: Legacy Checkout login
     And I should see the my email address in summary section
     And I provide the payment details
     Then I should see order confirmation page
+    Then I should see user created in cognito
+    And I should see user created in cognito account table

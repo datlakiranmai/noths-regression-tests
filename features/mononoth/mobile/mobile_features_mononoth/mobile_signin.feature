@@ -6,6 +6,7 @@ Feature: Login_mobile
   Background:
     Given I register as a new user via mobile
     And I signout from my account
+    And I navigate to home page
     
   @mobile @18.01
   Scenario: Customer is able to successfully login to notonthehighstreet (standard product)

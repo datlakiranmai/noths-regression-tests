@@ -13,11 +13,10 @@ module Noths
 
           element :register_button, '.register_link.last.button_medium_mobile'
           element :signin_button, '.sign_in_link.button_medium_mobile'
-          #element :signed_in_user, '.title.my_account_link.mobile_hide'
-          element :signed_in_user, '.title_container.my_account_title'
+          element :signed_in_user, '.title.my_account_link.mobile_hide'
           element :favourite_inactive_btn, '#favourites_heart_inactive'
           elements :footer_link, '.gc-links-list__link'
-          element :sign_out_btn, '.cta_button.sign_out_button.submit.button.secondary.medium'
+          element :sign_out_btn, '#sign_out_button_container'
           elements :banner_img, '.desktop_only.desktop_banner'
 
 
@@ -99,14 +98,13 @@ module Noths
             case button_name
               when 'Register'
                 if mobile?
-                  puts "inside mobile"
+                  sleep 2
                   mobile_buttons.last.click
                 else
                   register_button.click
                 end
               when 'Signin'
                 if mobile?
-                  puts "inside mobile"
                   mobile_buttons.first.click
                 else
                   signin_button.click

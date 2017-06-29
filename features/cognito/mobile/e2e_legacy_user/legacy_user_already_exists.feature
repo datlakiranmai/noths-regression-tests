@@ -18,7 +18,8 @@ Feature: User registration with a already existing email address
     And I click on Continue
     And I enter in existing details in your details form
     And I Continue to next page
-    Then I should see error message saying Please check your details before continuing
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
 
   @mobile_legacy @55.02
@@ -29,7 +30,8 @@ Feature: User registration with a already existing email address
     And I click on Continue
     And I enter in existing details in your details form
     And I Continue to next page
-    Then I should see error message saying Please check your details before continuing
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
 
   @mobile_legacy @55.03
@@ -37,7 +39,8 @@ Feature: User registration with a already existing email address
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-    Then I should see error message saying Please check your details before continuing
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
 
   @mobile_legacy @55.04
@@ -46,5 +49,6 @@ Feature: User registration with a already existing email address
     And I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-    Then I should see error message saying Please check your details before continuing
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.

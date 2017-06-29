@@ -15,6 +15,7 @@ Feature: Mobile signin temporary
     And I sign in with my new credentials
     And I Continue to next page
     And I enter in my address details
+    And I continue with my delivery address
     And I specify my card type
     And I provide the payment details
     Then I should see Thank you for your order message

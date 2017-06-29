@@ -20,7 +20,7 @@ Feature: Registration
   @mobile @17.02
   Scenario: Customer is able is successfully register in site via favourites
     When I click on Favourite
-    And I click on Register
+    And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button
     And I navigate to my accounts

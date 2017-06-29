@@ -34,8 +34,8 @@ And(/^I enter in existing details in your details form$/) do
   @app.registration.enter_existing_user_details
 end
 
-Then(/^I should see error message saying (.*)$/) do |error_title|
-  expect(@app.registration.error_title.text.downcase).to eq(error_title.downcase)
+Then(/^I should see error message saying (.*)$/) do |error_message|
+  expect(@app.registration.error_message.text.downcase).to eq(error_message.downcase)
 end
 
 And(/^I should see info message saying (.*)$/) do |info_message|
@@ -48,3 +48,7 @@ And(/^I should see password text field input should get cleared up$/) do
   expect(@app.registration.password_confirm_field.value).to eq('')
 end
 
+
+Then(/^I should see error title saying (.*)$/) do |error_title|
+  expect(@app.registration.error_title.text.downcase).to eq(error_title.downcase)
+end

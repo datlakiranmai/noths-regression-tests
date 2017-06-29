@@ -18,7 +18,7 @@ Given(/^I register as a new user$/) do
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-    And I navigate to my accounts
+    And I navigate to My accounts page
     And I should be taken to My details page
     Then I should see the my email address in my accounts page
         }
@@ -55,7 +55,7 @@ end
 
 And(/^I sign out from my account$/) do
   steps %Q{
-  When I navigate to My accounts page
+    When I navigate to My accounts page
     And I choose sign out from my account section
     Then I should successfully sign out
     And I should see the message You have been signed out

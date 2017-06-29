@@ -13,18 +13,27 @@ Feature: Legacy Login
 
   @legacy @27.01
   Scenario:   Legacy Customer is able to successfully login to notonthehighstreet
+    And I should see user created in user table
+    And I should see user password in user table is not empty
     When I click on Signin
     And I sign in with my new credentials
     Then I should login successfully
     Then I navigate to My accounts page
     And I should be taken to My details page
     And I should see the my email address in my accounts page
+    Then I should see user created in cognito
+    And I should see user created in cognito account table
 
   @legacy @27.02
   Scenario: Customer is able to successfully login to notonthehighstreet via favourites
+    And I should see user created in user table
+    And I should see user password in user table is not empty
     When I click on Favourite
     When I click on Signin
     And I sign in with my new credentials
     Then I should login successfully
-    And I should be taken to My details page
+    When I navigate to My accounts page
+    Then I should be taken to My details page
     And I should see the my email address in my accounts page
+    Then I should see user created in cognito
+    And I should see user created in cognito account table

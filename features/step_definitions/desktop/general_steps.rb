@@ -7,6 +7,7 @@ Given /^I am on Home page$/ do
 end
 
 When(/^I click on (.*)$/) do |button_name|
+  sleep 3
   @app.home.click_on(button_name)
 end
 
@@ -17,8 +18,20 @@ Given(/^I register as a new user$/) do
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-
+    And I navigate to My accounts page
+    And I should be taken to My details page
+    Then I should see the my email address in my accounts page
         }
+end
+
+Given(/^I register as a new user via mobile$/) do
+  steps %Q{
+    Given I am on Home page
+    When I navigate to my accounts
+    And I click on Register
+    And I enter in my details in sign up form
+    And I click Submit button
+  }
 end
 
 #Then I should register successfully
@@ -42,7 +55,7 @@ end
 
 And(/^I sign out from my account$/) do
   steps %Q{
-  When I navigate to My accounts page
+    When I navigate to My accounts page
     And I choose sign out from my account section
     Then I should successfully sign out
     And I should see the message You have been signed out
@@ -62,4 +75,12 @@ end
 And(/^I should be redirected to home page$/) do
   expect(@app.home.home_page?).to eq(true)
   expect(@app.home.get_desktop_banners_count).to be > (1)
+end
+
+And(/^I signout from my account$/) do
+  steps %Q{
+  And I navigate to my accounts
+  And I choose to signout
+  Then I should see the message You have been signed out
+}
 end

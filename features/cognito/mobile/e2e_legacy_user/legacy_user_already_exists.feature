@@ -1,16 +1,17 @@
-Feature: User registeration with a already existing email address
+Feature: User registration with a already existing email address
+
   As a customer
   I want to register to noths website
   with an already existing email address
 
   Background:
-    Given I enable the cognito flag ON as admin
+    Given I register as a new user via mobile
+    And I signout from my account
+    And I enable the cognito flag ON as admin
     And I navigate to home page
     And I check my cognito flag is ON
-    And I register as a new user
-    And I sign out from my account
 
-  @wip @cog_e2e @42.01
+  @mobile_legacy @55.01
   Scenario: Customer should see 'user already exists' message if existing email address is used (Standard products)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -20,9 +21,8 @@ Feature: User registeration with a already existing email address
     Then I should see error title saying Please check your details before continuing
     And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
-    And I should see password text field input should get cleared up
 
-  @wip @cog_e2e @42.02
+  @mobile_legacy @55.02
   Scenario: Customer should see 'user already exists' message if existing email address is used (gift voucher)
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
@@ -33,9 +33,8 @@ Feature: User registeration with a already existing email address
     Then I should see error title saying Please check your details before continuing
     And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
-    And I should see password text field input should get cleared up
 
-  @wip@cog_e2e @42.03
+  @mobile_legacy @55.03
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via header)
     When I click on Register
     And I enter in my details in sign up form
@@ -43,9 +42,8 @@ Feature: User registeration with a already existing email address
     Then I should see error title saying Please check your details before continuing
     And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
-    And I should see password text field input should get cleared up
 
-  @wip @cog_e2e @42.04
+  @mobile_legacy @55.04
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via favourites)
     When I click on Favourite
     And I click on Register
@@ -54,4 +52,3 @@ Feature: User registeration with a already existing email address
     Then I should see error title saying Please check your details before continuing
     And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
-    And I should see password text field input should get cleared up

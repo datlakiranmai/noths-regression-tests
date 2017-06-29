@@ -4,28 +4,28 @@ Feature: Login_mobile
   I expect to land on my details page
 
   Background:
-    Given I am on Home page
-
-  @mobile @mobile_demo @11.01
+    Given I enable the cognito flag ON as admin
+    And I navigate to home page
+    And I check my cognito flag is ON
+    And I register as a new user via mobile
+    And I signout from my account
+    
+  @cog_mobile_e2e @68.01
   Scenario: Customer is able to successfully login to notonthehighstreet (standard product)
     When I navigate to my accounts
-    When I click on Signin
-    And I enter my login credentials:
-      | user_name | 1496669633@sharklasers.com |
-      | password  | password           |
+    And I click on Signin
+    And I sign in with my new credentials
     And I navigate to my accounts
     And I click link to go to my details
     And I should be taken to My details page
     Then I should see the my email address in my accounts page
 
 
-  @mobile @mobile_demo @11.02
+  @cog_mobile_e2e @68.02
   Scenario: Customer is able to successfully login to notonthehighstreet (gift voucher)
     When I click on Favourite
-    When I click on Favourites SignIn
-    And I enter my login credentials:
-      | user_name | 1496669633@sharklasers.com |
-      | password  | password           |
+    And I click on Favourites SignIn
+    And I sign in with my new credentials
     And I navigate to my accounts
     And I click link to go to my details
     And I should be taken to My details page

@@ -9,10 +9,11 @@ module Noths
           include Mobile
 
           element :my_accounts, '#accordion-1>a'
+          #element :my_accounts,'h3#accordian-1.gc-accordion__header.gc-footer__title'
           element :my_shopping, '#accordion-2>a'
           element :sign_in_fav, '#favourites-list-sign-in'
-          elements :footer_links, '.n-links-list__link'
-          element :sign_out, '.n-button.n-button--medium.n-button--secondary'
+          elements :footer_links, '.gc-links-list__link'
+          element :sign_out, '.gc-button.gc-button--medium.gc-button--secondary'
           element :info_signout, '.message.info.with_icon'
           element :signin_checkout, '.button.primary.large.existing_mobile_customer_link'
 

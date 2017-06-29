@@ -10,36 +10,35 @@ Feature: Sign In failure
     And I register as a new user
     And I sign out from my account
 
-  @cog_e2e @26.01
+  @cog_e2e @40.01
   Scenario: Password field data should get cleared when user signs in with invalid password (checkout standard products)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with invalid password
-    Then I should see error message 'sorry, either the email address or the password you entered does not correspond with any of our accounts'
+    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
     And I should see sign in password textfield input should get cleared up
 
-  @cog_e2e @26.02
+  @cog_e2e @40.02
   Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
     And I checkout gift voucher
     And I sign in with invalid password
-    Then I should see error message 'sorry, either the email address or the password you entered does not correspond with any of our accounts'
+    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
     And I should see sign in password textfield input should get cleared up
 
-  @cog_e2e @26.03
+  @40.03
   Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)(via header)
     When I navigate to home page
     And I click on Signin
     And I sign in with invalid password
-    Then I should see error message 'sorry, either the email address or the password you entered does not correspond with any of our accounts'
+    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
     And I should see sign in password textfield input should get cleared up
 
-
-  @cog_e2e @26.04
+  @cog_e2e @40.04
   Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)(via favourites)
     When I click on Favourite
     When I click on Signin
     And I sign in with invalid password
-    Then I should see error message 'sorry, either the email address or the password you entered does not correspond with any of our accounts'
+    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
     And I should see sign in password textfield input should get cleared up

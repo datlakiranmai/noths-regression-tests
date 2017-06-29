@@ -10,6 +10,7 @@ module Noths
           elements :summary_your_delivery, '.your_delivery_summary_info.summary_info>li'
 
           def click_continue_btn
+            sleep 2
             continue_button.first.click
           end
 
@@ -28,7 +29,6 @@ module Noths
           def summary_delivery_address
             summary_your_delivery[1].text
           end
-
         end
       end
     end

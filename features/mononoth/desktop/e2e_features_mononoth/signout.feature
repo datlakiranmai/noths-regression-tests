@@ -5,14 +5,14 @@ Feature: Sign out
   Background:
     Given I register as a new user
 
-  @e2e @4.01
+  @smoke_tests @e2e @4.01
   Scenario: Sign out via header
    When I hover my account via header
    And I click on Sign out
    Then I should successfully sign out
    And I should see the message You have been signed out
 
-  @e2e @4.02
+  @smoke_tests @e2e @4.02
   Scenario: Sign out via my details
     When I navigate to My accounts page
     And I choose my details from my details section

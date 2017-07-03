@@ -9,7 +9,7 @@ Feature: Mobile Checkout_registration temporary
     And I check my cognito flag is ON
     And I am on Home page
 
-  @cog_mobile_e2e @65.01
+  @smoke_tests_mobile @cog_mobile_e2e @65.01
   Scenario: Customer should be able to purchase a product as a registered user
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -26,7 +26,7 @@ Feature: Mobile Checkout_registration temporary
     Then I should see Thank you for your order message
 
 
-  @cog_mobile_e2e @65.02
+  @smoke_tests_mobile @cog_mobile_e2e @65.02
   Scenario: Customer should be able to purchase a gift voucher as a registered user
     When I navigate to my shopping
     And  I click link to go to gift vouchers

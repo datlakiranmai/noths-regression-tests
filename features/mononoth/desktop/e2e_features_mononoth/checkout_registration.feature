@@ -6,7 +6,7 @@ Feature: Checkout_registration
   Background:
     Given I am on Home page
 
-  @e2e @5.01
+  @smoke_tests @e2e @5.01
   Scenario: Customer should be able to purchase a product as a registered user
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -22,7 +22,7 @@ Feature: Checkout_registration
     And I provide the payment details
     Then I should see order confirmation page
 
-  @e2e @5.02
+  @smoke_tests @e2e @5.02
   Scenario: Customer should be able to purchase a gift voucher as a registered user
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form

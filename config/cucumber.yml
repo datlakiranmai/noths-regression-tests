@@ -8,3 +8,5 @@ headless: "DRIVER='headless' features --tag @e2e <%= html_report %>"
 rerun: '--guess @rerun.txt'
 e2e_coginito_check: 'features --guess <%= html_report %> --tag @e2e_coginito_check'
 allure: 'features --guess --format AllureCucumber::Formatter --out'
+smoke_tests: '-p allure features --guess --tag @smoke_tests'
+smoke_tests_mobile: 'DRIVER="mobile" -p allure features --guess --tag @smoke_tests_mobile'

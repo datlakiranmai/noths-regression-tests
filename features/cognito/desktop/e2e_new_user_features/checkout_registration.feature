@@ -9,7 +9,7 @@ Feature: Checkout_registration
     And I check my cognito flag is ON
     And I am on Home page
 
-  @cog_e2e @37.01
+  @smoke_tests @cog_e2e @37.01
   Scenario: Customer should be able to purchase a product as a registered user
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -25,7 +25,7 @@ Feature: Checkout_registration
     And I provide the payment details
     Then I should see order confirmation page
 
-  @cog_e2e_coginito_check @37.01a
+  @smoke_tests @cog_e2e_coginito_check @37.01a
   Scenario: Customer should be able to purchase a product as a registered user
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -45,7 +45,7 @@ Feature: Checkout_registration
     And I should see user password in user table is empty
     And I should see user created in cognito account table
 
-  @cog_e2e @37.02
+  @smoke_tests @cog_e2e @37.02
   Scenario: Customer should be able to purchase a gift voucher as a registered user
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
@@ -58,7 +58,7 @@ Feature: Checkout_registration
     And I provide the payment details
     Then I should see order confirmation page
 
-  @cog_e2e_coginito_check @37.02a
+  @smoke_tests @cog_e2e_coginito_check @37.02a
   Scenario: Customer should be able to purchase a gift voucher as a registered user
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form

@@ -7,7 +7,7 @@ Feature: Checkout_login
     Given I register as a new user
     And I sign out from my account
 
-  @e2e @3.01
+  @smoke_tests @e2e @3.01
   Scenario: Customer should be able to purchase a product as a customer
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -21,7 +21,7 @@ Feature: Checkout_login
     And I provide the payment details
     Then I should see order confirmation page
 
-  @e2e @3.02
+  @smoke_tests @e2e @3.02
   Scenario: Customer should be able to purchase a product as a customer
     When I navigate to home page
     And I tap on the link gift vouchers in footer

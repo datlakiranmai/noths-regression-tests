@@ -13,6 +13,19 @@
 
 **Execution Commands**: 
 
+
+**Smoke Test suite**
+
+To run mononoth and cognito end-to-end tests with reporting(allure)
+
+   ENV_ID="QA_ENV_NAME" cucumber -p smoke_tests
+
+
+To run mononoth and cognito mobile end-to_end  tests with reporting
+
+  ENV_ID="QA_ENV_NAME" cucumber -p smoke_tests_mobile
+
+
 **Selenium  webdriver chrome profile**
 
 

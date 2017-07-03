@@ -7,7 +7,7 @@ Feature: User registeration with a already existing email address
     Given I register as a new user
     And I sign out from my account
 
-  @e2e @7.01
+  @smoke_tests @e2e @7.01
   Scenario: Customer should see 'user already exists' message if existing email address is used (Standard products)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -19,7 +19,7 @@ Feature: User registeration with a already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @e2e @7.02
+  @smoke_tests @e2e @7.02
   Scenario: Customer should see 'user already exists' message if existing email address is used (gift voucher)
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
@@ -32,7 +32,7 @@ Feature: User registeration with a already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @e2e @7.03
+  @smoke_tests @e2e @7.03
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via header)
     When I click on Register
     And I enter in my details in sign up form
@@ -42,7 +42,7 @@ Feature: User registeration with a already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @e2e @7.04
+  @smoke_tests @e2e @7.04
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via favourites)
     When I click on Favourite
     And I click on Favourite Register

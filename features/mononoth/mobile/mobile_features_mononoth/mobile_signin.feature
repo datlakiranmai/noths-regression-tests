@@ -7,8 +7,8 @@ Feature: Login_mobile
     Given I register as a new user via mobile
     And I signout from my account
     And I navigate to home page
-    
-  @mobile @18.01
+
+  @smoke_tests_mobile @mobile @18.01
   Scenario: Customer is able to successfully login to notonthehighstreet (standard product)
     When I navigate to my accounts
     And I click on Signin
@@ -19,7 +19,7 @@ Feature: Login_mobile
     Then I should see the my email address in my accounts page
 
 
-  @mobile @18.02
+  @smoke_tests_mobile @mobile @18.02
   Scenario: Customer is able to successfully login to notonthehighstreet (gift voucher)
     When I click on Favourite
     And I click on Favourite SignIn

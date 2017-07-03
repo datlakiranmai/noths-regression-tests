@@ -5,7 +5,7 @@ Feature: Mobile Temporary Sign out
   Background:
     Given I register as a new user via mobile
 
-  @mobile @19.01
+  @smoke_tests_mobile @mobile @19.01
   Scenario: Sign out
     And I navigate to my accounts
     And I choose to signout

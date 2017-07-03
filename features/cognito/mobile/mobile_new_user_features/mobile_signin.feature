@@ -9,8 +9,8 @@ Feature: Login_mobile
     And I check my cognito flag is ON
     And I register as a new user via mobile
     And I signout from my account
-    
-  @cog_mobile_e2e @68.01
+
+  @smoke_tests_mobile @cog_mobile_e2e @68.01
   Scenario: Customer is able to successfully login to notonthehighstreet (standard product)
     When I navigate to my accounts
     And I click on Signin
@@ -21,7 +21,7 @@ Feature: Login_mobile
     Then I should see the my email address in my accounts page
 
 
-  @cog_mobile_e2e @68.02
+  @smoke_tests_mobile @cog_mobile_e2e @68.02
   Scenario: Customer is able to successfully login to notonthehighstreet (gift voucher)
     When I click on Favourite
     And I click on Favourite SignIn

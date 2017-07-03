@@ -6,7 +6,7 @@ Feature: Registration
   Background:
     Given I am on Home page
 
-  @mobile @17.01
+  @smoke_tests_mobile @mobile @17.01
   Scenario: Customer is able is successfully register in site via header
     When I navigate to my accounts
     And I click on Register
@@ -17,7 +17,7 @@ Feature: Registration
     And I should see the my email address in my accounts page
 
 
-  @mobile @17.02
+  @smoke_tests_mobile @mobile @17.02
   Scenario: Customer is able is successfully register in site via favourites
     When I click on Favourite
     And I click on Favourite Register

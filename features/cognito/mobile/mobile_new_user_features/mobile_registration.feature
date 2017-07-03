@@ -9,7 +9,7 @@ Feature: Registration
     And I check my cognito flag is ON
     And I am on Home page
 
-  @cog_mobile_e2e @67.01
+  @smoke_tests_mobile @cog_mobile_e2e @67.01
   Scenario: Customer is able is successfully register in site via header
     When I navigate to my accounts
     When I click on Register
@@ -19,7 +19,7 @@ Feature: Registration
     And I click link to go to my details
     And I should see the my email address in my accounts page
 
-  @cog_mobile_e2e_check @67.01a
+  @smoke_tests_mobile @cog_mobile_e2e_check @67.01a
   Scenario: Customer is able is successfully register in site via header
     When I click on Register
     And I enter in my details in sign up form
@@ -32,7 +32,7 @@ Feature: Registration
     And I should see user password in user table is empty
     And I should see user created in cognito account table
 
-  @cog_mobile @67.02
+  @smoke_tests_mobile @cog_mobile @67.02
   Scenario: Customer is able is successfully register in site via favourites
     When I click on Favourite
     And I click on Favourite Register
@@ -42,7 +42,7 @@ Feature: Registration
     And I click link to go to my details
     And I should see the my email address in my accounts page
 
-  @cog_mobile_e2e_check @67.02a
+  @smoke_tests_mobile @cog_mobile_e2e_check @67.02a
   Scenario: Customer is able is successfully register in site via favourites
     When I click on Favourite
     And I click on Favourite Register

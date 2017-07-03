@@ -45,6 +45,10 @@ module Noths
         @pages[:order_confirmation] ||= Noths::PageObjects::Pages::OrderConfirmation::OrderConfirmation.new
       end
 
+      def forgotten_password
+        @pages[:forgotten_password] ||= Noths::PageObjects::Pages::ForgottenPassword::ForgottenPassword.new
+      end
+
       def mobile
         @pages[:mobile_new_user_features] ||= Noths::PageObjects::Pages::MobileLoginPage::MobileLoginPage.new
       end

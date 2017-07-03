@@ -11,13 +11,16 @@ module Noths
           include Poltergeist
           include Mobile
 
-          element :register_button, '.register_link.last.button_medium_mobile'
-          element :signin_button, '.sign_in_link.button_medium_mobile'
-          element :signed_in_user, '.title.my_account_link.mobile_hide'
-          element :favourite_inactive_btn, '#favourites_heart_inactive'
+          #element :register_button, '.register_link.last.button_medium_mobile'
+          #element :signin_button, '.sign_in_link.button_medium_mobile'
+          elements :header_buttons, '.gc-header-myaccount__link.gc-header-myaccount__link--inline'
+          element :signed_in_user, '.gc-header-myaccount__trigger.logged-in>span'
+          element :favourite_inactive_btn, '.gc-header-favourites.gc-header__item.gc-header__item--favourites'
           elements :footer_link, '.gc-links-list__link'
-          element :sign_out_btn, '#sign_out_button_container'
+          elements :sign_out_btn, '.gc-button.gc-button--secondary'
           elements :banner_img, '.desktop_only.desktop_banner'
+          element :forgotten_password_link, '.sign_in_forgotten_password.text_link'
+
 
 
           #Welcome Screen
@@ -26,7 +29,7 @@ module Noths
           element :new_customer, '#button_new_customer'
 
           #mobile
-          elements :mobile_buttons,'.gc-button.gc-button--medium.gc-button--primary.gc-button--full-width'
+          elements :mobile_buttons, 'a.gc-button.gc-button--medium.gc-button--primary.gc-button--full-width'
           element :sign_in_fav, '#favourites-list-sign-in'
           element :sign_up_fav, '#favourites-list-register'
           element :signin_checkout, '.button.primary.large.existing_mobile_customer_link'
@@ -78,7 +81,7 @@ module Noths
             if headless?
               try_until(20) { find('.title.my_account_link.mobile_hide').trigger('click') }
             else
-              find('.title.my_account_link.mobile_hide').hover
+              find('.gc-header-myaccount__trigger.logged-in>span').hover
             end
           end
 
@@ -98,16 +101,16 @@ module Noths
             case button_name
               when 'Register'
                 if mobile?
-                  sleep 2
+                  sleep 5
                   mobile_buttons.last.click
                 else
-                  register_button.click
+                  header_buttons.last.click
                 end
               when 'Signin'
                 if mobile?
                   mobile_buttons.first.click
                 else
-                  signin_button.click
+                  header_buttons.first.click
                 end
               when 'Favourite'
                 if headless?
@@ -115,15 +118,18 @@ module Noths
                 else
                   favourite_inactive_btn.click
                 end
-              when 'Favourites SignIn'
+              when 'Favourite SignIn'
                 sign_in_fav.click
               when 'Favourite Register'
                 sign_up_fav.click
+              when 'Forgotten password'
+                forgotten_password_link.click
               when 'Sign out'
                 if headless?
                   try_until(20) { sign_out_btn.trigger('click') }
                 else
-                  sign_out_btn.click
+                  wait_until_sign_out_btn_visible(20)
+                  sign_out_btn.first.click
                 end
               when 'Continue'
                 new_customer.click

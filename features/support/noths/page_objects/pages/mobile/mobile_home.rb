@@ -28,6 +28,7 @@ module Noths
           def click_on(button_name)
             case button_name
               when 'my accounts'
+                sleep 3
                 my_accounts.click
               when 'my shopping'
                 my_shopping.click

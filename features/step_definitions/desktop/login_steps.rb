@@ -24,8 +24,12 @@ Then(/^I should login successfully$/) do
   expect(@app.home.signed_in_user.text.downcase).to have_text(name)
 end
 
-And(/^I sign in with invalid password$/) do
-  @app.login.signin_credentials($email_address, "inval23")
+And(/^I sign in with invalid (.*)$/) do |text|
+  if text.eql? "password"
+    @app.login.signin_credentials($email_address, "inval23")
+  else
+    @app.login.signin_credentials("invalidemail@test.com", "inval23")
+  end
 end
 
 Then(/^I should see error message (.*)$/) do |error_msg|

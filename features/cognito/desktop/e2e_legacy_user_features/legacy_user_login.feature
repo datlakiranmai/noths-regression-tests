@@ -1,4 +1,4 @@
-Feature: Legacy Login
+Feature: Legacy user login via header
 
   As a customer
   I want to login to noths website for the first time via Cognito
@@ -17,8 +17,9 @@ Feature: Legacy Login
     And I should see user password in user table is not empty
     When I click on Signin
     And I sign in with my new credentials
-    Then I should login successfully
+    #Then I should login successfully
     Then I navigate to My accounts page
+    And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
     Then I should see user created in cognito
@@ -31,8 +32,9 @@ Feature: Legacy Login
     When I click on Favourite
     When I click on Signin
     And I sign in with my new credentials
-    Then I should login successfully
+    #Then I should login successfully
     When I navigate to My accounts page
+    And I choose my details from my account section
     Then I should be taken to My details page
     And I should see the my email address in my accounts page
     Then I should see user created in cognito

@@ -25,7 +25,7 @@ Feature: Checkout_registration
     And I provide the payment details
     Then I should see order confirmation page
 
-  @e2e_coginito_check @37.01a
+  @cog_e2e_coginito_check @37.01a
   Scenario: Customer should be able to purchase a product as a registered user
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -69,7 +69,7 @@ Feature: Checkout_registration
     And I enter in my address details
     And I should see the my email address in summary section
     And I provide the payment details
-    Then I should see order confirmation page
+    #Then I should see order confirmation page
     Then I should see user created in cognito
     And I should see user created in user table
     And I should see user password in user table is empty

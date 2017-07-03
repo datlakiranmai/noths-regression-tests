@@ -42,7 +42,7 @@ Before do
 
   Capybara.register_driver :chrome do |app|
     client = Selenium::WebDriver::Remote::Http::Default.new
-    client.read_timeout = 120
+    client.read_timeout = 90
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, desired_capabilities: {
       "chromeOptions" => {
         "args" => %w{ no-sandbox start-fullscreen disable-impl-side-painting }
@@ -52,7 +52,7 @@ Before do
 
   Capybara.register_driver :mobile do |app|
     client = Selenium::WebDriver::Remote::Http::Default.new
-    client.read_timeout = 120
+    client.read_timeout = 90
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client)
   end
   if Capybara.current_driver == :mobile

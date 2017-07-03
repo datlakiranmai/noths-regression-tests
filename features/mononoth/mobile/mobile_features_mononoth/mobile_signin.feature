@@ -22,7 +22,7 @@ Feature: Login_mobile
   @mobile @18.02
   Scenario: Customer is able to successfully login to notonthehighstreet (gift voucher)
     When I click on Favourite
-    And I click on Favourites SignIn
+    And I click on Favourite SignIn
     And I sign in with my new credentials
     And I navigate to my accounts
     And I click link to go to my details

@@ -38,7 +38,7 @@ Feature: Sign In failure
   @cog_e2e @40.04
   Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)(via favourites)
     When I click on Favourite
-    When I click on Signin
+    When I click on Favourite SignIn
     And I sign in with invalid password
     Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
     And I should see sign in password textfield input should get cleared up

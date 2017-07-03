@@ -48,7 +48,7 @@ Feature: User registeration with a already existing email address
   @wip @cog_e2e @42.04
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via favourites)
     When I click on Favourite
-    And I click on Register
+    And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button
     Then I should see error title saying Please check your details before continuing

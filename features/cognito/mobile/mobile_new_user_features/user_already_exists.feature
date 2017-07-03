@@ -7,8 +7,8 @@ Feature: User registeration with a already existing email address
     Given I enable the cognito flag ON as admin
     And I navigate to home page
     And I check my cognito flag is ON
-    And I register as a new user
-    And I sign out from my account
+    And I register as a new user via mobile
+    And I signout from my account
 
   @cog_mobile_e2e @70.01
   Scenario: Customer should see 'user already exists' message if existing email address is used (Standard products)

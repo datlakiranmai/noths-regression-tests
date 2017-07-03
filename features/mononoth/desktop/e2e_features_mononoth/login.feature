@@ -12,15 +12,18 @@ Feature: Login
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
-    Then I should login successfully
+    #Then I should login successfully
     And I should be taken to My details page
     And I should see the my email address in my accounts page
+
 
   @e2e @no_poltergeist @2.02
   Scenario: Customer is able to successfully login to notonthehighstreet via favourites
     When I click on Favourite
-    When I click on Signin
+    When I click on Favourite SignIn
     And I sign in with my new credentials
-    Then I should login successfully
+    #Then I should login successfully
+    And I navigate to My accounts page
+    And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page

@@ -10,7 +10,7 @@ module Noths
           elements :summary_your_delivery, '.your_delivery_summary_info.summary_info>li'
 
           def click_continue_btn
-            sleep 2
+            wait_until_continue_button_visible(20)
             continue_button.first.click
           end
 

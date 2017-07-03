@@ -1,4 +1,4 @@
-Feature: Legacy Checkout login
+Feature: Legacy user login via checkout
 
   As a customer
   I have added a product to my basket
@@ -29,7 +29,6 @@ Feature: Legacy Checkout login
     Then I should see order confirmation page
     Then I should see user created in cognito
     And I should see user created in cognito account table
-
 
 
   @legacy @26.02

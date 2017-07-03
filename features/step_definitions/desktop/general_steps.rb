@@ -7,7 +7,6 @@ Given /^I am on Home page$/ do
 end
 
 When(/^I click on (.*)$/) do |button_name|
-  sleep 3
   @app.home.click_on(button_name)
 end
 
@@ -19,6 +18,7 @@ Given(/^I register as a new user$/) do
     And I enter in my details in sign up form
     And I click Submit button
     And I navigate to My accounts page
+    And I choose my details from my account section
     And I should be taken to My details page
     Then I should see the my email address in my accounts page
         }
@@ -56,7 +56,7 @@ end
 And(/^I sign out from my account$/) do
   steps %Q{
     When I navigate to My accounts page
-    And I choose sign out from my account section
+    And I choose sign out from my details section
     Then I should successfully sign out
     And I should see the message You have been signed out
    }

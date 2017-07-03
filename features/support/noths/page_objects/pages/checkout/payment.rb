@@ -14,6 +14,7 @@ module Noths
           element :card_verification_value, '#checkout_credit_card_verification_value'
           element :skip_3d_secure, '#checkout_skip_3d_secure'
           element :payment_button, '#process_payment_button'
+
           def select_card_type
             payment_option.click
           end

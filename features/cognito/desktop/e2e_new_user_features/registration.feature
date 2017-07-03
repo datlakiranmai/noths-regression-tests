@@ -14,8 +14,9 @@ Feature: Registration
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-    Then I should register successfully
+    #Then I should register successfully
     And I navigate to My accounts page
+  And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
 
@@ -24,8 +25,9 @@ Feature: Registration
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-    Then I should register successfully
+    #Then I should register successfully
     And I navigate to My accounts page
+    And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
     Then I should see user created in cognito
@@ -36,22 +38,24 @@ Feature: Registration
   @cog_e2e @39.02
   Scenario: Customer is able is successfully register in site via favourites
     When I click on Favourite
-    And I click on Register
+    And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button
-    Then I should register successfully
+    #Then I should register successfully
     And I navigate to My accounts page
+    And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
 
-  @cog_e2e_coginito_check @21.02a
+  @cog_e2e_coginito_check @39.02a
   Scenario: Customer is able is successfully register in site via favourites
     When I click on Favourite
-    And I click on Register
+    And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button
-    Then I should register successfully
+    #Then I should register successfully
     And I navigate to My accounts page
+    And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
     Then I should see user created in cognito

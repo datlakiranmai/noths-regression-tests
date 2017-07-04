@@ -3,6 +3,7 @@ module Noths
     module Pages
       module YourOrder
         class YourOrder < SitePrism::Page
+          include Poltergeist
           elements :continue_button, '#button_continue'
           element :delivery_recipient, '.delivery_recipient_name'
           element :delivery_addressline1, '.address1.address_line'
@@ -10,7 +11,7 @@ module Noths
           elements :summary_your_delivery, '.your_delivery_summary_info.summary_info>li'
 
           def click_continue_btn
-            wait_until_continue_button_visible(20)
+            sleep 3
             continue_button.first.click
           end
 

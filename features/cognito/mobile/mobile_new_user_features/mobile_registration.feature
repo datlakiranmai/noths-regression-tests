@@ -21,6 +21,7 @@ Feature: Registration
 
   @smoke_tests_mobile @cog_mobile_e2e_check @67.01a
   Scenario: Customer is able is successfully register in site via header
+    When I navigate to my accounts
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button

@@ -86,6 +86,7 @@ module Noths
           end
 
           def navigate_to_myaccounts
+            wait_until_signed_in_user_visible(20)
             signed_in_user.click
           end
 

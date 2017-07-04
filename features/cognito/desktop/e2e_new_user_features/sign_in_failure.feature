@@ -27,7 +27,7 @@ Feature: Sign In failure
     Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
     And I should see sign in password textfield input should get cleared up
 
-  @smoke_tests @40.03
+  @smoke_tests @cog_e2e @40.03
   Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)(via header)
     When I navigate to home page
     And I click on Signin

@@ -24,7 +24,8 @@ Feature: User registeration with a already existing email address
 
   @smoke_tests_mobile @cog_mobile_e2e @70.02
   Scenario: Customer should see 'user already exists' message if existing email address is used (gift voucher)
-    And I tap on the link gift vouchers in footer
+    When I navigate to my shopping
+    And  I click link to go to gift vouchers
     And I enter my details in gift voucher form
     And I checkout gift voucher
     And I click on Continue

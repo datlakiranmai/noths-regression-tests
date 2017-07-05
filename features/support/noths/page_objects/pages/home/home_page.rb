@@ -62,7 +62,7 @@ module Noths
             usecognito[0].find('#new_feature>input').click
             sleep 1
             if mobile?
-              page.driver.browser.manage.window.maximize
+              page.driver.browser.manage.window.resize_to(1200, 768)
               visit('admin#home')
               cms_sign_out.click
               page.driver.browser.manage.window.resize_to(375, 667)

@@ -38,7 +38,8 @@ Feature: User registeration with a already existing email address
 
   @smoke_tests_mobile @cog_mobile_e2e @70.03
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via header)
-    When I click on Register
+    When I navigate to my accounts
+    And I click on Register
     And I enter in my details in sign up form
     And I click Submit button
     Then I should see error title saying Please check your details before continuing

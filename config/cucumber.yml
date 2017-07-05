@@ -2,11 +2,17 @@
 <% html_report = '--format progress --format html --out=features_report.html' %>
 <% rerun = '-f rerun --out rerun.txt' %>
 
+
+e2e_coginito_check: 'features --guess <%= html_report %> --tag @e2e_coginito_check'
 e2e: 'features --guess <%= html_report %> --tag @e2e'
-mobile:  "DRIVER='mobile' features <%= html_report %> --tag @mobile"
+cog_e2e: 'features --guess <%= html_report %> --tag @cog_e2e'
+mobile: "DRIVER='mobile' features <%= html_report %> --tag @mobile"
+cog_mobile_e2e: "DRIVER='mobile' features <%= html_report %> --tag @cog_mobile_e2e"
+
 headless: "DRIVER='headless' features --tag @e2e <%= html_report %>"
 rerun: '--guess @rerun.txt'
-e2e_coginito_check: 'features --guess <%= html_report %> --tag @e2e_coginito_check'
 allure: 'features --guess --format AllureCucumber::Formatter --out'
+
+
 smoke_tests: '-p allure features --guess --tag @smoke_tests'
 smoke_tests_mobile: 'DRIVER="mobile" -p allure features --guess --tag @smoke_tests_mobile'

@@ -30,7 +30,7 @@ Feature: Legacy user login via header
     And I should see user created in user table
     And I should see user password in user table is not empty
     When I click on Favourite
-    When I click on Signin
+    When I click on Favourite SignIn
     And I sign in with my new credentials
     #Then I should login successfully
     When I navigate to My accounts page

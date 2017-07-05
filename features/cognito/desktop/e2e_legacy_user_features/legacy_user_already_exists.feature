@@ -54,7 +54,7 @@ Feature: User registration with a already existing email address
     And I should see user created in user table
     And I should see user password in user table is not empty
     When I click on Favourite
-    And I click on Register
+    And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button
     Then I should see error title saying Please check your details before continuing

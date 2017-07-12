@@ -34,7 +34,6 @@ module Noths
           element :sign_up_fav, '#favourites-list-register'
           element :signin_checkout, '.button.primary.large.existing_mobile_customer_link'
 
-
           #admin
           elements :site_features, '#new_feature'
           element :cms_sign_out, '#ext-gen160'

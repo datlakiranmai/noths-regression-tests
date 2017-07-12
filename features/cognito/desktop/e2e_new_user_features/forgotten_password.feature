@@ -24,3 +24,12 @@ Feature: Forgotten password
     And I provide my Invalid email address
     And I submit my forgotten password form
     Then I should see email validation error as Please enter your email.
+
+  @cog_e2e @43.03
+  Scenario: Noths employee requests to reset password
+    And I click on Signin
+    And I click on Forgotten password
+    And I provide my noths email address
+    And I submit my forgotten password form
+    Then I should see security error message saying Unfortunately due to security concerns, we cannot allow staff to reset their passwords. Please talk to a member of the IT team to reset your password.
+

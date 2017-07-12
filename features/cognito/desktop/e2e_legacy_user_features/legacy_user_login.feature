@@ -22,7 +22,7 @@ Feature: Legacy user login via header
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
-    Then I should see user created in cognito
+    And I should see user created in cognito
     And I should see user created in cognito account table
 
   @legacy @27.02

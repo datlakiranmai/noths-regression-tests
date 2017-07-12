@@ -46,9 +46,27 @@ end
 And(/^I should see password text field input should get cleared up$/) do
   expect(@app.registration.password_field.value).to eq('')
   expect(@app.registration.password_confirm_field.value).to eq('')
+  sleep 3
 end
 
 
 Then(/^I should see error title saying (.*)$/) do |error_title|
   expect(@app.registration.error_title.text.downcase).to eq(error_title.downcase)
+end
+
+And(/^I register as a new Cognito user$/) do
+  steps %Q{
+    Given I am on Home page
+    When I click on Register
+    And I enter in my email in small cases in sign up form
+    And I click Submit button
+    And I navigate to My accounts page
+    And I choose my details from my account section
+    And I should be taken to My details page
+    Then I should see the my email address in my accounts page
+        }
+end
+
+And(/^I enter in my email in small cases in sign up form$/) do
+  @app.registration.enter_email_address_small_cases
 end

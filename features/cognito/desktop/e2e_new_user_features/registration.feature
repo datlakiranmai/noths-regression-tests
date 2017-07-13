@@ -20,7 +20,7 @@ Feature: Registration
     And I should be taken to My details page
     And I should see the my email address in my accounts page
 
-  @smoke_tests @cog_e2e_coginito_check @39.01a
+  @smoke_tests @e2e_cognito_check @39.01a
   Scenario: Customer is able is successfully register in site via header
     When I click on Register
     And I enter in my details in sign up form
@@ -47,7 +47,7 @@ Feature: Registration
     And I should be taken to My details page
     And I should see the my email address in my accounts page
 
-  @smoke_tests @cog_e2e_coginito_check @39.02a
+  @smoke_tests @e2e_cognito_check @39.02a
   Scenario: Customer is able is successfully register in site via favourites
     When I click on Favourite
     And I click on Favourite Register

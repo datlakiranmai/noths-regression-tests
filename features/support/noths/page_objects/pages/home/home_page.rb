@@ -36,7 +36,7 @@ module Noths
 
           #admin
           elements :site_features, '#new_feature'
-          element :cms_sign_out, '#ext-gen160'
+          element :cms_sign_out, '#ext-gen161'
 
           def navigate(link=nil)
             begin

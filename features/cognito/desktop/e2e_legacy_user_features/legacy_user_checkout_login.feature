@@ -12,7 +12,7 @@ Feature: Legacy user login via checkout
     And I check my cognito flag is ON
 
 
-  @legacy @26.01
+  @e2e_coginito_check @legacy @26.01
   Scenario: Customer should be able to purchase a product as a customer
     And I should see user created in user table
     And I should see user password in user table is not empty
@@ -31,7 +31,7 @@ Feature: Legacy user login via checkout
     And I should see user created in cognito account table
 
 
-  @legacy @26.02
+  @e2e_coginito_check @legacy @26.02
   Scenario: Customer should be able to purchase a gift voucher as a customer
     And I should see user created in user table
     And I should see user password in user table is not empty

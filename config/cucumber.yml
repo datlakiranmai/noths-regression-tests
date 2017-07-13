@@ -6,13 +6,12 @@
 e2e_coginito_check: 'features --guess <%= html_report %> --tag @e2e_coginito_check'
 e2e: 'features --guess <%= html_report %> --tag @e2e'
 cog_e2e: 'features --guess <%= html_report %> --tag @cog_e2e'
+legacy: 'features --guess <%= html_report %> --tag @legacy'
 mobile: "DRIVER='mobile' features <%= html_report %> --tag @mobile"
 cog_mobile_e2e: "DRIVER='mobile' features <%= html_report %> --tag @cog_mobile_e2e"
 
+
 headless: "DRIVER='headless' features --tag @e2e <%= html_report %>"
 rerun: '--guess @rerun.txt'
-allure: 'features --guess --format AllureCucumber::Formatter --out'
+allure: '--format AllureCucumber::Formatter --out'
 
-
-smoke_tests: '-p allure features --guess --tag @smoke_tests'
-smoke_tests_mobile: 'DRIVER="mobile" -p allure features --guess --tag @smoke_tests_mobile'

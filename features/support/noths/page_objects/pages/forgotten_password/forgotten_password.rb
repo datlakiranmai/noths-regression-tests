@@ -7,6 +7,7 @@ module Noths
           element :email_field, '#email'
           element :forgotten_password, '.button.primary.large'
           element :inline_validation_error_msg, '.validate-error.inline-errors.required.last'
+          element :forgotten_password_notice_msg, '.message.notice.with_icon'
 
 
           def enter_email_address(email_address)

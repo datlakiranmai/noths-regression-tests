@@ -5,12 +5,18 @@ And(/^I provide my (.*) email address$/) do |email_address|
     @app.forgotten_password.enter_email_address(" ")
   elsif email_address.eql? "noths"
     @app.forgotten_password.enter_email_address("noths@notonthehighstreet.com")
+  elsif email_address.eql? "cognito"
+    @app.forgotten_password.enter_email_address($email_address)
   end
 end
 
 
-Then(/^I should see (.*)$/) do |error_message|
+Then(/^I should see be redirected with the message (.*)$/) do |error_message|
   expect(@app.login.forgotten_password_info_msg.text).to eq(error_message)
+end
+
+Then(/^I should see (.*)$/) do |error_message|
+  expect(@app.forgotten_password.forgotten_password_notice_msg.text).to eq(error_message)
 end
 
 Then(/^I should see security error message saying (.*)$/) do |error_message|

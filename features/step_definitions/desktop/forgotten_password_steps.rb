@@ -11,7 +11,7 @@ And(/^I provide my (.*) email address$/) do |email_address|
 end
 
 
-Then(/^I should see be redirected with the message (.*)$/) do |error_message|
+Then(/^I should be redirected with the message (.*)$/) do |error_message|
   expect(@app.login.forgotten_password_info_msg.text).to eq(error_message)
 end
 

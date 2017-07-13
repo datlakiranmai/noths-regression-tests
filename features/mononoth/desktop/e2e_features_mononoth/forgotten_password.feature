@@ -12,7 +12,7 @@ Feature: Forgotten password
     And I click on Forgotten password
     And I provide my valid email address
     And I submit my forgotten password form
-    Then I should see Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
+    Then I should be redirected with the message Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
 
   @e2e @8.02
   Scenario: Customer requests password reset for an empty email address

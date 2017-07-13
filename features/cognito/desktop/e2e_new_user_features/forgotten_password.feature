@@ -10,17 +10,36 @@ Feature: Forgotten password
     And I am on Home page
 
   @cog_e2e @43.01
-  Scenario: Customer requests password reset for a valid email address
+  Scenario: Legacy user requests password reset for a email address
     And I click on Signin
     And I click on Forgotten password
     And I provide my valid email address
     And I submit my forgotten password form
-    Then I should see Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
+    Then I should see be redirected with the message Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
 
   @cog_e2e @43.02
+  Scenario: Cognito user requests password reset for a valid cognito email address
+    And I register as a new user
+    And I sign out from my account
+    And I click on Signin
+    And I click on Forgotten password
+    And I provide my cognito email address
+    And I submit my forgotten password form
+    Then I should see Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
+
+  @cog_e2e @43.03
   Scenario: Customer requests password reset for an empty email address
     And I click on Signin
     And I click on Forgotten password
     And I provide my Invalid email address
     And I submit my forgotten password form
     Then I should see email validation error as Please enter your email.
+
+  @cog_e2e @43.04
+  Scenario: Noths employee requests to reset password
+    And I click on Signin
+    And I click on Forgotten password
+    And I provide my noths email address
+    And I submit my forgotten password form
+    Then I should see security error message saying Unfortunately due to security concerns, we cannot allow staff to reset their passwords. Please talk to a member of the IT team to reset your password.
+

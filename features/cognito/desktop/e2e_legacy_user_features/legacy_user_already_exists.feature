@@ -23,6 +23,7 @@ Feature: User registration with a already existing email address
     Then I should see error title saying Please check your details before continuing
     And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
+    And I should see password text field input should get cleared up
 
   @legacy @28.02
   Scenario: Customer should see 'user already exists' message if existing email address is used (gift voucher)
@@ -37,6 +38,7 @@ Feature: User registration with a already existing email address
     Then I should see error title saying Please check your details before continuing
     And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
+    And I should see password text field input should get cleared up
 
   @legacy @28.03
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via header)
@@ -48,6 +50,7 @@ Feature: User registration with a already existing email address
     Then I should see error title saying Please check your details before continuing
     And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
+    And I should see password text field input should get cleared up
 
   @legacy @28.04
   Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via favourites)
@@ -60,3 +63,4 @@ Feature: User registration with a already existing email address
     Then I should see error title saying Please check your details before continuing
     And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
     And I should see info message saying To use this email address simply sign in before continuing.
+    And I should see password text field input should get cleared up

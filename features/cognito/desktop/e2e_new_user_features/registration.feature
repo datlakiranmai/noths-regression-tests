@@ -16,7 +16,7 @@ Feature: Registration
     And I click Submit button
     #Then I should register successfully
     And I navigate to My accounts page
-  And I choose my details from my account section
+    And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
 

@@ -15,6 +15,7 @@ module Noths
           element :sign_in_error_msg, '.error_message'
           element :checkout_sign_in_error_msg, '.message.error.with_icon'
           element :forgotten_password_info_msg, '.message.info.with_icon'
+          element :noths_employee_security_error_message, '.message.error.with_icon'
           
           def signin_credentials(username, password)
             wait_until_login_email_visible(30)
@@ -22,6 +23,7 @@ module Noths
             login_pwd.set password
             signin_button.click
           end
+
 
           def admin_signin_credentials
             get_admin_credentials

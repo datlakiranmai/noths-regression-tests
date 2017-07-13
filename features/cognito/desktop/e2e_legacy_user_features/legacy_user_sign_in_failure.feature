@@ -19,6 +19,7 @@ Feature: Legacy user Sign In failure (Invalid email address / password)
     Then I should see error message Sorry, either the email address or the password you entered does not correspond with any of our accounts.
     And I should see sign in password textfield input should get cleared up
 
+
   @legacy @29.02
   Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)
     And I tap on the link gift vouchers in footer

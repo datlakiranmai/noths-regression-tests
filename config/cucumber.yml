@@ -7,7 +7,7 @@ e2e_cognito_check: 'features --format AllureCucumber::Formatter --out --guess <%
 e2e: 'features --format AllureCucumber::Formatter --out --guess <%= html_report %> --tag @e2e'
 cog_e2e: 'features --format AllureCucumber::Formatter --out --guess <%= html_report %> --tag @cog_e2e'
 legacy: 'features --format AllureCucumber::Formatter --out --guess <%= html_report %> --tag @legacy'
-mobile: "DRIVER='mobile' features <%= html_report %> --format AllureCucumber::Formatter --out --guess--tag @mobile"
+mobile: "DRIVER='mobile' features <%= html_report %> --format AllureCucumber::Formatter --out --guess --tag @mobile"
 cog_mobile_e2e: "DRIVER='mobile' features <%= html_report %> --format AllureCucumber::Formatter --out --guess --tag @cog_mobile_e2e"
 
 

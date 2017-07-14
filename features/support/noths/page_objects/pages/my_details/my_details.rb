@@ -20,6 +20,11 @@ module Noths
 
           element :details_updated, '.message.alert.with_icon>p'
 
+          element :value_too_short_validation_msg, '.validate-error.inline-errors.minlength.last'
+          element :value_mismatch_validation_msg, '.validate-error.inline-errors.matches.last'
+          element :error_message_title, '.error_messages_title'
+          element :error_message, '.error_message'
+
           def click_on(button_name)
             if headless?
               my_details_options.select { |option| option.text == button_name }.first.trigger("click")
@@ -36,7 +41,23 @@ module Noths
             current_password.set current_pwd
             new_password_field.set @new_password
             confirm_new_password.set @new_password
+          end
+
+
+          def click_submit
             submit_button.click
+          end
+
+          def enter_new_password(password)
+            new_password_field.set password
+          end
+
+          def enter_confirm_password(password)
+            confirm_new_password.set password
+          end
+
+          def change_only_current_password(current_pwd)
+            current_password.set current_pwd
           end
 
           def click_on_link(link_name)

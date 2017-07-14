@@ -16,7 +16,10 @@ end
 
 
 And(/^I sign in with my new credentials$/) do
-  puts "current password #{@app.registration.password}"
+  @app.login.signin_credentials($email_address, @app.registration.password)
+end
+
+And(/^I sign in with my existing credentials$/) do
   @app.login.signin_credentials($email_address, @app.registration.password)
 end
 
@@ -53,4 +56,8 @@ end
 And(/^I sign in with my new password$/) do
   puts "new password #{@app.my_details.new_password}"
   @app.login.signin_credentials($email_address, @app.my_details.new_password)
+end
+
+And(/^I sign in with new current password$/) do
+  @app.login.signin_credentials($email_address, @invalid_current_password)
 end

@@ -42,4 +42,3 @@ Feature: Forgotten password
     And I provide my noths email address
     And I submit my forgotten password form
     Then I should see security error message saying Unfortunately due to security concerns, we cannot allow staff to reset their passwords. Please talk to a member of the IT team to reset your password.
-

@@ -11,7 +11,7 @@ Feature: Login (username in uppercase)
     And I sign out from my account
 
   @smoke_tests @cog_e2e @no_poltergeist @75.01
-  Scenario: Customer is able to successfully login to notonthehighstreet
+  Scenario: 75.01 - Customer is able to successfully login to notonthehighstreet using capitalized email address
     When I navigate to home page
     And I click on Signin
     And I sign in with my user name in capital letters

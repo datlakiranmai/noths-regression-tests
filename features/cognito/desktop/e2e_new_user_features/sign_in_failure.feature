@@ -11,7 +11,7 @@ Feature: Sign In failure
     And I sign out from my account
 
   @smoke_tests @cog_e2e @40.01
-  Scenario: Password field data should get cleared when user signs in with invalid password (checkout standard products)
+  Scenario: 40.01 - Password field should get cleared when a user signs in with an invalid password during checkout of standard products
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with invalid password
@@ -19,7 +19,7 @@ Feature: Sign In failure
     And I should see sign in password textfield input should get cleared up
 
   @smoke_tests @cog_e2e @40.02
-  Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)
+  Scenario: 40.02 - Password field should get cleared when a user signs in with an invalid password during the gift voucher checkout
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
     And I checkout gift voucher
@@ -28,7 +28,7 @@ Feature: Sign In failure
     And I should see sign in password textfield input should get cleared up
 
   @smoke_tests @cog_e2e @40.03
-  Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)(via header)
+  Scenario: 40.03 - Password field should get cleared when a user signs in with an invalid password via the header
     When I navigate to home page
     And I click on Signin
     And I sign in with invalid password
@@ -36,7 +36,7 @@ Feature: Sign In failure
     And I should see sign in password textfield input should get cleared up
 
   @smoke_tests @cog_e2e @40.04
-  Scenario: Password field data should get cleared when user signs in with invalid password (checkout gift voucher)(via favourites)
+  Scenario: 40.04 - Password field should get cleared when a user signs in with an invalid password via favourites
     When I click on Favourite
     When I click on Favourite SignIn
     And I sign in with invalid password
@@ -44,7 +44,7 @@ Feature: Sign In failure
     And I should see sign in password textfield input should get cleared up
 
   @smoke_tests @cog_e2e @40.05
-  Scenario: Password field data should get cleared when user signs in with invalid email address (checkout standard products)
+  Scenario: 40.05 - Password field should get cleared when a user signs in with an invalid email address during checkout of standard products
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with invalid email address

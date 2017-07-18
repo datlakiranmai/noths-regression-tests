@@ -29,7 +29,7 @@ module Noths
             if headless?
               my_details_options.select { |option| option.text == button_name }.first.trigger("click")
             else
-              wait_until_my_details_options_visible(20)
+              wait_until_my_details_options_visible(30)
               my_details_options.select { |option| option.text == button_name }.first.click
             end
 
@@ -64,7 +64,7 @@ module Noths
             if headless?
               my_details_accounts_options.select { |option| option.text == link_name }.first.trigger("click")
             else
-              wait_until_my_details_accounts_options_visible(20)
+              wait_until_my_details_accounts_options_visible(30)
               my_details_accounts_options.select { |option| option.text == link_name }.first.click
             end
           end

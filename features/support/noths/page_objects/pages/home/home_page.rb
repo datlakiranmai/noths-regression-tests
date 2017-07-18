@@ -85,7 +85,7 @@ module Noths
           end
 
           def navigate_to_myaccounts
-            wait_until_signed_in_user_visible(20)
+            wait_until_signed_in_user_visible(30)
             signed_in_user.click
           end
 
@@ -128,7 +128,7 @@ module Noths
                 if headless?
                   try_until(20) { sign_out_btn.trigger('click') }
                 else
-                  wait_until_sign_out_btn_visible(20)
+                  wait_until_sign_out_btn_visible(30)
                   sign_out_btn.first.click
                 end
               when 'Continue'

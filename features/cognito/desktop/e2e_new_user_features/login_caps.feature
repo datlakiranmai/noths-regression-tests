@@ -11,7 +11,7 @@ Feature: Login (username in uppercase)
     And I sign out from my account
 
   @smoke_tests @cog_e2e @no_poltergeist @75.01
-  Scenario: 75.01 - Customer is able to successfully login to notonthehighstreet using capitalized email address
+  Scenario: 75.01 - A customer should be able to successfully login to notonthehighstreet via the header using capitalized email address
     When I navigate to home page
     And I click on Signin
     And I sign in with my user name in capital letters
@@ -19,3 +19,18 @@ Feature: Login (username in uppercase)
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
+
+
+  @smoke_tests @cog_e2e @no_poltergeist @75.02
+  Scenario: 75.02 - A customer should be able to successfully login to notonthehighstreet during the checkout flow using capitalized email address
+    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I add the product in my basket
+    And I sign in with my user name in capital letters
+    And I enter in my address details
+    Then I should see my name as delivery recipient
+    And  I should see Antony Roberts Estate Agents as my delivery address
+    And I should see the my email address in summary section
+    When I continue with my delivery address
+    And I specify my card type
+    And I provide the payment details
+    Then I should see order confirmation page

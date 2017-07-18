@@ -9,14 +9,14 @@ Feature: Sign out
     And I register as a new user
 
   @smoke_tests @cog_e2e @41.01
-  Scenario: Sign out via header
-   When I hover my account via header
-   And I click on Sign out
-   Then I should successfully sign out
-   And I should see the message You have been signed out
+  Scenario: 41.01 - Sign out via the header
+    When I hover my account via header
+    And I click on Sign out
+    Then I should successfully sign out
+    And I should see the message You have been signed out
 
   @smoke_tests @cog_e2e @41.02
-  Scenario: Sign out via my details
+  Scenario: 41.02 - Sign out via my details page
     #When I navigate to My accounts page
     And I choose sign out from my details section
     Then I should successfully sign out

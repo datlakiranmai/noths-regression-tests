@@ -10,7 +10,7 @@ Feature: Registration
     And I am on Home page
 
   @smoke_tests @cog_e2e @39.01
-  Scenario: Customer is able is successfully register in site via header
+  Scenario: 39.01 - A potential customer is able to successfully register via the header
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
@@ -21,7 +21,7 @@ Feature: Registration
     And I should see the my email address in my accounts page
 
   @smoke_tests @e2e_cognito_check @39.01a
-  Scenario: Customer is able is successfully register in site via header
+  Scenario: 39.01a - A potential customer is able to successfully register via the header and is confirmed within AWS
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
@@ -36,7 +36,7 @@ Feature: Registration
     And I should see user created in cognito account table
 
   @smoke_tests @cog_e2e @39.02
-  Scenario: Customer is able is successfully register in site via favourites
+  Scenario: 39.02 - A potential customer is able to successfully register via favourites
     When I click on Favourite
     And I click on Favourite Register
     And I enter in my details in sign up form
@@ -48,7 +48,7 @@ Feature: Registration
     And I should see the my email address in my accounts page
 
   @smoke_tests @e2e_cognito_check @39.02a
-  Scenario: Customer is able is successfully register in site via favourites
+  Scenario: 39.02a - A potential customer is able to successfully register via favourites and is confirmed within AWS
     When I click on Favourite
     And I click on Favourite Register
     And I enter in my details in sign up form

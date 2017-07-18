@@ -11,22 +11,20 @@ Feature: Login
     And I sign out from my account
 
   @smoke_tests @cog_e2e @no_poltergeist @38.01
-  Scenario: Customer is able to successfully login to notonthehighstreet
+  Scenario: 38.01 - A customer is able to successfully login via the header
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
-    #Then I should login successfully
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
 
   @smoke_tests @cog_e2e @no_poltergeist @38.02
-  Scenario: Customer is able to successfully login to notonthehighstreet via favourites
+  Scenario: 38.02 - A customer is able to successfully login via favourites
     When I click on Favourite
     When I click on Favourite SignIn
     And I sign in with my new credentials
-    #Then I should login successfully
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page

@@ -10,7 +10,7 @@ Feature: Forgotten password
     And I am on Home page
 
   @cog_e2e @43.01
-  Scenario: Legacy user requests password reset for a email address
+  Scenario: 43.01 - A legacy customer should request a reset password email
     And I click on Signin
     And I click on Forgotten password
     And I provide my valid email address
@@ -18,7 +18,7 @@ Feature: Forgotten password
     Then I should be redirected with the message Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
 
   @cog_e2e @43.02
-  Scenario: Cognito user requests password reset for a valid cognito email address
+  Scenario: 43.02 - A customer should request a reset password email
     And I register as a new user
     And I sign out from my account
     And I click on Signin
@@ -28,7 +28,7 @@ Feature: Forgotten password
     Then I should see Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
 
   @cog_e2e @43.03
-  Scenario: Customer requests password reset for an empty email address
+  Scenario: 43.03 - A customer should not be able to request a reset password email without an email address
     And I click on Signin
     And I click on Forgotten password
     And I provide my Invalid email address
@@ -36,7 +36,7 @@ Feature: Forgotten password
     Then I should see email validation error as Please enter your email.
 
   @cog_e2e @43.04
-  Scenario: Noths employee requests to reset password
+  Scenario: 43.04 -  A Noths employee should not be able to request a reset password email
     And I click on Signin
     And I click on Forgotten password
     And I provide my noths email address

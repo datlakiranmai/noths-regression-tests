@@ -117,7 +117,7 @@ Feature: Change Password
     And I provide a new password as password
     And I submit my details form
     Then I should get password error messages title saying Please check your details before continuing
-    And I should get password error message saying Please enter the same password twice
+    And I should get password error message saying Please enter the same new password twice
 
 #   TODO CONFIRM USER SPACES AS PASSWORDS
 #  @smoke_tests @cog_e2e @44.07

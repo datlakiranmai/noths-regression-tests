@@ -11,7 +11,7 @@ Feature: Login (username in uppercase)
     And I sign out from my account
 
   @smoke_tests @cog_e2e @no_poltergeist @75.01
-  Scenario: 75.01 - A customer should be able to successfully login to notonthehighstreet via the header using capitalized email address
+  Scenario: 75.01 - A customer should be able to successfully login via the header using a capitalized email address
     When I navigate to home page
     And I click on Signin
     And I sign in with my user name in capital letters
@@ -22,7 +22,7 @@ Feature: Login (username in uppercase)
 
 
   @smoke_tests @cog_e2e @no_poltergeist @75.02
-  Scenario: 75.02 - A customer should be able to successfully login to notonthehighstreet during the checkout flow using capitalized email address
+  Scenario: 75.02 - A customer should be able to successfully login during the checkout flow using a capitalized email address
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with my user name in capital letters

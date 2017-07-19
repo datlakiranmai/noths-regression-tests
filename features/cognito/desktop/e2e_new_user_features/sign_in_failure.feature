@@ -48,5 +48,5 @@ Feature: Sign In failure
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with invalid email address
-    Then I should see error message Sorry, either the email address or the password you entered does not correspond with any of our accounts.
+    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
     And I should see sign in password textfield input should get cleared up

@@ -7,11 +7,10 @@ Feature: Registration
     Given I am on Home page
 
   @smoke_tests @e2e @1.01
-  Scenario: Customer is able is successfully register in site via header
+  Scenario: 1.01 - A potential customer is able to successfully register via the header
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-    #Then I should register successfully
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
@@ -19,12 +18,11 @@ Feature: Registration
 
 
   @smoke_tests @e2e @1.02
-  Scenario: Customer is able is successfully register in site via favourites
+  Scenario: 1.02 - A potential customer is able to successfully register via favourites
     When I click on Favourite
     And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button
-    #Then I should register successfully
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page

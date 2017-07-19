@@ -1,4 +1,4 @@
-Feature: Checkout_login
+Feature: Checkout Login
   As a customer
   I have added a product to my basket
   I want to signin during checkout process
@@ -8,7 +8,7 @@ Feature: Checkout_login
     And I sign out from my account
 
   @smoke_tests @e2e @3.01
-  Scenario: Customer should be able to purchase a product as a customer
+  Scenario: 3.01 - Customer should be able to purchase a product as a customer
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with my new credentials
@@ -22,7 +22,7 @@ Feature: Checkout_login
     Then I should see order confirmation page
 
   @smoke_tests @e2e @3.02
-  Scenario: Customer should be able to purchase a product as a customer
+  Scenario: 3.02 - A customer should be able to login during the gift voucher checkout
     When I navigate to home page
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form

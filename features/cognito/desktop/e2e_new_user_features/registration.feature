@@ -14,7 +14,6 @@ Feature: Registration
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-    #Then I should register successfully
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
@@ -25,7 +24,6 @@ Feature: Registration
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
-    #Then I should register successfully
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
@@ -41,7 +39,6 @@ Feature: Registration
     And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button
-    #Then I should register successfully
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
@@ -53,7 +50,6 @@ Feature: Registration
     And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button
-    #Then I should register successfully
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page

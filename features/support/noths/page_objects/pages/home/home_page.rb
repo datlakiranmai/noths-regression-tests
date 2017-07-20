@@ -10,6 +10,7 @@ module Noths
           include Capybara::DSL
           include Poltergeist
           include Mobile
+          include Helper
 
           #element :register_button, '.register_link.last.button_medium_mobile'
           #element :signin_button, '.sign_in_link.button_medium_mobile'
@@ -20,7 +21,6 @@ module Noths
           elements :sign_out_btn, '.gc-button.gc-button--secondary'
           elements :banner_img, '.desktop_only.desktop_banner'
           element :forgotten_password_link, '.sign_in_forgotten_password.text_link'
-
 
 
           #Welcome Screen
@@ -39,21 +39,15 @@ module Noths
           element :cms_sign_out, '#ext-gen161'
 
           def navigate(link=nil)
-            begin
-              visit(link)
-                #raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be DEAD!" unless page.has_css?('.sign_in_link.button_medium_mobile')
-            rescue Net::ReadTimeout
-              retry
-            end
-            #raise "We have trouble accessing QA Env. #{ENV['ENV_ID']} might be dead!" unless page.has_css?('.sign_in_link.button_medium_mobile')
+            retry_on_readtimeout(link)
           end
 
           def navigate_to_admin
-            visit('admin/session/new')
+            retry_on_readtimeout('admin/session/new')
           end
 
           def navigate_to_site_features
-            visit('admin/features')
+            retry_on_readtimeout('admin/features')
           end
 
           def turn_cognito_flag(flag_status)
@@ -66,7 +60,7 @@ module Noths
               cms_sign_out.click
               page.driver.browser.manage.window.resize_to(375, 667)
             else
-              visit('admin#home')
+              retry_on_readtimeout('admin#home')
               cms_sign_out.click
             end
           end
@@ -86,7 +80,7 @@ module Noths
 
           def navigate_to_myaccounts
             wait_until_signed_in_user_visible(30)
-            signed_in_user.click
+            page.find('.gc-header-myaccount__trigger.logged-in>span').click
           end
 
           def home_page?

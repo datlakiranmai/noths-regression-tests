@@ -86,6 +86,7 @@ module Noths
           def enter_user_details
             random_name
             $email_address = "#{@random_name}@sharklasers.com"
+            wait_until_email_field_visible(30)
             email_field.set $email_address
             email_confirmation_field.set $email_address
             @first_name="first#{@random_name}"
@@ -100,6 +101,7 @@ module Noths
           def enter_your_details_in_checkout
             random_name
             $email_address="#{@random_name}@sharklasers.com"
+            wait_until_email_field_visible(30)
             email_field.set $email_address
             email_confirmation_field.set $email_address
             @first_name="first#{@random_name}"
@@ -114,6 +116,7 @@ module Noths
           def enter_email_address_small_cases
             random_name
             $email_address = "cognito#{@random_name}@sharklasers.com"
+            wait_until_email_field_visible(30)
             email_field.set $email_address
             email_confirmation_field.set $email_address
             @first_name="first#{@random_name}"
@@ -126,6 +129,7 @@ module Noths
           end
 
           def enter_existing_user_details
+            wait_until_email_field_visible(30)
             email_field.set $email_address
             email_confirmation_field.set $email_address
             @first_name="first#{@random_name}"

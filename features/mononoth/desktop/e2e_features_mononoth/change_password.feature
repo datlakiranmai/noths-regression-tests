@@ -143,7 +143,7 @@ Feature: Change Password
 
 
   @smoke_tests @e2e @9.08
-  Scenario: 9.08 - A customer should provide an invalid current password, valid new password and blank new password in change password section
+  Scenario: 9.08 - A customer should provide an invalid current password, valid new password and blank confirm new password in change password section
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials

@@ -119,11 +119,11 @@ Feature: Change Password
     And I provide a new password as qwertyuiop
     And I submit my details form
     Then I should get password error messages title saying Please check your details before continuing
-    And I should get password error message saying Please enter the same new password twice
+    And I should get password error message saying Please enter the same password twice
 
 
   @smoke_tests @cog_e2e @44.07
-  Scenario: 44.07 - A customer should provide an invalid current password, valid password and confirm new password in change password section
+  Scenario: 44.07 - A customer should provide an invalid current password, valid new password and confirm new password in change password section
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -146,7 +146,7 @@ Feature: Change Password
 
 
   @smoke_tests @cog_e2e @44.08
-  Scenario: 44.08 - A customer should provide an blank current password, valid password and confirm new password in change password section
+  Scenario: 44.08 - A customer should provide an blank current password, valid new password and confirm new password in change password section
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -168,7 +168,7 @@ Feature: Change Password
 
 
   @smoke_tests @cog_e2e @44.09
-  Scenario: 44.09 - A customer should provide an invalid current password, valid password and blank new password in change password section
+  Scenario: 44.09 - A customer should provide an invalid current password, valid new password and blank confirm new password in change password section
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -180,73 +180,7 @@ Feature: Change Password
     And I provide a new password as qwertyuiop
     And I submit my details form
     Then I should get password error messages title saying Please check your details before continuing
-    And I should get password error message saying current password incorrect, please try again
-
-
-
-
-
-  @smoke_tests @cog_e2e @44.07
-  Scenario: 44.07 - A customer should provide an invalid current password, valid password and confirm new password in change password section
-    When I navigate to home page
-    And I click on Signin
-    And I sign in with my new credentials
-    And I navigate to My accounts page
-    And I choose my details from my account section
-    And I should be taken to My details page
-    And I should see the my email address in my accounts page
-    And I provide Invalid current password
-    And I provide a new password as qwertyuiop
-    And I provide a confirm password as qwertyuiop
-    And I submit my details form
-    Then I should get password error messages title saying Please check your details before continuing
-    And I should get password error message saying current password incorrect, please try again
-    And I sign out from my account
-    And I navigate to home page
-    And I click on Signin
-    And I sign in with my new password as qwertyuiop
-    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
-    And I should see sign in password textfield input should get cleared up
-
-
-  @smoke_tests @cog_e2e @44.08
-  Scenario: 44.08 - A customer should provide an blank current password, valid password and confirm new password in change password section
-    When I navigate to home page
-    And I click on Signin
-    And I sign in with my new credentials
-    And I navigate to My accounts page
-    And I choose my details from my account section
-    And I should be taken to My details page
-    And I should see the my email address in my accounts page
-    And I provide a new password as qwertyuiop
-    And I provide a confirm password as qwertyuiop
-    And I submit my details form
-    Then I should get password error messages title saying Please check your details before continuing
-    And I should get password error message saying current password incorrect, please try again
-    And I sign out from my account
-    And I navigate to home page
-    And I click on Signin
-    And I sign in with my new password as qwertyuiop
-    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
-    And I should see sign in password textfield input should get cleared up
-
-
-  @smoke_tests @cog_e2e @44.09
-  Scenario: 44.09 - A customer should provide an invalid current password, valid password and blank new password in change password section
-    When I navigate to home page
-    And I click on Signin
-    And I sign in with my new credentials
-    And I navigate to My accounts page
-    And I choose my details from my account section
-    And I should be taken to My details page
-    And I should see the my email address in my accounts page
-    And I provide Invalid current password
-    And I provide a new password as qwertyuiop
-    And I submit my details form
-    Then I should get password error messages title saying Please check your details before continuing
-    And I should get password error message saying current password incorrect, please try again
-
-
+    And I should get password error message saying Please enter the same password twice
 
 
 #   TODO CONFIRM USER SPACES AS PASSWORDS

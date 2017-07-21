@@ -61,3 +61,7 @@ end
 And(/^I sign in with new current password$/) do
   @app.login.signin_credentials($email_address, @invalid_current_password)
 end
+
+And(/^I sign in with my new password as (.*)$/) do |password|
+  @app.login.signin_credentials($email_address, password)
+end

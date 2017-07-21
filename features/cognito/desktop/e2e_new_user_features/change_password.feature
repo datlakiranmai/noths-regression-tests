@@ -65,14 +65,16 @@ Feature: Change Password
     And I should see the my email address in my accounts page
     And I provide Invalid current password
     And I submit my details form
-    Then I should get password error messages title saying Please check your details before continuing
-    And I should get password error message saying current password incorrect, please try again
+    Then I should see flash message saying your details have successfully been updated
     And I sign out from my account
     And I navigate to home page
     And I click on Signin
-    And I sign in with new current password
-    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
-    And I should see sign in password textfield input should get cleared up
+    And I sign in with my existing credentials
+    And I navigate to My accounts page
+    And I choose my details from my account section
+    And I should be taken to My details page
+    Then I should see the my email address in my accounts page
+
 
   @smoke_tests @cog_e2e @44.04
   Scenario: 44.04 - A customer should not be able to submit a password with an invalid length
@@ -84,7 +86,7 @@ Feature: Change Password
     And I should be taken to My details page
     And I should see the my email address in my accounts page
     And I provide valid current password
-    And I provide a new password as passwd
+    And I provide a new password as qwert
     And I submit my details form
     Then I should get password length validation error saying The value entered is too short. Please enter a value that is at least 8 characters long.
 
@@ -98,8 +100,8 @@ Feature: Change Password
     And I should be taken to My details page
     And I should see the my email address in my accounts page
     And I provide valid current password
-    And I provide a new password as password
-    And I provide a confirm password as passwordd
+    And I provide a new password as qwertyuiop
+    And I provide a confirm password as qwerty
     And I submit my details form
     Then I should get password mismatch validation error saying The values entered don't appear to match. Please check and try again.
 
@@ -114,10 +116,74 @@ Feature: Change Password
     And I should be taken to My details page
     And I should see the my email address in my accounts page
     And I provide valid current password
-    And I provide a new password as password
+    And I provide a new password as qwertyuiop
     And I submit my details form
     Then I should get password error messages title saying Please check your details before continuing
     And I should get password error message saying Please enter the same new password twice
+
+
+  @smoke_tests @cog_e2e @44.07
+  Scenario: 44.07 - A customer should provide an invalid current password, valid password and confirm new password in change password section
+    When I navigate to home page
+    And I click on Signin
+    And I sign in with my new credentials
+    And I navigate to My accounts page
+    And I choose my details from my account section
+    And I should be taken to My details page
+    And I should see the my email address in my accounts page
+    And I provide Invalid current password
+    And I provide a new password as qwertyuiop
+    And I provide a confirm password as qwertyuiop
+    And I submit my details form
+    Then I should get password error messages title saying Please check your details before continuing
+    And I should get password error message saying current password incorrect, please try again
+    And I sign out from my account
+    And I navigate to home page
+    And I click on Signin
+    And I sign in with my new password as qwertyuiop
+    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
+    And I should see sign in password textfield input should get cleared up
+
+
+  @smoke_tests @cog_e2e @44.08
+  Scenario: 44.08 - A customer should provide an blank current password, valid password and confirm new password in change password section
+    When I navigate to home page
+    And I click on Signin
+    And I sign in with my new credentials
+    And I navigate to My accounts page
+    And I choose my details from my account section
+    And I should be taken to My details page
+    And I should see the my email address in my accounts page
+    And I provide a new password as qwertyuiop
+    And I provide a confirm password as qwertyuiop
+    And I submit my details form
+    Then I should get password error messages title saying Please check your details before continuing
+    And I should get password error message saying current password incorrect, please try again
+    And I sign out from my account
+    And I navigate to home page
+    And I click on Signin
+    And I sign in with my new password as qwertyuiop
+    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
+    And I should see sign in password textfield input should get cleared up
+
+
+  @smoke_tests @cog_e2e @44.09
+  Scenario: 44.09 - A customer should provide an invalid current password, valid password and blank new password in change password section
+    When I navigate to home page
+    And I click on Signin
+    And I sign in with my new credentials
+    And I navigate to My accounts page
+    And I choose my details from my account section
+    And I should be taken to My details page
+    And I should see the my email address in my accounts page
+    And I provide Invalid current password
+    And I provide a new password as qwertyuiop
+    And I submit my details form
+    Then I should get password error messages title saying Please check your details before continuing
+    And I should get password error message saying current password incorrect, please try again
+
+
+
 
 #   TODO CONFIRM USER SPACES AS PASSWORDS
 #  @smoke_tests @cog_e2e @44.07

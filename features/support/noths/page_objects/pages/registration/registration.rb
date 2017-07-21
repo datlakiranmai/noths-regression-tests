@@ -57,7 +57,8 @@ module Noths
           end
 
           def random_name
-            @random_name||= Time.now.to_i
+            random_no=SecureRandom.random_number(98765432178634)
+            @random_name ||= random_no+Time.now.to_i
           end
 
           def click_on_button(button_name)
@@ -85,7 +86,7 @@ module Noths
 
           def enter_user_details
             random_name
-            $email_address = "#{@random_name}@sharklasers.com"
+            $email_address = "auth_#{@random_name}@sharklasers.com"
             wait_until_email_field_visible(30)
             email_field.set $email_address
             email_confirmation_field.set $email_address
@@ -100,7 +101,7 @@ module Noths
 
           def enter_your_details_in_checkout
             random_name
-            $email_address="#{@random_name}@sharklasers.com"
+            $email_address="auth_#{@random_name}@sharklasers.com"
             wait_until_email_field_visible(30)
             email_field.set $email_address
             email_confirmation_field.set $email_address
@@ -115,7 +116,7 @@ module Noths
 
           def enter_email_address_small_cases
             random_name
-            $email_address = "cognito#{@random_name}@sharklasers.com"
+            $email_address = "cognito_#{@random_name}@sharklasers.com"
             wait_until_email_field_visible(30)
             email_field.set $email_address
             email_confirmation_field.set $email_address

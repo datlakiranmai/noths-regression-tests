@@ -17,7 +17,6 @@ Feature: Legacy user login via header
     And I should see user password in user table is not empty
     When I click on Signin
     And I sign in with my new credentials
-    #Then I should login successfully
     Then I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
@@ -32,7 +31,6 @@ Feature: Legacy user login via header
     When I click on Favourite
     When I click on Favourite SignIn
     And I sign in with my new credentials
-    #Then I should login successfully
     When I navigate to My accounts page
     And I choose my details from my account section
     Then I should be taken to My details page

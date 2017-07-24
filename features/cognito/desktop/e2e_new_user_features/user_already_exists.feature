@@ -10,7 +10,7 @@ Feature: User registration with an already existing email address
     And I register as a new user
     And I sign out from my account
 
-  @smoke_tests @cog_e2e @42.01
+  @cog_e2e @42.01
   Scenario: 42.01 - A customer should see the 'user already exists' message if they use an existing registered email during the checkout of a standard product
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -22,7 +22,7 @@ Feature: User registration with an already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @smoke_tests @cog_e2e @42.02
+  @cog_e2e @42.02
   Scenario: 42.02 - A customer should see the 'user already exists' message if they use an existing registered email during the gift voucher checkout
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
@@ -35,7 +35,7 @@ Feature: User registration with an already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @smoke_tests @cog_e2e @42.03
+  @cog_e2e @42.03
   Scenario: 42.03 - A customer should see the 'user already exists' message if they use an existing registered email when registering via the header
     When I click on Register
     And I enter in my details in sign up form
@@ -45,7 +45,7 @@ Feature: User registration with an already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @smoke_tests @cog_e2e @42.04
+  @cog_e2e @42.04
   Scenario: 42.04 - A customer should see the 'user already exists' message if they use an existing registered email when registering via favourites
     When I click on Favourite
     And I click on Favourite Register

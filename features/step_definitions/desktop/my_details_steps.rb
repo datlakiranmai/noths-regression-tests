@@ -29,8 +29,6 @@ And(/^I change my existing password in my details page$/) do
   @app.my_details.change_password(@app.registration.password)
 end
 
-
-
 And(/^I provide (.*) current password$/) do |password_status|
   if password_status.eql? 'valid'
     @app.my_details.change_only_current_password(@app.registration.password)
@@ -39,7 +37,6 @@ And(/^I provide (.*) current password$/) do |password_status|
     @app.my_details.change_only_current_password(@invalid_current_password)
   end
 end
-
 
 And(/^I submit my details form$/) do
   @app.my_details.click_submit

@@ -12,8 +12,6 @@ module Noths
           include Mobile
           include Helper
 
-          #element :register_button, '.register_link.last.button_medium_mobile'
-          #element :signin_button, '.sign_in_link.button_medium_mobile'
           elements :header_buttons, '.gc-header-myaccount__link.gc-header-myaccount__link--inline'
           element :signed_in_user, '.gc-header-myaccount__trigger.logged-in>span'
           element :favourite_inactive_btn, '.gc-header-favourites.gc-header__item.gc-header__item--favourites'

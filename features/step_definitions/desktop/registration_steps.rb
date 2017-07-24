@@ -3,7 +3,7 @@ And(/^I enter in my details in sign up form$/) do
 end
 
 And(/^I click (.*) button$/) do |button_name|
-  puts "User email address is #{$email_address}"
+  puts "User email address is #{@app.registration.email_address}"
   @app.registration.click_on_button(button_name)
 end
 
@@ -15,7 +15,6 @@ end
 When(/^I go for (.*) from wishlist page$/) do |button_name|
   @app.wishlist.click_on(button_name)
 end
-
 
 And(/^I enter in my details in your details form$/) do
   @app.registration.enter_your_details_in_checkout

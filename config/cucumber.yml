@@ -14,4 +14,3 @@ cog_mobile_e2e: "DRIVER='mobile' features <%= html_report %> --format AllureCucu
 headless: "DRIVER='headless' features --tag @e2e <%= html_report %>"
 rerun: '--guess @rerun.txt'
 #allure: '--format AllureCucumber::Formatter --out'
-

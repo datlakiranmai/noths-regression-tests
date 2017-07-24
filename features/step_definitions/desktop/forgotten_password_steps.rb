@@ -6,7 +6,7 @@ And(/^I provide my (.*) email address$/) do |email_address|
   elsif email_address.eql? "noths"
     @app.forgotten_password.enter_email_address("noths@notonthehighstreet.com")
   elsif email_address.eql? "cognito"
-    @app.forgotten_password.enter_email_address($email_address)
+    @app.forgotten_password.enter_email_address(@app.registration.email_address)
   end
 end
 

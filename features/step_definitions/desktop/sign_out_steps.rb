@@ -9,4 +9,3 @@ end
 And(/^I should see the message (.*)$/) do |message|
   expect(@app.home.info).to have_text(message)
 end
-

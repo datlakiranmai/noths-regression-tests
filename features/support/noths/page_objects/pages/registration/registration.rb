@@ -86,53 +86,53 @@ module Noths
 
           def enter_user_details
             random_name
-            $email_address = "auth_#{@random_name}@sharklasers.com"
+            @email_address = "auth_#{@random_name}@sharklasers.com"
             wait_until_email_field_visible(30)
-            email_field.set $email_address
-            email_confirmation_field.set $email_address
+            email_field.set @email_address
+            email_confirmation_field.set @email_address
             @first_name="first#{@random_name}"
             @last_name="last#{@random_name}"
             first_name_field.set @first_name
             last_name_field.set @last_name
             @password = "password"
-            password_field.set "password"
-            password_confirm_field.set "password"
+            password_field.set @password
+            password_confirm_field.set @password
           end
 
           def enter_your_details_in_checkout
             random_name
-            $email_address="auth_#{@random_name}@sharklasers.com"
+            @email_address="auth_#{@random_name}@sharklasers.com"
             wait_until_email_field_visible(30)
-            email_field.set $email_address
-            email_confirmation_field.set $email_address
+            email_field.set @email_address
+            email_confirmation_field.set @email_address
             @first_name="first#{@random_name}"
             @last_name="last#{@random_name}"
             first_name_field.set @first_name
             last_name_field.set @last_name
             @password = "password"
-            password_field.set "password"
-            password_confirm_field.set "password"
+            password_field.set @password
+            password_confirm_field.set @password
           end
 
           def enter_email_address_small_cases
             random_name
-            $email_address = "cognito_#{@random_name}@sharklasers.com"
+            @email_address = "cognito_#{@random_name}@sharklasers.com"
             wait_until_email_field_visible(30)
-            email_field.set $email_address
-            email_confirmation_field.set $email_address
+            email_field.set @email_address
+            email_confirmation_field.set @email_address
             @first_name="first#{@random_name}"
             @last_name="last#{@random_name}"
             first_name_field.set @first_name
             last_name_field.set @last_name
             @password = "password"
-            password_field.set "password"
-            password_confirm_field.set "password"
+            password_field.set @password
+            password_confirm_field.set @password
           end
 
           def enter_existing_user_details
             wait_until_email_field_visible(30)
-            email_field.set $email_address
-            email_confirmation_field.set $email_address
+            email_field.set @email_address
+            email_confirmation_field.set @email_address
             @first_name="first#{@random_name}"
             @last_name="last#{@random_name}"
             first_name_field.set @first_name

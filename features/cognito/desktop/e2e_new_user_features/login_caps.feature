@@ -10,7 +10,7 @@ Feature: Login (username in uppercase)
     And I register as a new Cognito user
     And I sign out from my account
 
-  @smoke_tests @cog_e2e @no_poltergeist @75.01
+  @cog_e2e @no_poltergeist @75.01
   Scenario: 75.01 - A customer should be able to successfully login via the header using a capitalized email address
     When I navigate to home page
     And I click on Signin
@@ -21,7 +21,7 @@ Feature: Login (username in uppercase)
     And I should see the my email address in my accounts page
 
 
-  @smoke_tests @cog_e2e @no_poltergeist @75.02
+  @cog_e2e @no_poltergeist @75.02
   Scenario: 75.02 - A customer should be able to successfully login during the checkout flow using a capitalized email address
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket

@@ -10,7 +10,7 @@ Feature: Checkout Login
     And I register as a new user
     And I sign out from my account
 
-  @smoke_tests @cog_e2e @36.01
+  @cog_e2e @36.01
   Scenario: 36.01 - A customer should be able to login during the checkout of a standard product
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -24,7 +24,7 @@ Feature: Checkout Login
     And I provide the payment details
     Then I should see order confirmation page
 
-  @smoke_tests @cog_e2e @36.02
+  @cog_e2e @36.02
   Scenario: 36.02 - A customer should be able to login during the gift voucher checkout
     When I navigate to home page
     And I tap on the link gift vouchers in footer

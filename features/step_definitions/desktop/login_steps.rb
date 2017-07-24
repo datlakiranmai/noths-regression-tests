@@ -1,26 +1,15 @@
-And(/^I enter my login credentials:$/) do |table|
-  # table is a table.hashes.keys # => [:username, :password]
-  table.raw.each do |key, value|
-    if key == 'user_name' then
-      $email_address = value
-    else
-      @password = value
-    end
-  end
-  @app.login.signin_credentials($email_address, @password)
-end
-
 Then(/^I should login successfully as (.*)$/) do |user_name|
   expect(@app.home.signed_in_user).to have_text(user_name)
 end
 
 
 And(/^I sign in with my new credentials$/) do
-  @app.login.signin_credentials($email_address, @app.registration.password)
+  puts "registration email address is #{@app.registration.email_address}"
+  @app.login.signin_credentials(@app.registration.email_address, @app.registration.password)
 end
 
 And(/^I sign in with my existing credentials$/) do
-  @app.login.signin_credentials($email_address, @app.registration.password)
+  @app.login.signin_credentials(@app.registration.email_address, @app.registration.password)
 end
 
 Then(/^I should login successfully$/) do
@@ -30,7 +19,7 @@ end
 
 And(/^I sign in with invalid (.*)$/) do |text|
   if text.eql? "password"
-    @app.login.signin_credentials($email_address, "inval23")
+    @app.login.signin_credentials(@app.registration.email_address, "inval23")
   else
     @app.login.signin_credentials("invalidemail@test.com", "inval23")
   end
@@ -50,18 +39,18 @@ Then(/^I should see sign in failure with message (.*)$/) do |error_msg|
 end
 
 And(/^I sign in with my user name in capital letters$/) do
-  @app.login.signin_credentials($email_address.upcase, @app.registration.password)
+  @app.login.signin_credentials(@app.registration.email_address.upcase, @app.registration.password)
 end
 
 And(/^I sign in with my new password$/) do
   puts "new password #{@app.my_details.new_password}"
-  @app.login.signin_credentials($email_address, @app.my_details.new_password)
+  @app.login.signin_credentials(@app.registration.email_address, @app.my_details.new_password)
 end
 
 And(/^I sign in with new current password$/) do
-  @app.login.signin_credentials($email_address, @invalid_current_password)
+  @app.login.signin_credentials(@app.registration.email_address, @invalid_current_password)
 end
 
 And(/^I sign in with my new password as (.*)$/) do |password|
-  @app.login.signin_credentials($email_address, password)
+  @app.login.signin_credentials(@app.registration.email_address, password)
 end

@@ -1,4 +1,4 @@
-Feature: Forgotten password
+Feature: Forgotten password [New User]
   As a NOTHS customer
   I forgot my password
   I should be able to make email request for password reset via forgotten password form
@@ -10,15 +10,7 @@ Feature: Forgotten password
     And I am on Home page
 
   @43.01
-  Scenario: 43.01 - A legacy customer should request a reset password email
-    And I click on Signin
-    And I click on Forgotten password
-    And I provide my valid email address
-    And I submit my forgotten password form
-    Then I should be redirected with the message Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
-
-  @43.02
-  Scenario: 43.02 - A customer should request a reset password email
+  Scenario: [New user] 43.02 - A customer should request a reset password email
     And I register as a new user
     And I sign out from my account
     And I click on Signin
@@ -27,16 +19,16 @@ Feature: Forgotten password
     And I submit my forgotten password form
     Then I should see Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
 
-  @43.03
-  Scenario: 43.03 - A customer should not be able to request a reset password email without an email address
+  @43.02
+  Scenario: [New user] 43.03 - A customer should not be able to request a reset password email without an email address
     And I click on Signin
     And I click on Forgotten password
-    And I provide my Invalid email address
+    And I provide my empty email address
     And I submit my forgotten password form
     Then I should see email validation error as Please enter your email.
 
-  @43.04
-  Scenario: 43.04 -  A Noths employee should not be able to request a reset password email
+  @43.03
+  Scenario: [New user] 43.04 -  A Noths employee should not be able to request a reset password email
     And I click on Signin
     And I click on Forgotten password
     And I provide my noths email address

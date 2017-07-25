@@ -23,6 +23,6 @@ Feature: Forgotten password
     When I navigate to my accounts
     And I click on Signin
     And I click on Forgotten password
-    And I provide my Invalid email address
+    And I provide my empty email address
     And I submit my forgotten password form
     Then I should see email validation error as Please enter your email.

@@ -1,4 +1,4 @@
-Feature: User registration with a already existing email address
+Feature: User registration with an already existing email address [Legacy user]
 
   As a customer
   I want to register to noths website
@@ -11,8 +11,8 @@ Feature: User registration with a already existing email address
     And I navigate to home page
     And I check my cognito flag is ON
 
-  @legacy @28.01
-  Scenario: Customer should see 'user already exists' message if existing email address is used (Standard products)
+  @cog_e2e @28.01
+  Scenario: [Legacy user] 28.01 - A customer should see the 'user already exists' message if they use an existing registered email during the checkout of a standard product
     And I should see user created in user table
     And I should see user password in user table is not empty
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
@@ -25,8 +25,8 @@ Feature: User registration with a already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @legacy @28.02
-  Scenario: Customer should see 'user already exists' message if existing email address is used (gift voucher)
+  @cog_e2e @28.02
+  Scenario: [Legacy user] 28.02 - A customer should see the 'user already exists' message if they use an existing registered email during the gift voucher checkout
     And I should see user created in user table
     And I should see user password in user table is not empty
     And I tap on the link gift vouchers in footer
@@ -40,8 +40,8 @@ Feature: User registration with a already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @legacy @28.03
-  Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via header)
+  @cog_e2e @28.03
+  Scenario: [Legacy user] 28.03 - A customer should see the 'user already exists' message if they use an existing registered email when registering via the header
     And I should see user created in user table
     And I should see user password in user table is not empty
     When I click on Register
@@ -52,8 +52,8 @@ Feature: User registration with a already existing email address
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @legacy @28.04
-  Scenario: Customer should see 'user already exists' message if existing email address is used in registration form(via favourites)
+  @cog_e2e @28.04
+  Scenario: [Legacy user] 28.04 - A customer should see the 'user already exists' message if they use an existing registered email when registering via favourites
     And I should see user created in user table
     And I should see user password in user table is not empty
     When I click on Favourite

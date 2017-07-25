@@ -10,7 +10,7 @@ Feature: Checkout Registration
     And I am on Home page
 
   @cog_e2e @37.01
-  Scenario: 37.01 - A customer should be able to register during the checkout of a standard product
+  Scenario: [New user] 37.01 - A customer should be able to register during the checkout of a standard product
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I click on Continue
@@ -26,7 +26,7 @@ Feature: Checkout Registration
     Then I should see order confirmation page
 
   @e2e_cognito_check @37.01a
-  Scenario: 37.01a - A customer should be able to register during the checkout of a standard product and is confirmed within AWS
+  Scenario: [New user] 37.01a - A customer should be able to register during the checkout of a standard product and is confirmed within AWS
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I click on Continue
@@ -46,7 +46,7 @@ Feature: Checkout Registration
     And I should see user created in cognito account table
 
   @cog_e2e @37.02
-  Scenario: 37.02 - A customer should be able to register during the gift voucher checkout
+  Scenario: [New user] 37.02 - A customer should be able to register during the gift voucher checkout
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
     And I checkout gift voucher
@@ -59,7 +59,7 @@ Feature: Checkout Registration
     Then I should see order confirmation page
 
   @e2e_cognito_check @37.02a
-  Scenario: 37.02a - A customer should be able to register during the gift voucher checkout and is confirmed within AWS
+  Scenario: [New user] 37.02a - A customer should be able to register during the gift voucher checkout and is confirmed within AWS
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
     And I checkout gift voucher

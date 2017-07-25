@@ -1,4 +1,4 @@
-Feature: Legacy user login via header
+Feature: Login [Legacy user]
 
   As a customer
   I want to login to noths website for the first time via Cognito
@@ -11,8 +11,8 @@ Feature: Legacy user login via header
     And I navigate to home page
     And I check my cognito flag is ON
 
-  @e2e_cognito_check @legacy @27.01
-  Scenario:   Legacy Customer is able to successfully login to notonthehighstreet
+  @e2e_cognito_check @cog_e2e @27.01
+  Scenario: [Legacy user] 27.01 - A customer is able to successfully login via the header
     And I should see user created in user table
     And I should see user password in user table is not empty
     When I click on Signin
@@ -21,11 +21,11 @@ Feature: Legacy user login via header
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see the my email address in my accounts page
-    And I should see user created in cognito
-    And I should see user created in cognito account table
+    #And I should see user created in cognito
+    #And I should see user created in cognito account table
 
-  @e2e_cognito_check @legacy @27.02
-  Scenario: Customer is able to successfully login to notonthehighstreet via favourites
+  @e2e_cognito_check @cog_e2e @27.02
+  Scenario: [Legacy user] 27.02 - A customer is able to successfully login via favourites
     And I should see user created in user table
     And I should see user password in user table is not empty
     When I click on Favourite
@@ -35,5 +35,5 @@ Feature: Legacy user login via header
     And I choose my details from my account section
     Then I should be taken to My details page
     And I should see the my email address in my accounts page
-    Then I should see user created in cognito
-    And I should see user created in cognito account table
+    #Then I should see user created in cognito
+    #And I should see user created in cognito account table

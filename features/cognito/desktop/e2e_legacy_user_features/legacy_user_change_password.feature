@@ -1,4 +1,4 @@
-Feature: Leagacy user change Password
+Feature: Change Password [Legacy user]
 
   As a noths customer
   I should be able to reset password via my details page
@@ -10,8 +10,8 @@ Feature: Leagacy user change Password
     And I navigate to home page
     And I check my cognito flag is ON
 
-  @smoke_tests @legacy @30.01
-  Scenario: Customer should be able to reset password in my details page
+  @smoke_tests @cog_e2e @30.01
+  Scenario: [Legacy user] 30.01 - A customer should be able to reset their password on the my details page
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials

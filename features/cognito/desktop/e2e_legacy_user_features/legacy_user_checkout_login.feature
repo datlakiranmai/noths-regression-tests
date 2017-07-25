@@ -1,4 +1,4 @@
-Feature: Legacy user login via checkout
+Feature: Checkout Login [Legacy user]
 
   As a customer
   I have added a product to my basket
@@ -12,8 +12,8 @@ Feature: Legacy user login via checkout
     And I check my cognito flag is ON
 
 
-  @e2e_cognito_check @legacy @26.01
-  Scenario: Customer should be able to purchase a product as a customer
+  @e2e_cognito_check @cog_e2e @26.01
+  Scenario: [Legacy user] 26.01 - A customer should be able to login during the checkout of a standard product
     And I should see user created in user table
     And I should see user password in user table is not empty
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
@@ -27,12 +27,12 @@ Feature: Legacy user login via checkout
     And I specify my card type
     And I provide the payment details
     Then I should see order confirmation page
-    Then I should see user created in cognito
-    And I should see user created in cognito account table
+    #Then I should see user created in cognito
+    #And I should see user created in cognito account table
 
 
-  @e2e_cognito_check @legacy @26.02
-  Scenario: Customer should be able to purchase a gift voucher as a customer
+  @e2e_cognito_check @cog_e2e @26.02
+  Scenario: [Legacy user] 26.02 - A customer should be able to login during the gift voucher checkout
     And I should see user created in user table
     And I should see user password in user table is not empty
     When I navigate to home page
@@ -44,5 +44,5 @@ Feature: Legacy user login via checkout
     And I should see the my email address in summary section
     And I provide the payment details
     Then I should see order confirmation page
-    Then I should see user created in cognito
-    And I should see user created in cognito account table
+    #Then I should see user created in cognito
+    #And I should see user created in cognito account table

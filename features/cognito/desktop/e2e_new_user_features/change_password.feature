@@ -1,4 +1,4 @@
-Feature: Change Password
+Feature: Change Password [New user]
 
   As a noths customer
   I should be able to change password via my details page
@@ -11,7 +11,7 @@ Feature: Change Password
     And I sign out from my account
 
   @cog_e2e @44.01
-  Scenario: 44.01 - A customer should be able to reset their password on the my details page
+  Scenario: [New user] 44.01 - A customer should be able to reset their password on the my details page
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -33,7 +33,7 @@ Feature: Change Password
 
 
   @cog_e2e @44.02
-  Scenario: 44.02 - A customer should only provide a valid current password in the change password section and then attempt to sign in with the current password
+  Scenario: [New user] 44.02 - A customer should only provide a valid current password in the change password section and then attempt to sign in with the current password
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -55,7 +55,7 @@ Feature: Change Password
 
 
   @cog_e2e @44.03
-  Scenario: 44.03 - A customer should provide an invalid current password in change password section and attempt to sign in with the original current password
+  Scenario: [New user] 44.03 - A customer should provide an invalid current password in change password section and attempt to sign in with the original current password
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -77,7 +77,7 @@ Feature: Change Password
 
 
   @cog_e2e @44.04
-  Scenario: 44.04 - A customer should not be able to submit a password with an invalid length
+  Scenario: [New user] 44.04 - A customer should not be able to submit a password with an invalid length
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -91,7 +91,7 @@ Feature: Change Password
     Then I should get password length validation error saying The value entered is too short. Please enter a value that is at least 8 characters long.
 
   @cog_e2e @44.05
-  Scenario: 44.05 - A customer should not be able to change their password if a new and confirm password do not match
+  Scenario: [New user] 44.05 - A customer should not be able to change their password if a new and confirm password do not match
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -107,7 +107,7 @@ Feature: Change Password
 
 
   @cog_e2e @44.06
-  Scenario: 44.06 - A customer should not be able to change their password if they do not supply confirm password value
+  Scenario: [New user] 44.06 - A customer should not be able to change their password if they do not supply confirm password value
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -123,7 +123,7 @@ Feature: Change Password
 
 
   @cog_e2e @44.07
-  Scenario: 44.07 - A customer should provide an invalid current password, valid new password and confirm new password in change password section
+  Scenario: [New user] 44.07 - A customer should provide an invalid current password, valid new password and confirm new password in change password section
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -146,7 +146,7 @@ Feature: Change Password
 
 
   @cog_e2e @44.08
-  Scenario: 44.08 - A customer should provide an blank current password, valid new password and confirm new password in change password section
+  Scenario: [New user] 44.08 - A customer should provide an blank current password, valid new password and confirm new password in change password section
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -168,7 +168,7 @@ Feature: Change Password
 
 
   @cog_e2e @44.09
-  Scenario: 44.09 - A customer should provide an invalid current password, valid new password and blank confirm new password in change password section
+  Scenario: [New user] 44.09 - A customer should provide an invalid current password, valid new password and blank confirm new password in change password section
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials

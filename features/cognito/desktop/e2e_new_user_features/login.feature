@@ -1,4 +1,4 @@
-Feature: Login
+Feature: Login [New User]
   As a customer
   I want to login to noths website for the first time
   I expect to land on my details page
@@ -11,7 +11,7 @@ Feature: Login
     And I sign out from my account
 
   @cog_e2e @no_poltergeist @38.01
-  Scenario: 38.01 - A customer is able to successfully login via the header
+  Scenario: [New user] 38.01 - A customer is able to successfully login via the header
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
@@ -21,7 +21,7 @@ Feature: Login
     And I should see the my email address in my accounts page
 
   @cog_e2e @no_poltergeist @38.02
-  Scenario: 38.02 - A customer is able to successfully login via favourites
+  Scenario: [New user] 38.02 - A customer is able to successfully login via favourites
     When I click on Favourite
     When I click on Favourite SignIn
     And I sign in with my new credentials

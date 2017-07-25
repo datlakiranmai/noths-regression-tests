@@ -1,12 +1,10 @@
 And(/^I provide my (.*) email address$/) do |email_address|
-  if email_address.eql? "valid"
-    @app.forgotten_password.enter_email_address("sadha877117@gmail.com")
-  elsif email_address.eql? "invalid"
+  if email_address.eql? "legacy" || "cognito"
+    @app.forgotten_password.enter_email_address(@app.registration.email_address)
+  elsif email_address.eql? "empty"
     @app.forgotten_password.enter_email_address(" ")
   elsif email_address.eql? "noths"
     @app.forgotten_password.enter_email_address("noths@notonthehighstreet.com")
-  elsif email_address.eql? "cognito"
-    @app.forgotten_password.enter_email_address(@app.registration.email_address)
   end
 end
 

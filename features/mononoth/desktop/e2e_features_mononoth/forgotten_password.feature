@@ -8,9 +8,12 @@ Feature: Forgotten password
 
   @e2e @8.01
   Scenario: 8.01 - A customer should request a reset password email
+    Given I register as a new user
+    And I sign out from my account
+    And I navigate to home page
     And I click on Signin
     And I click on Forgotten password
-    And I provide my valid email address
+    And I provide my legacy email address
     And I submit my forgotten password form
     Then I should be redirected with the message Your request has been submitted and you should receive an email from us shortly with instructions on how to reset your password. If you don't receive an email soon, please try again.
 

@@ -14,7 +14,7 @@ Feature: Registration
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
 
 
   @smoke_tests @e2e @1.02
@@ -26,4 +26,4 @@ Feature: Registration
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page

@@ -7,7 +7,7 @@ module Noths
         class MyDetails < SitePrism::Page
           include Poltergeist
 
-          attr_reader :my_details_address, :new_password
+          attr_reader :my_details_address, :new_password, :new_email_address
 
           element :my_details_page, '.page_title'
           elements :my_details_options, '.gc-header-myaccount__link'
@@ -25,6 +25,12 @@ module Noths
           element :error_message_title, '.error_messages_title'
           element :error_message, '.error_message'
 
+
+          def random_new_email
+            a=[('a'..'z'),('A'..'Z')].map(&:to_a).flatten
+            @new_email_address="auth_"+(0..20).map{ a[rand(a.length)]}.join+"@sharklasers.com"
+          end
+
           def click_on(button_name)
             if headless?
               my_details_options.select { |option| option.text == button_name }.first.trigger("click")
@@ -32,7 +38,6 @@ module Noths
               wait_until_my_details_options_visible(30)
               my_details_options.select { |option| option.text == button_name }.first.click
             end
-
           end
 
 
@@ -41,6 +46,12 @@ module Noths
             current_password.set current_pwd
             new_password_field.set @new_password
             confirm_new_password.set @new_password
+          end
+
+
+          def change_email_address
+            random_new_email
+            my_details_address.set @new_email_address
           end
 
 

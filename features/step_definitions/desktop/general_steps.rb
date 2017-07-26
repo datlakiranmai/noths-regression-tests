@@ -20,7 +20,7 @@ Given(/^I register as a new user$/) do
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    Then I should see the my email address in my accounts page
+    Then I should see my email address in my accounts page
         }
 end
 

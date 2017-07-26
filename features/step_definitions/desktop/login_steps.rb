@@ -5,6 +5,7 @@ end
 
 And(/^I sign in with my new credentials$/) do
   puts "registration email address is #{@app.registration.email_address}"
+  puts "password is #{@app.registration.password}"
   @app.login.signin_credentials(@app.registration.email_address, @app.registration.password)
 end
 
@@ -53,4 +54,11 @@ end
 
 And(/^I sign in with my new password as (.*)$/) do |password|
   @app.login.signin_credentials(@app.registration.email_address, password)
+end
+
+
+And(/^I sign in with my new email address$/) do
+  puts "email address is #{@app.my_details.new_email_address}"
+  puts "password is #{@app.registration.password}"
+  @app.login.signin_credentials(@app.my_details.new_email_address, @app.registration.password)
 end

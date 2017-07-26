@@ -18,7 +18,7 @@ Feature: Login (username in uppercase) [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
 
 
   @cog_e2e @no_poltergeist @75.02

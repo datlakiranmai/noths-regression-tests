@@ -18,7 +18,7 @@ Feature: Change Password [Legacy user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I change my existing password in my details page
     And I submit my details form
     Then I should see flash message saying your details have successfully been updated
@@ -29,4 +29,4 @@ Feature: Change Password [Legacy user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    Then I should see the my email address in my accounts page
+    Then I should see my email address in my accounts page

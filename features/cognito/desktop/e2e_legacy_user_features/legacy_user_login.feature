@@ -20,7 +20,7 @@ Feature: Login [Legacy user]
     Then I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     #And I should see user created in cognito
     #And I should see user created in cognito account table
 
@@ -34,6 +34,6 @@ Feature: Login [Legacy user]
     When I navigate to My accounts page
     And I choose my details from my account section
     Then I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     #Then I should see user created in cognito
     #And I should see user created in cognito account table

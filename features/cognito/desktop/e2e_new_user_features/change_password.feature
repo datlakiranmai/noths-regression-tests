@@ -18,7 +18,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I change my existing password in my details page
     And I submit my details form
     Then I should see flash message saying your details have successfully been updated
@@ -29,7 +29,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    Then I should see the my email address in my accounts page
+    Then I should see my email address in my accounts page
 
 
   @cog_e2e @44.02
@@ -40,7 +40,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide valid current password
     And I submit my details form
     Then I should see flash message saying your details have successfully been updated
@@ -51,7 +51,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    Then I should see the my email address in my accounts page
+    Then I should see my email address in my accounts page
 
 
   @cog_e2e @44.03
@@ -62,7 +62,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide Invalid current password
     And I submit my details form
     Then I should see flash message saying your details have successfully been updated
@@ -73,7 +73,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    Then I should see the my email address in my accounts page
+    Then I should see my email address in my accounts page
 
 
   @cog_e2e @44.04
@@ -84,7 +84,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide valid current password
     And I provide a new password as qwert
     And I submit my details form
@@ -98,7 +98,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide valid current password
     And I provide a new password as qwertyuiop
     And I provide a confirm password as qwerty
@@ -114,7 +114,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide valid current password
     And I provide a new password as qwertyuiop
     And I submit my details form
@@ -130,7 +130,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide Invalid current password
     And I provide a new password as qwertyuiop
     And I provide a confirm password as qwertyuiop
@@ -153,7 +153,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide a new password as qwertyuiop
     And I provide a confirm password as qwertyuiop
     And I submit my details form
@@ -175,7 +175,7 @@ Feature: Change Password [New user]
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide Invalid current password
     And I provide a new password as qwertyuiop
     And I submit my details form

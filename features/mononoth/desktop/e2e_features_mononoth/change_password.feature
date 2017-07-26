@@ -15,7 +15,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I change my existing password in my details page
     And I submit my details form
     Then I should see flash message saying your details have successfully been updated
@@ -26,7 +26,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    Then I should see the my email address in my accounts page
+    Then I should see my email address in my accounts page
 
 
   @smoke_tests @e2e @9.02
@@ -37,7 +37,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide valid current password
     And I submit my details form
     Then I should see flash message saying your details have successfully been updated
@@ -48,7 +48,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    Then I should see the my email address in my accounts page
+    Then I should see my email address in my accounts page
 
 
   @smoke_tests @e2e @9.03
@@ -59,7 +59,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide valid current password
     And I provide a new password as qwerty
     And I submit my details form
@@ -73,7 +73,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide valid current password
     And I provide a new password as qwertyuiop
     And I provide a confirm password as qwertyuiopp
@@ -89,7 +89,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide valid current password
     And I provide a new password as qwertyuiop
     And I submit my details form
@@ -105,7 +105,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide Invalid current password
     And I provide a new password as qwertyuiop
     And I provide a confirm password as qwertyuiop
@@ -128,7 +128,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide a new password as qwertyuiop
     And I provide a confirm password as qwertyuiop
     And I submit my details form
@@ -150,7 +150,7 @@ Feature: Change Password
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     And I provide Invalid current password
     And I provide a new password as qwertyuiop
     And I submit my details form

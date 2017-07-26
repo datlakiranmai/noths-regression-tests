@@ -17,7 +17,7 @@ Feature: Registration
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
 
   @e2e_cognito_check @39.01a
   Scenario: [New user] 39.01a - A potential customer is able to successfully register via the header and is confirmed within AWS
@@ -27,7 +27,7 @@ Feature: Registration
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
 #    Then I should see user created in cognito
 #    And I should see user created in user table
 #    And I should see user password in user table is empty
@@ -42,7 +42,7 @@ Feature: Registration
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
 
   @e2e_cognito_check @39.02a
   Scenario: [New user] 39.02a - A potential customer is able to successfully register via favourites and is confirmed within AWS
@@ -53,7 +53,7 @@ Feature: Registration
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page
-    And I should see the my email address in my accounts page
+    And I should see my email address in my accounts page
     Then I should see user created in cognito
     And I should see user created in user table
     And I should see user password in user table is empty

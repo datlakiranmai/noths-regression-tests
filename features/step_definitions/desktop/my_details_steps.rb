@@ -15,9 +15,15 @@ And(/^I choose (.*) from my details section$/) do |option|
   @app.my_details.click_on_link(option)
 end
 
-And(/^I should see the my email address in my accounts page$/) do
+And(/^I should see my email address in my accounts page$/) do
   puts @app.my_details.my_details_address.value
   expect(@app.my_details.my_details_address.value).to have_text(@app.registration.email_address)
+end
+
+
+And(/^I should see my new email address in my accounts page$/) do
+  puts @app.my_details.my_details_address.value
+  expect(@app.my_details.my_details_address.value).to have_text(@app.my_details.new_email_address)
 end
 
 Then(/^I should see flash message saying (.*)$/) do |message|
@@ -65,4 +71,8 @@ end
 
 And(/^I provide a confirm password as (.*)$/) do |password|
   @app.my_details.enter_confirm_password(password)
+end
+
+And(/^I change my email address in my details page$/) do
+  @app.my_details.change_email_address
 end

@@ -52,6 +52,10 @@ module Noths
       def mobile
         @pages[:mobile_new_user_features] ||= Noths::PageObjects::Pages::MobileLoginPage::MobileLoginPage.new
       end
+
+      def search
+        @pages[:search] ||= Noths::PageObjects::Pages::SearchPage::SearchPage.new
+      end
     end
   end
 end

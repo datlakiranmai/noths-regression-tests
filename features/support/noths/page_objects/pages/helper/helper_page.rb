@@ -6,8 +6,6 @@ And(/^I enable the cognito flag (.*) as admin$/) do |status|
     @app.home.turn_cognito_flag(status)
 end
 
-
-
 And(/^I check my cognito flag is (.*)$/) do |status|
   expect(@app.home.check_cognito_flag(status)).to eq(true)
 end

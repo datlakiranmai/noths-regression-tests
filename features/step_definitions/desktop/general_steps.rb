@@ -1,4 +1,9 @@
+
 And(/^I navigate to a product detail page (.*)$/) do |navigationlink|
+  @app.home.navigate(navigationlink)
+end
+
+And(/^I navigate to a product listings page (.*)$/) do |navigationlink|
   @app.home.navigate(navigationlink)
 end
 
@@ -83,4 +88,13 @@ And(/^I signout from my account$/) do
   And I choose to signout
   Then I should see the message You have been signed out
 }
+end
+
+When(/^I search for (.*) in search textfield$/) do |search_text|
+  @app.home.enter_search_text(search_text)
+end
+
+
+Then(/^I should be in favourites page$/) do
+  expect(@app.home.favourites_page?).to eq(true)
 end

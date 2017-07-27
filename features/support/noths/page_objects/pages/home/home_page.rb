@@ -20,6 +20,13 @@ module Noths
           elements :banner_img, '.desktop_only.desktop_banner'
           element :forgotten_password_link, '.sign_in_forgotten_password.text_link'
 
+          element :search_field, '#term'
+          element :find_button, '.gc-button.gc-button--medium.gc-button--primary.gc-form__field.gc-form__field--submit'
+
+
+         #favourites
+          element :favourites_page_title,'.favourites_intro_header'
+
 
           #Welcome Screen
           element :page_title, '.page_title'
@@ -48,6 +55,10 @@ module Noths
             retry_on_readtimeout('admin/features')
           end
 
+          def enter_search_text(search_text)
+             search_field.set search_text
+          end
+
           def turn_cognito_flag(flag_status)
             usecognito= all('#new_feature').select { |l| l[:action].include? 'use_cognito_auth/preview' }
             usecognito[0].find('#new_feature>input').click
@@ -61,6 +72,11 @@ module Noths
               retry_on_readtimeout('admin#home')
               cms_sign_out.click
             end
+          end
+
+
+          def favourites_page?
+            page.has_css?('.favourites_intro_header')
           end
 
           def check_cognito_flag(status)
@@ -91,6 +107,8 @@ module Noths
 
           def click_on(button_name)
             case button_name
+              when 'Find'
+                 find_button.click
               when 'Register'
                 if mobile?
                   sleep 5

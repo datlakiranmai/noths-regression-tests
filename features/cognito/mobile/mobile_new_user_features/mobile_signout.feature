@@ -45,8 +45,8 @@ Feature: Mobile Temporary Sign out
     And I navigate to my accounts
     Then I should see sign in and register buttons
 
-  @cog_e2e @41.06
-  Scenario: [New user] 41.06 - Sign out on order completion page via the header
+  @smoke_tests_mobile @cog_mobile_e2e @69.05
+  Scenario: [Mobile] 69.05 - Sign out on order completion page via the header
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I enter in my address details

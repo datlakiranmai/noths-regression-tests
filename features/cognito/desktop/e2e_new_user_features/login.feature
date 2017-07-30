@@ -10,7 +10,7 @@ Feature: Login [New User]
     And I register as a new user
     And I sign out from my account
 
-  @cog_e2e @no_poltergeist @38.01
+  @error_msg_check @cog_e2e @no_poltergeist @38.01
   Scenario: [New user] 38.01 - A customer is able to successfully login via the header
     When I navigate to home page
     And I click on Signin
@@ -19,6 +19,8 @@ Feature: Login [New User]
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
+    And I should see my country code as United Kingdom [44]
+
 
   @cog_e2e @no_poltergeist @38.02
   Scenario: [New user] 38.02 - A customer is able to successfully login via favourites
@@ -29,3 +31,4 @@ Feature: Login [New User]
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
+    And I should see my country code as United Kingdom [44]

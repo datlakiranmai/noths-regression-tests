@@ -11,7 +11,7 @@ Feature: User registration with an already existing email address [Legacy user]
     And I navigate to home page
     And I check my cognito flag is ON
 
-  @cog_e2e @28.01
+  @error_msg_check @cog_e2e @28.01
   Scenario: [Legacy user] 28.01 - A customer should see the 'user already exists' message if they use an existing registered email during the checkout of a standard product
     And I should see user created in user table
     And I should see user password in user table is not empty
@@ -25,7 +25,7 @@ Feature: User registration with an already existing email address [Legacy user]
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @cog_e2e @28.02
+  @error_msg_check @cog_e2e @28.02
   Scenario: [Legacy user] 28.02 - A customer should see the 'user already exists' message if they use an existing registered email during the gift voucher checkout
     And I should see user created in user table
     And I should see user password in user table is not empty
@@ -40,7 +40,7 @@ Feature: User registration with an already existing email address [Legacy user]
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @cog_e2e @28.03
+  @error_msg_check @cog_e2e @28.03
   Scenario: [Legacy user] 28.03 - A customer should see the 'user already exists' message if they use an existing registered email when registering via the header
     And I should see user created in user table
     And I should see user password in user table is not empty
@@ -52,7 +52,7 @@ Feature: User registration with an already existing email address [Legacy user]
     And I should see info message saying To use this email address simply sign in before continuing.
     And I should see password text field input should get cleared up
 
-  @cog_e2e @28.04
+  @error_msg_check @cog_e2e @28.04
   Scenario: [Legacy user] 28.04 - A customer should see the 'user already exists' message if they use an existing registered email when registering via favourites
     And I should see user created in user table
     And I should see user password in user table is not empty

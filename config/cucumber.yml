@@ -9,7 +9,7 @@ cog_e2e: 'features --format AllureCucumber::Formatter --out --guess <%= html_rep
 legacy: 'features --format AllureCucumber::Formatter --out --guess <%= html_report %> --tag @legacy'
 mobile: "DRIVER='mobile' features <%= html_report %> --format AllureCucumber::Formatter --out --guess --tag @mobile"
 cog_mobile_e2e: "DRIVER='mobile' features <%= html_report %> --format AllureCucumber::Formatter --out --guess --tag @cog_mobile_e2e"
-
+error_msg_check: 'features --format AllureCucumber::Formatter --out --guess <%= html_report %> --tag @error_msg_check'
 
 headless: "DRIVER='headless' features --tag @e2e <%= html_report %>"
 rerun: '--guess @rerun.txt'

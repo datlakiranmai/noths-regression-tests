@@ -69,3 +69,7 @@ end
 And(/^I enter in my email in small cases in sign up form$/) do
   @app.registration.enter_email_address_small_cases
 end
+
+And(/^I select my country code as (.*)$/) do |country_code|
+  @app.registration.change_country_code(country_code)
+end

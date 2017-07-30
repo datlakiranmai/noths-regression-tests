@@ -8,7 +8,7 @@ Feature: Sign out
     And I check my cognito flag is ON
     And I register as a new user
 
-  @cog_e2e @41.01
+  @error_msg_check @cog_e2e @41.01
   Scenario: [New user] 41.01 - Sign out on my details page via the header
     When I hover my account via header
     And I click on Sign out

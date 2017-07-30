@@ -9,7 +9,7 @@ Feature: Registration
     And I check my cognito flag is ON
     And I am on Home page
 
-  @cog_e2e @39.01
+  @error_msg_check @cog_e2e @39.01
   Scenario: [New user] 39.01 - A potential customer is able to successfully register via the header
     When I click on Register
     And I enter in my details in sign up form

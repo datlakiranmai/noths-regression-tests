@@ -21,6 +21,7 @@ Feature: Login (username in uppercase) [Legacy User]
     And I should see my email address in my accounts page
 
 
+
   @cog_e2e  @32.02
   Scenario: [Legacy user] 32.02 - A customer should be able to successfully login during the checkout flow using a capitalized email address
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch

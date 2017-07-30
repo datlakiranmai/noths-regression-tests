@@ -20,6 +20,8 @@ module Noths
 
           element :details_updated, '.message.alert.with_icon>p'
 
+          element :my_details_country_code, '#user_telephone_alpha2'
+
           element :value_too_short_validation_msg, '.validate-error.inline-errors.minlength.last'
           element :value_mismatch_validation_msg, '.validate-error.inline-errors.matches.last'
           element :error_message_title, '.error_messages_title'
@@ -38,6 +40,11 @@ module Noths
               wait_until_my_details_options_visible(30)
               my_details_options.select { |option| option.text == button_name }.first.click
             end
+          end
+
+
+          def selected_country_code
+            my_details_country_code.find('option[selected]').text.downcase
           end
 
 

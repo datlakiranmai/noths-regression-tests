@@ -1,5 +1,4 @@
 Feature: Login [Legacy user]
-
   As a customer
   I want to login to noths website for the first time via Cognito
   I expect to land on my details page
@@ -21,6 +20,7 @@ Feature: Login [Legacy user]
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
+    And I should see my country code as United Kingdom [44]
     #And I should see user created in cognito
     #And I should see user created in cognito account table
 
@@ -35,5 +35,6 @@ Feature: Login [Legacy user]
     And I choose my details from my account section
     Then I should be taken to My details page
     And I should see my email address in my accounts page
+    And I should see my country code as United Kingdom [44]
     #Then I should see user created in cognito
     #And I should see user created in cognito account table

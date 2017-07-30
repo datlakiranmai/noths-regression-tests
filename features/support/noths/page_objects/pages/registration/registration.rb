@@ -22,6 +22,8 @@ module Noths
           element :password_confirm_field, '#user_password_confirmation'
           element :postcode_field, '#user_default_billing_address_attributes_post_code'
 
+          element :country_code, '#user_telephone_alpha2'
+
           element :country, '#address_new_address_country'
           element :postcode, '#address_new_address_post_code'
           element :find_address_link, '.find_address_button.button.secondary.medium'
@@ -141,6 +143,10 @@ module Noths
             password_field.set @password
             password_confirm_field.set @password
           end
+
+           def change_country_code(country_name)
+             country_code.select(country_name)
+           end
 
 
           def enter_address_details

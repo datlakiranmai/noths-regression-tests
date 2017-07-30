@@ -26,10 +26,13 @@ And(/^I should see my new email address in my accounts page$/) do
   expect(@app.my_details.my_details_address.value).to have_text(@app.my_details.new_email_address)
 end
 
+And(/^I should see my country code as (.*)$/) do |country_code|
+  expect(@app.my_details.selected_country_code).to eq(country_code.downcase)
+end
+
 Then(/^I should see flash message saying (.*)$/) do |message|
   expect(@app.my_details.details_updated.text.downcase).to eq(message.downcase)
 end
-
 
 And(/^I change my existing password in my details page$/) do
   @app.my_details.change_password(@app.registration.password)

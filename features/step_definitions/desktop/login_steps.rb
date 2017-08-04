@@ -22,7 +22,7 @@ And(/^I sign in with invalid (.*)$/) do |text|
   if text.eql? "password"
     @app.login.signin_credentials(@app.registration.email_address, "inval23")
   else
-    @app.login.signin_credentials("invalidemail@test.com", "inval23")
+    @app.login.signin_credentials("invalidemail@test.com", "inva")
   end
 end
 

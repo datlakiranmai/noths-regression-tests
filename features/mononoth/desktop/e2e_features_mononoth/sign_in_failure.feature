@@ -32,7 +32,6 @@ Feature: Sign In failure
     Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
     And I should see sign in password textfield input should get cleared up
 
-
   @smoke_tests @e2e @6.04
   Scenario: 6.04 - Password field should get cleared when a user signs in with an invalid password via favourites
     When I click on Favourite

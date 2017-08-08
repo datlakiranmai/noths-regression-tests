@@ -110,7 +110,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @41.12
+  @e2e @4.12
   Scenario: 4.12 - Sign out on the gift voucher page via the header
     When I navigate to home page
     And I tap on the link gift vouchers in footer

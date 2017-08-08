@@ -1,6 +1,8 @@
 And(/^I provide my (.*) email address$/) do |email_address|
+  puts "email address is #{email_address}"
   case email_address
-    when "cognito" || "legacy"
+    when "cognito" , "legacy"
+      puts "registration email address #{@app.registration.email_address}"
       @app.forgotten_password.enter_email_address(@app.registration.email_address)
     when "empty"
       @app.forgotten_password.enter_email_address(" ")

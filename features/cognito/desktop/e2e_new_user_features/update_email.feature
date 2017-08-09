@@ -26,6 +26,7 @@ Feature: Update Email address [New user]
     And I navigate to home page
     And I click on Signin
     And I sign in with my new email address
+    And I expect NOT to see signin failure
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page

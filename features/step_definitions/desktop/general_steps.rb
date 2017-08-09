@@ -98,3 +98,7 @@ end
 Then(/^I should be in favourites page$/) do
   expect(@app.home.favourites_page?).to eq(true)
 end
+
+And(/^I expect NOT to see signin failure$/) do
+  expect(@app.login.signin_failure?).to eq(false), "A Sign in failure has occurred! Please refer the failure scenario for more details."
+end

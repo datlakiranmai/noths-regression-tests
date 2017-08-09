@@ -15,6 +15,8 @@ Feature: Checkout Registration
     And I add the product in my basket
     And I click on Continue
     And I enter in my details in your details form
+    And I select my country code as United Kingdom
+    And I provide my contact number as 07 299 571 109
     And I Continue to next page
     And I enter in my address details
     Then I should see my name as delivery recipient
@@ -52,6 +54,8 @@ Feature: Checkout Registration
     And I checkout gift voucher
     And I click on Continue
     And I enter in my details in your details form
+    And I select my country code as Germany
+    And I provide my contact number as 069 299 571 109
     And I Continue to next page
     And I enter in my address details
     And I should see the my email address in summary section

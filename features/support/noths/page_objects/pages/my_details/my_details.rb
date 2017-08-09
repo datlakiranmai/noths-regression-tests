@@ -18,9 +18,12 @@ module Noths
           element :confirm_new_password, '#user_password_confirmation'
           element :submit_button, '.primary.button.large'
 
+
+
           element :details_updated, '.message.alert.with_icon>p'
 
           element :my_details_country_code, '#user_telephone_alpha2'
+          element :my_details_contact_number, '#user_telephone'
 
           element :value_too_short_validation_msg, '.validate-error.inline-errors.minlength.last'
           element :value_mismatch_validation_msg, '.validate-error.inline-errors.matches.last'
@@ -42,11 +45,9 @@ module Noths
             end
           end
 
-
           def selected_country_code
             my_details_country_code.find('option[selected]').text.downcase
           end
-
 
           def change_password(current_pwd)
             @new_password="newcognitopassword"

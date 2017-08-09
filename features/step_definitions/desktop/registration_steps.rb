@@ -48,7 +48,6 @@ And(/^I should see password text field input should get cleared up$/) do
   sleep 3
 end
 
-
 Then(/^I should see error title saying (.*)$/) do |error_title|
   expect(@app.registration.error_title.text.downcase).to eq(error_title.downcase)
 end
@@ -72,4 +71,8 @@ end
 
 And(/^I select my country code as (.*)$/) do |country_code|
   @app.registration.change_country_code(country_code)
+end
+
+And(/^I provide my contact number as (.*)$/) do |contact_number|
+  @app.registration.set_contact_number(contact_number)
 end

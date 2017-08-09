@@ -30,6 +30,14 @@ And(/^I should see my country code as (.*)$/) do |country_code|
   expect(@app.my_details.selected_country_code).to eq(country_code.downcase)
 end
 
+And(/^I should see my contact number as (.*)$/) do |contact_number|
+  if contact_number.eql?('empty')
+    expect(@app.my_details.my_details_contact_number.value).to be_empty
+  else
+    expect(@app.my_details.my_details_contact_number.value).to eq(contact_number.strip)
+  end
+end
+
 Then(/^I should see flash message saying (.*)$/) do |message|
   expect(@app.my_details.details_updated.text.downcase).to eq(message.downcase)
 end

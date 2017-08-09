@@ -23,6 +23,7 @@ module Noths
           element :postcode_field, '#user_default_billing_address_attributes_post_code'
 
           element :country_code, '#user_telephone_alpha2'
+          element :contact_number_field, '#user_telephone'
 
           element :country, '#address_new_address_country'
           element :postcode, '#address_new_address_post_code'
@@ -144,10 +145,13 @@ module Noths
             password_confirm_field.set @password
           end
 
-           def change_country_code(country_name)
-             country_code.select(country_name)
-           end
+          def change_country_code(country_name)
+            country_code.select(country_name)
+          end
 
+          def set_contact_number(contact_number)
+            contact_number_field.set contact_number
+          end
 
           def enter_address_details
             guest_user_postcode_field.set "TW9 2NQ"

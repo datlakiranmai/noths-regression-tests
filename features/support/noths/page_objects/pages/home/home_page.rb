@@ -93,7 +93,7 @@ module Noths
           end
 
           def navigate_to_myaccounts
-            wait_until_signed_in_user_visible(30)
+            wait_until_signed_in_user_visible(10)
             page.find('.gc-header-myaccount__trigger.logged-in>span').click
           end
 

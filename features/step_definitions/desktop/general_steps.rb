@@ -102,3 +102,7 @@ end
 And(/^I expect NOT to see signin failure$/) do
   expect(@app.login.signin_failure?).to eq(false), "A Sign in failure has occurred! Please find the test steps and screenshot attached in the failed scenario for more details."
 end
+
+And(/^I close survey pop up if any$/) do 
+ @app.add_to_basket.close_survey_popup 
+end

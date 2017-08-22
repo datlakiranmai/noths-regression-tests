@@ -24,6 +24,7 @@ Feature: Sign out
   @cog_e2e @41.03
   Scenario: [New user] 41.03 - Sign out on product details page via the header
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I close survey pop up if any
     And I hover my account via header
     And I click on Sign out
     Then I should successfully sign out

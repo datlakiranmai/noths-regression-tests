@@ -93,8 +93,12 @@ module Noths
           end
 
           def navigate_to_myaccounts
-            wait_until_signed_in_user_visible(10)
-            page.find('.gc-header-myaccount__trigger.logged-in>span').click
+            start_time=Time.now
+            begin
+              page.find('.gc-header-myaccount__trigger.logged-in>span',wait: 10).click
+            rescue Capybara::ElementNotFound
+              p "Registartion Failure - Redirection Timeout, Waited for #{Time.now-start_time}!"
+            end
           end
 
           def home_page?

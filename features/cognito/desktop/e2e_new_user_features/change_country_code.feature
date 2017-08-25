@@ -105,4 +105,4 @@ Feature: Change default country code [New user]
     And I should be taken to My details page
     And I should see my email address in my accounts page
     And I should see my country code as United Kingdom [44]
-    And I should see my contact number as empty
+    And I should see my contact number as 077 92 99 57 11 12 13 14

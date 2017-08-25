@@ -93,6 +93,7 @@ Feature: Change default country code [New user]
     And I should see my country code as Isle of Man [44]
     And I should see my contact number as 07799995722
 
+    #Extra validation is needed before a phone number is registered in cognito. This test reflects the current behaviour.
   @cog_e2e @47.04
   Scenario: [New user] 47.04 - A potential customer is able to successfully register with an Invalid phone number
     Given I am on Home page
@@ -105,4 +106,4 @@ Feature: Change default country code [New user]
     And I should be taken to My details page
     And I should see my email address in my accounts page
     And I should see my country code as United Kingdom [44]
-    And I should see my contact number as 07792995711121314
+    And I should see my contact number as +4407792995711121314

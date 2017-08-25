@@ -4,7 +4,7 @@ end
 
 And(/^I should be taken to (.*) page$/) do |pagename|
   #@mydetails_page.check_page_name(pagename)
-  expect(@app.my_details.my_details_page.text.eql?(pagename.upcase))
+  expect(@app.my_details.my_details_page.text.eql?(pagename.upcase)).to eq(true)
 end
 
 And(/^I choose (.*) from my account section$/) do |option|

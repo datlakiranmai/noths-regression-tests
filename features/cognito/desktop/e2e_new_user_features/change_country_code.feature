@@ -107,3 +107,69 @@ Feature: Change default country code [New user]
     And I should see my email address in my accounts page
     And I should see my country code as United Kingdom [44]
     And I should see my contact number as +4407792995711121314
+
+  @cog_e2e @47.05
+  Scenario: [New user] 47.05 - A customer is not able to register via the header with special characters in the phone number input field
+    Given I am on Home page
+    And I click on Register
+    And I enter in my details in sign up form
+    And I provide my contact number as 077 ** 99 ** 11 @@ 13 14
+    And I click Submit button
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying Invalid phone number format.
+
+  @cog_e2e @47.06
+  Scenario: [New user] 47.06 - A customer is not able to register via the header with alphanumeric characters in the phone number input field
+    Given I am on Home page
+    And I click on Register
+    And I enter in my details in sign up form
+    And I provide my contact number as 077 a2 9z i7 jq 13 14
+    And I click Submit button
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying Invalid phone number format.
+
+  @cog_e2e @47.07
+  Scenario: [New user] 47.07 - A customer is not able to register via the header with more than 16 digits in the phone number input field
+    Given I am on Home page
+    And I click on Register
+    And I enter in my details in sign up form
+    And I provide my contact number as 077 92 99 57 11 12 13 14 16
+    And I click Submit button
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying Invalid phone number format.
+
+  @cog_e2e @47.08
+  Scenario: [New user] 47.08 - A customer is not able to register during the registration with special characters in the phone number input field
+    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I add the product in my basket
+    And I click on Continue
+    And I enter in my details in your details form
+    And I select my country code as United Kingdom
+    And I provide my contact number as 077 ** 99 ** 11 @@ 13 14
+    And I click Submit button
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying Invalid phone number format.
+
+  @cog_e2e @47.09
+  Scenario: [New user] 47.09 - A customer is not able to register during the registration with alphanumeric characters in the phone number input field
+    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I add the product in my basket
+    And I click on Continue
+    And I enter in my details in your details form
+    And I select my country code as United Kingdom
+    And I provide my contact number as 077 a2 9z i7 jq 13 14
+    And I click Submit button
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying Invalid phone number format.
+
+  @cog_e2e @47.10
+  Scenario: [New user] 47.10 - A customer is not able to register during the registration with more than 16 digits in the phone number input field
+    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I add the product in my basket
+    And I click on Continue
+    And I enter in my details in your details form
+    And I select my country code as United Kingdom
+    And I provide my contact number as 077 92 99 57 11 12 13 14 16
+    And I click Submit button
+    Then I should see error title saying Please check your details before continuing
+    And I should see error message saying Invalid phone number format

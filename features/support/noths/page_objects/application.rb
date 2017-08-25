@@ -56,6 +56,14 @@ module Noths
       def search
         @pages[:search] ||= Noths::PageObjects::Pages::SearchPage::SearchPage.new
       end
+
+      def wishlist
+        @pages[:wishlist] ||= Noths::PageObjects::Pages::WishlistPage::WishlistPage.new
+      end
+
+      def weddinglist
+        @pages[:weddinglist] ||= Noths::PageObjects::Pages::WeddinglistPage::WeddinglistPage.new
+      end
     end
   end
 end

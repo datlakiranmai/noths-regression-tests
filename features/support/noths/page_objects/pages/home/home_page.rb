@@ -32,6 +32,7 @@ module Noths
           element :page_title, '.page_title'
           element :info, '.message.info.with_icon'
           element :new_customer, '#button_new_customer'
+          element :sign_up_link, '#sign_up_link'
 
           #mobile
           elements :mobile_buttons, 'a.gc-button.gc-button--medium.gc-button--primary.gc-button--full-width'
@@ -145,6 +146,8 @@ module Noths
                   wait_until_sign_out_btn_visible(30)
                   sign_out_btn.first.click
                 end
+              when 'Sign up'
+                sign_up_link.click
               when 'Continue'
                 new_customer.click
             end

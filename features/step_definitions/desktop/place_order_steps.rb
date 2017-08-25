@@ -53,3 +53,11 @@ end
 And(/^I close mention me popup$/) do
   @app.order_confirmation.handle_mm_popup
 end
+
+And(/^I add the product to the wish list$/) do
+  @app.add_to_basket.add_the_product_to_wishlist
+end
+
+And(/^I add the product to the wedding list$/) do
+  @app.add_to_basket.add_the_product_to_weddinglist
+end

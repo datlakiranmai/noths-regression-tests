@@ -172,4 +172,4 @@ Feature: Change default country code [New user]
     And I provide my contact number as 077 92 99 57 11 12 13 14 16
     And I click Submit button
     Then I should see error title saying Please check your details before continuing
-    And I should see error message saying Invalid phone number format
+    And I should see error message saying Invalid phone number format.

@@ -96,9 +96,9 @@ module Noths
           def navigate_to_myaccounts
             start_time=Time.now
             begin
-              page.find('.gc-header-myaccount__trigger.logged-in>span',wait: 10).click
+              page.find('.gc-header-myaccount__trigger.logged-in>span',wait: 15).click
             rescue Capybara::ElementNotFound
-              p "Registartion Failure - Redirection Timeout, Waited for #{Time.now-start_time}!"
+              p "Registartion/Sign In Failure - Redirection Timeout, Waited for #{Time.now-start_time}!"
             end
           end
 

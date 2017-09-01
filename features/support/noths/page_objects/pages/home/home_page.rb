@@ -48,6 +48,10 @@ module Noths
             retry_on_readtimeout(link)
           end
 
+          def user_logged_in?
+            return true if page.has_css?('.gc-header-myaccount__trigger.logged-in>span',wait:15)
+          end
+
           def navigate_to_admin
             retry_on_readtimeout('admin/session/new')
           end

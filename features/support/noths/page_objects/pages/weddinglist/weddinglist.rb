@@ -7,13 +7,10 @@ module Noths
 
           element :wedding_list_page_title, '.section_title'
 
-          def navigated_to_wedding_list_page?
-            begin
-              wait_until_wedding_list_page_title_visible(10)
-            rescue SitePrism::TimeOutWaitingForElementVisibility
-              false
-            end
+          def navigated_to_weddinglist?
+            return true if page.has_css?('.section_title')
           end
+
         end
       end
     end

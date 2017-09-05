@@ -55,6 +55,3 @@ Feature: Registration
     And I should be taken to My details page
     And I should see my email address in my accounts page
     Then I should see user created in cognito
-    And I should see user created in user table
-    And I should see user password in user table is empty
-    And I should see user created in cognito account table

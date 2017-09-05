@@ -13,8 +13,6 @@ Feature: User registration with an already existing email address [Legacy user]
 
   @error_msg_check @cog_e2e @28.01
   Scenario: [Legacy user] 28.01 - A customer should see the 'user already exists' message if they use an existing registered email during the checkout of a standard product
-    And I should see user created in user table
-    And I should see user password in user table is not empty
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I click on Continue
@@ -27,8 +25,6 @@ Feature: User registration with an already existing email address [Legacy user]
 
   @error_msg_check @cog_e2e @28.02
   Scenario: [Legacy user] 28.02 - A customer should see the 'user already exists' message if they use an existing registered email during the gift voucher checkout
-    And I should see user created in user table
-    And I should see user password in user table is not empty
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form
     And I checkout gift voucher
@@ -42,8 +38,6 @@ Feature: User registration with an already existing email address [Legacy user]
 
   @error_msg_check @cog_e2e @28.03
   Scenario: [Legacy user] 28.03 - A customer should see the 'user already exists' message if they use an existing registered email when registering via the header
-    And I should see user created in user table
-    And I should see user password in user table is not empty
     When I click on Register
     And I enter in my details in sign up form
     And I click Submit button
@@ -54,8 +48,6 @@ Feature: User registration with an already existing email address [Legacy user]
 
   @error_msg_check @cog_e2e @28.04
   Scenario: [Legacy user] 28.04 - A customer should see the 'user already exists' message if they use an existing registered email when registering via favourites
-    And I should see user created in user table
-    And I should see user password in user table is not empty
     When I click on Favourite
     And I click on Favourite Register
     And I enter in my details in sign up form

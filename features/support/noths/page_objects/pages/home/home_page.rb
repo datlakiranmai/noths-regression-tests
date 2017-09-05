@@ -24,8 +24,8 @@ module Noths
           element :find_button, '.gc-button.gc-button--medium.gc-button--primary.gc-form__field.gc-form__field--submit'
 
 
-         #favourites
-          element :favourites_page_title,'.favourites_intro_header'
+          #favourites
+          element :favourites_page_title, '.favourites_intro_header'
 
 
           #Welcome Screen
@@ -61,7 +61,7 @@ module Noths
           end
 
           def enter_search_text(search_text)
-             search_field.set search_text
+            search_field.set search_text
           end
 
           def turn_cognito_flag(flag_status)
@@ -100,7 +100,7 @@ module Noths
           def navigate_to_myaccounts
             start_time=Time.now
             begin
-              page.find('.gc-header-myaccount__trigger.logged-in>span',wait: 15).click
+              page.find('.gc-header-myaccount__trigger.logged-in>span',wait: 10).click
             rescue Capybara::ElementNotFound
               p "Registartion/Sign In Failure - Redirection Timeout, Waited for #{Time.now-start_time}!"
             end
@@ -117,7 +117,7 @@ module Noths
           def click_on(button_name)
             case button_name
               when 'Find'
-                 find_button.click
+                find_button.click
               when 'Register'
                 if mobile?
                   sleep 5

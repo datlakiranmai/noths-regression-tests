@@ -12,8 +12,6 @@ Feature: Login [Legacy user]
 
   @e2e_cognito_check @cog_e2e @27.01
   Scenario: [Legacy user] 27.01 - A customer is able to successfully login via the header
-    And I should see user created in user table
-    And I should see user password in user table is not empty
     When I click on Signin
     And I sign in with my new credentials
     Then I navigate to My accounts page
@@ -26,8 +24,6 @@ Feature: Login [Legacy user]
 
   @e2e_cognito_check @cog_e2e @27.02
   Scenario: [Legacy user] 27.02 - A customer is able to successfully login via favourites
-    And I should see user created in user table
-    And I should see user password in user table is not empty
     When I click on Favourite
     When I click on Favourite SignIn
     And I sign in with my new credentials

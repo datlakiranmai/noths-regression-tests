@@ -42,10 +42,7 @@ Feature: Checkout Registration
     And I specify my card type
     And I provide the payment details
     Then I should see order confirmation page
-    Then I should see user created in cognito
-    And I should see user created in user table
-    And I should see user password in user table is empty
-    And I should see user created in cognito account table
+
 
   @cog_e2e @37.02
   Scenario: [New user] 37.02 - A customer should be able to register during the gift voucher checkout
@@ -74,7 +71,3 @@ Feature: Checkout Registration
     And I should see the my email address in summary section
     And I provide the payment details
     #Then I should see order confirmation page
-    Then I should see user created in cognito
-    And I should see user created in user table
-    And I should see user password in user table is empty
-    And I should see user created in cognito account table

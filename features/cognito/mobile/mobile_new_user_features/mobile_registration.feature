@@ -28,10 +28,7 @@ Feature: Registration
     And I navigate to my accounts
     And I click link to go to my details
     And I should see the my email address in my accounts page
-    Then I should see user created in cognito
-    And I should see user created in user table
-    And I should see user password in user table is empty
-    And I should see user created in cognito account table
+
 
   @smoke_tests_mobile @cog_mobile @67.02
   Scenario: Customer is able is successfully register in site via favourites
@@ -52,7 +49,3 @@ Feature: Registration
     And I navigate to my accounts
     And I click link to go to my details
     And I should see the my email address in my accounts page
-    Then I should see user created in cognito
-    And I should see user created in user table
-    And I should see user password in user table is empty
-    And I should see user created in cognito account table

@@ -14,8 +14,6 @@ Feature: Checkout Login [Legacy user]
 
   @e2e_cognito_check @cog_e2e @26.01
   Scenario: [Legacy user] 26.01 - A customer should be able to login during the checkout of a standard product
-    And I should see user created in user table
-    And I should see user password in user table is not empty
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with my new credentials
@@ -33,8 +31,6 @@ Feature: Checkout Login [Legacy user]
 
   @e2e_cognito_check @cog_e2e @26.02
   Scenario: [Legacy user] 26.02 - A customer should be able to login during the gift voucher checkout
-    And I should see user created in user table
-    And I should see user password in user table is not empty
     When I navigate to home page
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form

@@ -96,7 +96,7 @@ Feature: Sign out
   @cog_e2e @41.10
   Scenario: [New user] 41.10 - Sign out on a Home > Home Accessories > Art Pictures category page via the header
     When I navigate to a product listings page home/home-accessories/art-pictures
-    Then I should see my page title as prints & art
+    Then I should see my page title as art & pictures
     And I hover my account via header
     And I click on Sign out
     Then I should successfully sign out

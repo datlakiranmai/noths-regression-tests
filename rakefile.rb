@@ -19,6 +19,9 @@ end
 task :stop_execution_upon_first_testfailure, :test_no, :times do |t, args|
   c.cucumber_opts = "features --format AllureCucumber::Formatter --out --guess --format progress --format html --out=features_report.html --tag #{args[:test_no]}"
   args[:times].to_i.times {
+      p "Iteration No:  #{args[:times].to_i}"
       Rake::Task[:scenario].execute
   }
 end
+
+

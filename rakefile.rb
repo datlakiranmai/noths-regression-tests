@@ -23,5 +23,3 @@ task :stop_execution_upon_first_testfailure, :test_no, :times do |t, args|
       Rake::Task[:scenario].execute
   }
 end
-
-

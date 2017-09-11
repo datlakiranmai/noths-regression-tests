@@ -40,6 +40,8 @@ Then(/^I should see sign in failure with message (.*)$/) do |error_msg|
 end
 
 And(/^I sign in with my user name in capital letters$/) do
+  puts "registration email address in caps #{@app.registration.email_address.upcase}"
+  puts "password is #{@app.registration.password}"
   @app.login.signin_credentials(@app.registration.email_address.upcase, @app.registration.password)
 end
 

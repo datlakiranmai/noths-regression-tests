@@ -4,7 +4,7 @@ Feature: Login (username in uppercase) [Legacy User]
   I expect to land on my details page
 
   Background:
-    Given I register as a new Cognito user
+    Given I register as a new user
     And I sign out from my account
     And I enable the cognito flag ON as admin
     And I navigate to home page
@@ -19,6 +19,7 @@ Feature: Login (username in uppercase) [Legacy User]
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
+
 
   @cog_e2e  @32.02
   Scenario: [Legacy user] 32.02 - A customer should be able to successfully login during the checkout flow using a capitalized email address

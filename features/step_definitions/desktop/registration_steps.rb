@@ -65,6 +65,7 @@ And(/^I register as a new Cognito user$/) do
         }
 end
 
+
 And(/^I enter in my email in small cases in sign up form$/) do
   @app.registration.enter_email_address_small_cases
 end

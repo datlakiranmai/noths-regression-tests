@@ -102,6 +102,8 @@ module Noths
             password_confirm_field.set @password
           end
 
+
+
           def enter_your_details_in_checkout
             random_name
             @email_address="auth_#{@random_name}@sharklasers.com"

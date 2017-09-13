@@ -40,9 +40,18 @@ Before do
     $driver=Capybara::Poltergeist::Driver.new(app, options)
   end
 
+
+  # Downgrade selenium to 2.53.0 inorder to use firefox profile. The lastest firefox version supported by selenium is 46.0.
+  Capybara.register_driver :firefox do |app|
+    client = Selenium::WebDriver::Remote::Http::Default.new
+    $driver=Capybara::Selenium::Driver.new(app, browser: :firefox, :http_client => client)
+
+  end
+
+
   Capybara.register_driver :chrome do |app|
     client = Selenium::WebDriver::Remote::Http::Default.new
-    client.read_timeout = 180
+     client.read_timeout = 180
     $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, desired_capabilities: {
       "chromeOptions" => {
         "args" => %w{ no-sandbox start-fullscreen disable-impl-side-painting }

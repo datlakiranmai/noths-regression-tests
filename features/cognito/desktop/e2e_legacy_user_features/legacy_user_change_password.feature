@@ -56,3 +56,14 @@ Feature: Change Password [Legacy user]
     And I choose my details from my account section
     And I should be taken to My details page
     Then I should see my email address in my accounts page
+    And I sign out from my account
+    And I enable the cognito flag OFF as admin
+    And I navigate to home page
+    And I check my cognito flag is OFF
+    And I navigate to home page
+    And I click on Signin
+    And I sign in with my new password
+    And I navigate to My accounts page
+    And I choose my details from my account section
+    And I should be taken to My details page
+    Then I should see my email address in my accounts page

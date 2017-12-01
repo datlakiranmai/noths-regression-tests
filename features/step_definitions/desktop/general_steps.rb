@@ -107,3 +107,4 @@ end
 And(/^I close survey pop up if any$/) do
   @app.add_to_basket.close_survey_popup
 end
+

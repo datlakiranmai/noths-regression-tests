@@ -15,6 +15,7 @@ module Noths
           elements :header_buttons, '.gc-header-myaccount__link.gc-header-myaccount__link--inline'
           element :signed_in_user, '.gc-header-myaccount__trigger.logged-in>span'
           element :favourite_inactive_btn, '.gc-header-favourites.gc-header__item.gc-header__item--favourites'
+          element :favourite_active_btn, '.gc-header-favourites.gc-header__item.gc-header__item--favourites.gc-header__item--active'
           elements :footer_link, '.gc-links-list__link'
           elements :sign_out_btn, '.gc-button.gc-button--secondary'
           elements :banner_img, '.desktop_only.desktop_banner'
@@ -36,8 +37,8 @@ module Noths
 
           #mobile
           elements :mobile_buttons, 'a.gc-button.gc-button--medium.gc-button--primary.gc-button--full-width'
-          element :sign_in_fav, '#favourites-list-sign-in'
-          element :sign_up_fav, '#favourites-list-register'
+          element :sign_in_fav, '.AccountLogin__sign-in.sc-bwzfXH.igWqdp'
+          element :sign_up_fav, '.AccountLogin__register.sc-bwzfXH.evuUvb'
           element :signin_checkout, '.button.primary.large.existing_mobile_customer_link'
 
           #admin
@@ -137,6 +138,8 @@ module Noths
                 else
                   favourite_inactive_btn.click
                 end
+              when 'active Favourite'
+                favourite_active_btn.click
               when 'Favourite SignIn'
                 sign_in_fav.click
               when 'Favourite Register'

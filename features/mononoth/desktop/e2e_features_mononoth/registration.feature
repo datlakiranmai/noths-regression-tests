@@ -19,7 +19,11 @@ Feature: Registration
 
   @smoke_tests @e2e @1.02
   Scenario: 1.02 - A potential customer is able to successfully register via favourites
-    When I click on Favourite
+    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I add the product in my favourites
+    When I click on active Favourite
+    And I am redirected to the My Favourites page
+    And I click on my favourites product image
     And I click on Favourite Register
     And I enter in my details in sign up form
     And I click Submit button

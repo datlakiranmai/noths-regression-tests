@@ -37,7 +37,11 @@ Feature: Sign In failure [New user]
 
   @error_msg_check @cog_e2e @40.04
   Scenario: [New user] 40.04 - Password field should get cleared when a user signs in with an invalid password via favourites
-    When I click on Favourite
+    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I add the product in my favourites
+    And I click on active Favourite
+    And I am redirected to the My Favourites page
+    And I click on my favourites product image
     When I click on Favourite SignIn
     And I sign in with invalid password
     Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts

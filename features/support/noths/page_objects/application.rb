@@ -64,6 +64,15 @@ module Noths
       def weddinglist
         @pages[:weddinglist] ||= Noths::PageObjects::Pages::WeddinglistPage::WeddinglistPage.new
       end
+
+      def productpage
+        @pages[:productpage] ||= Noths::PageObjects::Pages::ProductPage::ProductPage.new
+      end
+
+      def favouritespage
+        @pages[:favouritespage] ||= Noths::PageObjects::Pages::FavouritesPage::FavouritesPage.new
+      end
+
     end
   end
 end

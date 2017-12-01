@@ -42,7 +42,7 @@ Feature: Sign out
   Scenario: [New user] 41.05 - Sign out on favourites page via the header
     And I navigate to home page
     And I click on Favourite
-    Then I should be in favourites page
+    Then I am redirected to the My Favourites page
     And I hover my account via header
     And I click on Sign out
     Then I should successfully sign out
@@ -122,7 +122,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @cog_e2e @41.13
+  @rollback @41.13
   Scenario: [New user] 41.13 - Sign out when the flag is turned OFF
     Given I enable the cognito flag OFF as admin
     And I navigate to home page

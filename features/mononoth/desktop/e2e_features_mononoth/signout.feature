@@ -40,7 +40,7 @@ Feature: Sign out
   Scenario:4.05 - Sign out on favourites page via the header
     And I navigate to home page
     And I click on Favourite
-    Then I should be in favourites page
+    Then I am redirected to the My Favourites page
     And I hover my account via header
     And I click on Sign out
     Then I should successfully sign out

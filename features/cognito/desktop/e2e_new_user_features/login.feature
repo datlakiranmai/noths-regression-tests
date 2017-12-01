@@ -24,7 +24,11 @@ Feature: Login [New User]
 
   @cog_e2e @no_poltergeist @38.02
   Scenario: [New user] 38.02 - A customer is able to successfully login via favourites
-    When I click on Favourite
+    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I add the product in my favourites
+    When I click on active Favourite
+    And I am redirected to the My Favourites page
+    And I click on my favourites product image
     When I click on Favourite SignIn
     And I sign in with my new credentials
     And I navigate to My accounts page

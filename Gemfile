@@ -33,4 +33,3 @@ gem 'aws-sdk'
 gem 'phantomjs', '~> 2.1', '>= 2.1.1.0'
 gem 'allure-cucumber'
 gem 'rubysl-securerandom', '~> 2.0'
-

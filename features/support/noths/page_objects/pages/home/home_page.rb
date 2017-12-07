@@ -37,8 +37,6 @@ module Noths
 
           #mobile
           elements :mobile_buttons, 'a.gc-button.gc-button--medium.gc-button--primary.gc-button--full-width'
-          element :sign_in_fav, '.AccountLogin__sign-in.sc-bwzfXH.igWqdp'
-          element :sign_up_fav, '.AccountLogin__register.sc-bwzfXH.evuUvb'
           element :signin_checkout, '.button.primary.large.existing_mobile_customer_link'
 
           #admin
@@ -141,9 +139,9 @@ module Noths
               when 'active Favourite'
                 favourite_active_btn.click
               when 'Favourite SignIn'
-                sign_in_fav.click
+                page.find("a[class^='AccountLogin__sign-in']").click
               when 'Favourite Register'
-                sign_up_fav.click
+                page.find("a[class^='AccountLogin__register']").click
               when 'Forgotten password'
                 forgotten_password_link.click
               when 'Sign out'

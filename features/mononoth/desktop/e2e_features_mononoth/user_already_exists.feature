@@ -46,7 +46,7 @@ Feature: User registration with an already existing email address
   Scenario: 7.04 - A customer should see the 'user already exists' message if they use an existing registered email when registering via favourites
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my favourites
-    When I click on active Favourite
+    When I click on Favourite
     And I am redirected to the My Favourites page
     And I click on my favourites product image
     And I click on Favourite Register

@@ -37,7 +37,7 @@ Feature: Registration
   Scenario: [New user] 39.02 - A potential customer is able to successfully register via favourites
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my favourites
-    When I click on active Favourite
+    When I click on Favourite
     And I am redirected to the My Favourites page
     And I click on my favourites product image
     And I click on Favourite Register
@@ -52,7 +52,7 @@ Feature: Registration
   Scenario: [New user] 39.02a - A potential customer is able to successfully register via favourites and is confirmed within AWS
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my favourites
-    When I click on active Favourite
+    When I click on Favourite
     And I am redirected to the My Favourites page
     And I click on my favourites product image
     And I click on Favourite Register

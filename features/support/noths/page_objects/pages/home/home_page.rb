@@ -14,8 +14,7 @@ module Noths
 
           elements :header_buttons, '.gc-header-myaccount__link.gc-header-myaccount__link--inline'
           element :signed_in_user, '.gc-header-myaccount__trigger.logged-in>span'
-          element :favourite_inactive_btn, '.gc-header-favourites.gc-header__item.gc-header__item--favourites'
-          element :favourite_active_btn, '.gc-header-favourites.gc-header__item.gc-header__item--favourites.gc-header__item--active'
+          element :favourite_btn, '.gc-header-favourites.gc-header__item.gc-header__item--favourites'
           elements :footer_link, '.gc-links-list__link'
           elements :sign_out_btn, '.gc-button.gc-button--secondary'
           elements :banner_img, '.desktop_only.desktop_banner'
@@ -134,10 +133,8 @@ module Noths
                 if headless?
                   page.driver.click(1731.5, 73)
                 else
-                  favourite_inactive_btn.click
+                  favourite_btn.click
                 end
-              when 'active Favourite'
-                favourite_active_btn.click
               when 'Favourite SignIn'
                 page.find("a[class^='AccountLogin__sign-in']").click
               when 'Favourite Register'

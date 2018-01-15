@@ -15,6 +15,7 @@ Feature: Login (username in uppercase) [Legacy User]
     When I navigate to home page
     And I click on Signin
     And I sign in with my user name in capital letters
+    And I wait for 10 seconds
     And I navigate to My accounts page
     And I choose my details from my account section
     And I should be taken to My details page

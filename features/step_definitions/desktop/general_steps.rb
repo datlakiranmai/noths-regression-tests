@@ -108,3 +108,8 @@ And(/^I close survey pop up if any$/) do
   @app.add_to_basket.close_survey_popup
 end
 
+
+And(/^I wait for (.*) seconds$/) do |seconds|
+  sleep seconds.to_i
+end
+

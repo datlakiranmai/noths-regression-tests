@@ -77,6 +77,21 @@ module Noths
             end
           end
 
+          def turn_rollback_flag(flag_status)
+            usecognito= all('#new_feature').select { |l| l[:action].include? 'use_cognito_rollback/preview' }
+            usecognito[0].find('#new_feature>input').click
+            sleep 1
+            if mobile?
+              page.driver.browser.manage.window.resize_to(1200, 768)
+              visit('admin#home')
+              cms_sign_out.click
+              page.driver.browser.manage.window.resize_to(375, 667)
+            else
+              retry_on_readtimeout('admin#home')
+              cms_sign_out.click
+            end
+          end
+
 
           def favourites_page?
             page.has_css?('.favourites_intro_header')
@@ -85,6 +100,11 @@ module Noths
           def check_cognito_flag(status)
             page_source = page.body
             status == 'ON' ? page_source.include?('"useCognitoAuth":true') : page_source.include?('"useCognitoAuth":false')
+          end
+
+          def check_rollback_flag(status)
+            page_source = page.body
+            status == 'ON' ? page_source.include?('"useCognitoRollback":true') : page_source.include?('"useCognitoRollback":false')
           end
 
           def hover_myaccounts

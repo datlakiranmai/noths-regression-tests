@@ -7,3 +7,6 @@ And(/^I click on my favourites product image$/)  do
   @app.favouritespage.click_on_product_image
 end
 
+And(/^I click on Create new folder$/)  do
+  @app.favouritespage.click_on_create_new_folder
+end

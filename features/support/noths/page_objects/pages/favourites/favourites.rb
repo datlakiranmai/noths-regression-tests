@@ -15,6 +15,11 @@ module Noths
             element = page.find("img[src$='/preview_bumble-bee-brooch.jpg']")
             element.click
           end
+
+          def click_on_create_new_folder
+            page.find("img[src$='/folder-icon-add.svg']").click
+          end
+
         end
       end
     end

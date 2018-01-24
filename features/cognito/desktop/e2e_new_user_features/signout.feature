@@ -124,6 +124,9 @@ Feature: Sign out
 
   @rollback @41.13
   Scenario: [New user] 41.13 - Sign out when the flag is turned OFF
+    Given I enable the rollback flag ON as admin
+    And I navigate to home page
+    And I check my rollback flag is ON
     Given I enable the cognito flag OFF as admin
     And I navigate to home page
     And I check my cognito flag is OFF

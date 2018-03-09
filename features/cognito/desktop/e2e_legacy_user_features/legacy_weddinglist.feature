@@ -9,7 +9,7 @@
 #    And I navigate to home page
 #    And I check my cognito flag is ON
 #
-#  @cog_e2e @106.01
+#  @106.01
 #  Scenario: 106.01 - A registered customer is able to save a product for later in the wedding list.
 #    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
 #    And I close survey pop up if any

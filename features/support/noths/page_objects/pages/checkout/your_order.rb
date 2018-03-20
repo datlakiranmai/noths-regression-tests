@@ -34,11 +34,7 @@ module Noths
 
           def click_paynow_button
             wait_until_pay_now_button_visible(30)
-            if chrome?
-              page.find('.btn-primary.btn-large.btn-right').click
-            else
-              page.execute_script("document.querySelector('.btn-primary.btn-large.btn-right').click();")
-            end
+            page.find('.btn-primary.btn-large.btn-right').click
           end
         end
       end

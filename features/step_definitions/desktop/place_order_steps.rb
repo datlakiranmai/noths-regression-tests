@@ -10,8 +10,8 @@ And(/^I specify my card type$/) do
   @app.payment.select_card_type
 end
 
-And(/^I provide the payment details$/) do
-  @app.payment.submit_payment
+And(/^I provide (.*) payment details$/) do |card_type|
+  @app.payment.submit_payment(card_type)
 end
 
 
@@ -60,4 +60,17 @@ end
 
 And(/^I add the product to the wedding list$/) do
   @app.add_to_basket.add_the_product_to_weddinglist
+end
+
+
+And(/^I choose to pay via paypal express$/) do
+  @app.add_to_basket.select_paypal_express_checkout
+end
+
+And(/^I click on pay now button$/) do
+  @app.your_order.click_paynow_button
+end
+
+And(/^I choose to pay via paypal$/) do
+  @app.payment.select_paypal
 end

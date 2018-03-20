@@ -24,7 +24,7 @@ Feature: Checkout Registration
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     Then I should see order confirmation page
 
   @e2e_cognito_check @37.01a
@@ -40,7 +40,7 @@ Feature: Checkout Registration
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     Then I should see order confirmation page
 
 
@@ -56,7 +56,7 @@ Feature: Checkout Registration
     And I Continue to next page
     And I enter in my address details
     And I should see the my email address in summary section
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     Then I should see order confirmation page
 
   @e2e_cognito_check @37.02a
@@ -69,5 +69,5 @@ Feature: Checkout Registration
     And I Continue to next page
     And I enter in my address details
     And I should see the my email address in summary section
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     #Then I should see order confirmation page

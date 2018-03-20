@@ -23,7 +23,7 @@ Feature: Checkout Login [Rollback Legacy user]
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     Then I should see order confirmation page
     And I close mention me popup
     And I hover my account via header
@@ -44,7 +44,7 @@ Feature: Checkout Login [Rollback Legacy user]
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     Then I should see order confirmation page
 
 
@@ -60,7 +60,7 @@ Feature: Checkout Login [Rollback Legacy user]
     And I sign in with my new credentials
     And I enter in my address details
     And I should see the my email address in summary section
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     Then I should see order confirmation page
     And I close mention me popup
     And I hover my account via header
@@ -81,7 +81,7 @@ Feature: Checkout Login [Rollback Legacy user]
     And I expect NOT to see signin failure
     #And I enter in my address details
     #And I should see the my email address in summary section
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     Then I should see order confirmation page
 
     #Then I should see user created in cognito

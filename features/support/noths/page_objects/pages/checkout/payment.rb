@@ -14,18 +14,43 @@ module Noths
           element :card_verification_value, '#checkout_credit_card_verification_value'
           element :skip_3d_secure, '#checkout_skip_3d_secure'
           element :payment_button, '#process_payment_button'
+          element :paypal_payment_option, '#payment_medium_payment_form_paypal'
+          element :paypal_section, '.hideable_form_section.js_hide.billing.paypal'
 
           def select_card_type
             payment_option.click
           end
 
-          def submit_payment
-            credit_card_type.select 'Visa Debit or Electron'
-            credit_card_number.set '4111111111111111'
+          def select_paypal
+            wait_until_paypal_payment_option_visible(10)
+            paypal_payment_option.click
+            sleep 2
+            payment_button.click
+          end
+
+          def submit_payment(card_type)
+            case card_type
+              when 'VisaDebit'
+                credit_card_type.select 'Visa Debit or Electron'
+                credit_card_number.set '4111111111111111'
+                card_verification_value.set '737'
+              when 'MasterCard'
+                credit_card_type.select 'MasterCard'
+                credit_card_number.set '5100 2900 2900 2909'
+                card_verification_value.set '737'
+              when 'Visa'
+                credit_card_type.select 'Visa'
+                credit_card_number.set '4400 0000 0000 0008'
+                card_verification_value.set '737'
+              when 'AmericanExpress'
+                credit_card_type.select 'American Express'
+                credit_card_number.set '3700 0000 0000 002'
+                card_verification_value.set '7373'
+            end
             credit_card_name.set 'Hans Peter Luhn'
             credit_card_expiry_month.select '8'
             credit_card_expiry_year.select '2018'
-            card_verification_value.set '737'
+
             skip_3d_secure.click
             payment_button.click
           end

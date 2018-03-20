@@ -19,7 +19,7 @@ Feature: Mobile signin temporary
     And I Continue to next page
     And I enter in my address details
     And I specify my card type
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     Then I should see Thank you for your order message
 
 
@@ -32,7 +32,7 @@ Feature: Mobile signin temporary
     And I choose to sign in
     And I sign in with my new credentials
     #And I specify my card type
-    And I provide the payment details
+    And I provide Visa Debit or Electron payment details
     Then I should see Thank you for your order message
 
 

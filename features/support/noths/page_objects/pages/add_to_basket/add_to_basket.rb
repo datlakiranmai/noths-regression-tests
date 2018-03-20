@@ -16,8 +16,9 @@ module Noths
           element :modal_add_to_wish_list_btn, '#modal_add_to_wish_list'
           element :modal_add_to_wedding_list_btn, '#modal_add_to_wedding_list'
 
-
+          element :paypal_express_checkout_btn, '.button.medium.proceed_to_checkout_with_paypal_express'
           element :survey_popup_close_btn, '.close'
+  
 
           def add_the_product_to_basket_page_and_do_not_proceed
             close_survey_popup
@@ -25,6 +26,13 @@ module Noths
             close_survey_popup
             checkout_button.click
           end
+
+
+          def select_paypal_express_checkout
+            wait_until_paypal_express_checkout_btn_visible(10)
+            page.find('.button.medium.proceed_to_checkout_with_paypal_express').click
+          end
+
 
           def close_survey_popup
             @element_present= page.has_css?('#edr_l_first', wait: 5)

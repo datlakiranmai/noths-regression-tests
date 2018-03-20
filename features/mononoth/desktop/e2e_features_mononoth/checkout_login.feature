@@ -65,7 +65,7 @@ Feature: Checkout Login
 
 
   @payments @e2e @3.05
-  Scenario: 3.05 - Checkout E2E - Customer should be able to purchase a product as a customer (paypal payment)
+  Scenario: 3.05 - Checkout E2E - Customer should be able to purchase a product as a customer (paypal Mark)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I sign in with my new credentials
@@ -80,7 +80,6 @@ Feature: Checkout Login
     Then I should see order confirmation page
 
   @smoke_tests @e2e @3.06
-
   Scenario: 3.06 - Checkout E2E - A customer should be able to login during the gift voucher checkout
     When I navigate to home page
     And I tap on the link gift vouchers in footer

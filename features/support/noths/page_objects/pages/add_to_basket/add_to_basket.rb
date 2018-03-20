@@ -18,7 +18,7 @@ module Noths
 
           element :paypal_express_checkout_btn, '.button.medium.proceed_to_checkout_with_paypal_express'
           element :survey_popup_close_btn, '.close'
-  
+
 
           def add_the_product_to_basket_page_and_do_not_proceed
             close_survey_popup

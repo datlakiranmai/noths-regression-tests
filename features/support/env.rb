@@ -77,6 +77,7 @@ end
 After do |scenario|
   if scenario.failed?
     path=save_screenshot("output/dir/#{scenario.name}.png")
+    p 'attaching screenshot on failure'
     AllureCucumber::DSL.attach_file("[FAILED]-#{scenario.name}", File.open(File.expand_path(path)))
   end
   #CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?

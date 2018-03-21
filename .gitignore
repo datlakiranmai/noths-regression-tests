@@ -15,7 +15,10 @@ screenshots
 screenshot
 allure-report/
 output/
-
+.cache/
+.chromedriver-helper/
+.local/
+.pki/
 # Used by dotenv library to load environment variables.
 # .env
 

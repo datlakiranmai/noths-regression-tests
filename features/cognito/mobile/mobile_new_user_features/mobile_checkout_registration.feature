@@ -22,7 +22,7 @@ Feature: Mobile Checkout_registration temporary
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide Visa Debit or Electron payment details
+    And I provide AmericanExpress payment details
     Then I should see Thank you for your order message
 
 
@@ -36,7 +36,7 @@ Feature: Mobile Checkout_registration temporary
     And I enter in my details in your details form
     And I Continue to next page
     And I enter in my address details
-    And I provide Visa Debit or Electron payment details
+    And I provide VisaDebit payment details
     Then I should see Thank you for your order message
 
 

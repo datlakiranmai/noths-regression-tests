@@ -21,7 +21,7 @@ Feature: Checkout Login [New user]
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide Visa Debit or Electron payment details
+    And I provide Visa payment details
     Then I should see order confirmation page
 
   @cog_e2e @36.02
@@ -33,5 +33,5 @@ Feature: Checkout Login [New user]
     And I sign in with my new credentials
     And I enter in my address details
     And I should see the my email address in summary section
-    And I provide Visa Debit or Electron payment details
+    And I provide Visa payment details
     Then I should see order confirmation page

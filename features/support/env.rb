@@ -25,7 +25,7 @@ Before do
   Capybara.configure do |config|
     Capybara.app_host = APP_HOST
     config.run_server = false
-    config.default_driver = configuration.driver
+    config.default_driver = (ENV['DRIVER'] || 'chrome').to_sym
     config.default_max_wait_time = 60
     config.match = :prefer_exact
     config.javascript_driver = :webkit_debug
@@ -80,5 +80,5 @@ After do |scenario|
     AllureCucumber::DSL.attach_file("[FAILED]-#{scenario.name}", File.open(File.expand_path(path)))
   end
   #CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?
-  $driver.quit if configuration.env_id.nil?
+  $driver.quit if ENV['DRIVER'].nil?
 end

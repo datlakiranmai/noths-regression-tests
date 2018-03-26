@@ -11,10 +11,10 @@ error_check() {
 }
 
 echo "Exporting Env ID variable"
-export ENV_ID = $ENV_ID
+export ENVID = $ENV_ID
 
 echo "Starting docker containers"
-docker-compose run -e ENV_ID = $ENV_ID tests
+docker-compose run -e ENV_ID = $ENVID tests
 
 error_check $?
 

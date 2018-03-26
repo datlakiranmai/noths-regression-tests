@@ -3,8 +3,8 @@
 error_check() {
     exit_code=$1
     if [ "$exit_code" -gt 0 ]; then
-        echo "Something when wrong!!"
-        echo "Shuting down Docker Compose down"
+        echo "Shutting down!!"
+        echo "Shuting Docker Compose down"
         docker-compose down
         exit 1
     fi
@@ -17,7 +17,7 @@ echo "Start all the containers"
 docker-compose up -d
 
 echo "Run the tests"
-docker-compose run -e ENV_ID = "shared" tests
+docker-compose run tests
 
 error_check $?
 

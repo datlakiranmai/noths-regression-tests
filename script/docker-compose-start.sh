@@ -19,7 +19,7 @@ echo "Start all the containers"
 docker-compose up -d
 
 echo "Run the tests"
-docker-compose run -e ENV_ID=$envid tests
+docker-compose run -e ENV_ID="shared" tests
 
 check_for_error $?
 

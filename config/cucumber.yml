@@ -11,6 +11,8 @@ mobile: "DRIVER='mobile' features <%= html_report %> --format AllureCucumber::Fo
 cog_mobile_e2e: "DRIVER='mobile' features <%= html_report %> --format AllureCucumber::Formatter --out --guess --tag @cog_mobile_e2e"
 error_msg_check: 'features --format AllureCucumber::Formatter --out --guess <%= html_report %> --tag @error_msg_check'
 
+test: 'features --format AllureCucumber::Formatter --out --guess <%= html_report %> --tag @1.01'
+
 headless: "DRIVER='headless' features --tag @e2e <%= html_report %>"
 rerun: '--guess @rerun.txt'
 #allure: '--format AllureCucumber::Formatter --out'

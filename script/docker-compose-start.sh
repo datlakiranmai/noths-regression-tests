@@ -5,7 +5,7 @@ error_check() {
     if [ "$exit_code" -gt 0 ]; then
         echo "Something when wrong!!"
         echo "Shuting down Docker Compose down"
-        docker_compose down
+        docker-compose down
         exit 1
     fi
 }

@@ -32,6 +32,8 @@
     environment:
       - ENV_ID = 'shared'
     command: cucumber -p payments
+    volumes:
+      - ./:/service
 
 
 

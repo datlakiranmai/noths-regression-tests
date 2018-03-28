@@ -31,7 +31,7 @@
       - firefoxnode
     environment:
       - ENV_ID = 'shared'
-    command: cucumber -p test
+    command: cucumber -p payments
 
 
 

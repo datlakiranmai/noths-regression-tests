@@ -13,9 +13,6 @@ echo "Exporting Environment Variable"
 export ENV_ID=$ENV_ID
 export TESTS_COMMAND=$TESTS_COMMAND
 
-echo "Build a test container"
-docker-compose build tests
-
 echo "Start all the containers"
 docker-compose up -d
 

@@ -29,6 +29,5 @@
     links:
       - chromenode
       - firefoxnode
-    command: cucumber -p test
     volumes:
       - ./:/service

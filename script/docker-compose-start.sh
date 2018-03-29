@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 check_for_error() {
-    exit_code=$1
-    if [ "$exit_code" -gt 0 ]; then
+    exit_code=$?
+    if [ $exit_code -gt 0 ]; then
         echo "Shuting Docker Compose down"
         docker-compose down
         exit 1
@@ -10,7 +10,8 @@ check_for_error() {
 }
 
 echo "Exporting Environment Variable"
-export envid = $ENV_ID
+export ENV_ID=$ENV_ID
+export TESTS_COMMAND=$TESTS_COMMAND
 
 echo "Build a test container"
 docker-compose build tests
@@ -19,7 +20,7 @@ echo "Start all the containers"
 docker-compose up -d
 
 echo "Run the tests"
-docker-compose run tests
+docker-compose run -e ENV_ID="$ENV_ID" tests
 
 check_for_error $?
 

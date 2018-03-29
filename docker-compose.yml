@@ -29,8 +29,6 @@
     links:
       - chromenode
       - firefoxnode
-    environment:
-      ENV_ID: 'shared'
     command: cucumber -p test
     volumes:
       - ./:/service

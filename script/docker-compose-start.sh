@@ -20,7 +20,7 @@ echo "Start all the containers"
 docker-compose up -d
 
 echo "Run the tests"
-docker-compose run -e ENV_ID="$ENV_ID" tests
+docker-compose run -e ENV_ID=${ENV_ID} tests
 
 check_for_error $?
 

@@ -32,5 +32,5 @@ Feature: Login (username in uppercase) [New user]
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide the payment details
+
     Then I should see order confirmation page

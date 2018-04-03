@@ -9,6 +9,7 @@ module Noths
           element :delivery_addressline1, '.address1.address_line'
           elements :summary_your_details, '.your_details_more_info.summary_info>li'
           elements :summary_your_delivery, '.your_delivery_summary_info.summary_info>li'
+          element :pay_now_button, '.btn-primary.btn-large.btn-right'
 
           def click_continue_btn
             sleep 3
@@ -29,6 +30,11 @@ module Noths
 
           def summary_delivery_address
             summary_your_delivery[1].text
+          end
+
+          def click_paynow_button
+            wait_until_pay_now_button_visible(30)
+            page.find('.btn-primary.btn-large.btn-right').click
           end
         end
       end

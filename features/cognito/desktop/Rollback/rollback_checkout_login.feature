@@ -21,7 +21,7 @@ Feature: Checkout Login [Rollback New user]
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide the payment details
+    And I provide AmericanExpress payment details
     Then I should see order confirmation page
     And I close mention me popup
     And I hover my account via header
@@ -43,7 +43,7 @@ Feature: Checkout Login [Rollback New user]
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide the payment details
+    And I provide VisaDebit payment details
     Then I should see order confirmation page
 
   @cog_e2e @178.02
@@ -55,7 +55,7 @@ Feature: Checkout Login [Rollback New user]
     And I sign in with my new credentials
     And I enter in my address details
     And I should see the my email address in summary section
-    And I provide the payment details
+    And I provide VisaDebit payment details
     Then I should see order confirmation page
     And I close mention me popup
     And I hover my account via header
@@ -75,5 +75,5 @@ Feature: Checkout Login [Rollback New user]
     And I expect NOT to see signin failure
     #And I enter in my address details
     And I should see the my email address in summary section
-    And I provide the payment details
+    And I provide MasterCard payment details
     Then I should see order confirmation page

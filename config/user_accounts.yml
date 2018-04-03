@@ -2,3 +2,7 @@
 admin:
   username: 'admin@notonthehighstreet.com'
   password: 'logmein1'
+
+paypal:
+  username: 'payments.team-buyer@notonthehighstreet.com'
+  password: 'NOTHS2014'

@@ -4,7 +4,7 @@ module Noths
     module Pages
       module LoginPage
         class LoginPage < SitePrism::Page
-          include Configuration
+
 
           element :login_email, '#email'
           element :login_pwd, '#password'
@@ -29,10 +29,9 @@ module Noths
           end
 
           def admin_signin_credentials
-            get_admin_credentials
             wait_until_login_email_visible(30)
-            login_email.set admin_username
-            login_pwd.set admin_password
+            login_email.set Configuration.instance.username('admin')
+            login_pwd.set Configuration.instance.password('admin')
             admin_signin_button.click
           end
         end

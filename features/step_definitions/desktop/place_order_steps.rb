@@ -10,8 +10,8 @@ And(/^I specify my card type$/) do
   @app.payment.select_card_type
 end
 
-And(/^I provide the payment details$/) do
-  @app.payment.submit_payment
+And(/^I provide (.*) payment details$/) do |card_type|
+  @app.payment.submit_payment(card_type)
 end
 
 
@@ -44,9 +44,11 @@ end
 
 
 Then(/^I should see order confirmation page$/) do
-expect(@app.order_confirmation.title_order_completed).to have_text("Thank you for your order, #{@app.registration.first_name.capitalize} #{@app.registration.last_name.capitalize}")
-expect(@app.order_confirmation.thank_you_for_order).to have_text("ORDER COMPLETED")
-expect(@app.order_confirmation.order_completed_status).to have_text("YOUR ORDER HAS BEEN SUCCESSFUL")
+  if @app.registration.first_name
+    expect(@app.order_confirmation.title_order_completed.text.downcase).to eq("thank you for your order, #{@app.registration.first_name.downcase} #{@app.registration.last_name.downcase}")
+  end
+  expect(@app.order_confirmation.thank_you_for_order.text.downcase).to have_text("order completed")
+  expect(@app.order_confirmation.order_completed_status.text.downcase).to have_text("your order has been successful")
 end
 
 
@@ -60,4 +62,17 @@ end
 
 And(/^I add the product to the wedding list$/) do
   @app.add_to_basket.add_the_product_to_weddinglist
+end
+
+
+And(/^I choose to pay via paypal express$/) do
+  @app.add_to_basket.select_paypal_express_checkout
+end
+
+And(/^I click on pay now button$/) do
+  @app.your_order.click_paynow_button
+end
+
+And(/^I choose to pay via paypal$/) do
+  @app.payment.select_paypal
 end

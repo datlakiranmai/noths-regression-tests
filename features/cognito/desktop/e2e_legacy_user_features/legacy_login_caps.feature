@@ -33,5 +33,5 @@ Feature: Login (username in uppercase) [Legacy User]
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide the payment details
+    And I provide Visa payment details
     Then I should see order confirmation page

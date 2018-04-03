@@ -73,6 +73,10 @@ module Noths
         @pages[:favouritespage] ||= Noths::PageObjects::Pages::FavouritesPage::FavouritesPage.new
       end
 
+      def paypal_page
+        @pages[:paypal_page] ||= Noths::PageObjects::Pages::PaypalPage::PaypalPage.new
+      end
+
     end
   end
 end

@@ -7,7 +7,7 @@ Feature: User registration with an already existing email address
     Given I register as a new user
     And I sign out from my account
 
-  @smoke_tests @e2e @7.01
+  @p1 @smoke_tests @e2e @7.01
   Scenario: 7.01 - A customer should see the 'user already exists' message if they use an existing registered email during the checkout of a standard product
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket

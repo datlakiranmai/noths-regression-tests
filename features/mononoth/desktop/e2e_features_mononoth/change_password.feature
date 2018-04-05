@@ -7,7 +7,7 @@ Feature: Change Password
     And I register as a new user
     And I sign out from my account
 
-  @smoke_tests @e2e @9.01
+  @p1 @e2e @9.01
   Scenario: 9.01 - A customer should be able to reset their password on the my details page
     When I navigate to home page
     And I click on Signin

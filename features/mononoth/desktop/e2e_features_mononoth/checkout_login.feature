@@ -7,7 +7,7 @@ Feature: Checkout Login
     Given I register as a new user
     And I sign out from my account
 
-  @payments @e2e @3.01
+  @p1 @payments @e2e @3.01
   Scenario: 3.01 - Checkout E2E - Customer should be able to purchase a product as a customer( Visa Debit or Electron)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket

@@ -6,7 +6,7 @@ Feature: Checkout Registration
   Background:
     Given I am on Home page
 
-  @payments @smoke_tests @e2e @5.01
+  @p1 @payments @smoke_tests @e2e @5.01
   Scenario: 5.01 - Checkout E2E - A customer should be able to register during the checkout of a standard product(Card Payment)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -35,7 +35,7 @@ Feature: Checkout Registration
     And I provide VisaDebit payment details
     Then I should see order confirmation page
 
-  @payments @5.03
+  @p1 @payments @5.03
   Scenario: 5.03 - Checkout E2E - A customer should be able to checkout a standard product(Paypal express)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket and do not want to checkout
@@ -45,7 +45,7 @@ Feature: Checkout Registration
     And I click on pay now button
     Then I should see order confirmation page
 
- @payments @e2e @5.04
+  @p1 @payments @e2e @5.04
   Scenario: 5.04 - Checkout E2E - A customer should be able to checkout a standard product(Paypal Mark)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket

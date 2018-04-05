@@ -17,7 +17,7 @@ Feature: Registration
     And I should see my email address in my accounts page
 
 
-  @smoke_tests @e2e @1.02
+  @p1 @smoke_tests @e2e @1.02
   Scenario: 1.02 - A potential customer is able to successfully register via favourites
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my favourites

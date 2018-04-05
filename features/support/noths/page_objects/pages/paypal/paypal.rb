@@ -12,14 +12,16 @@ module Noths
           element :password, "#password"
           element :signin_button, '#btnLogin'
 
+          element :next_button, :id, 'btnNext'
+
           def paypal_signin
             wait_until_preloader_spinner_invisible(30)
-
-            within_frame "injectedUl" do
+            #within_frame "injectedUl" do
               email.set Configuration.instance.username('paypal')
+              next_button.click
               password.set Configuration.instance.password('paypal')
               signin_button.click
-            end
+            #end
           end
 
           def wait_for_paypal_page

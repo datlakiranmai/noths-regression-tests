@@ -14,7 +14,7 @@ module Noths
           #error_messages
           element :sign_in_error_msg, '.error_message'
           element :checkout_sign_in_error_msg, '.message.error.with_icon'
-          element :forgotten_password_info_msg, '.message.notice.with_icon'
+          element :forgotten_password_info_msg, '.message.info.with_icon'
           element :noths_employee_security_error_message, '.message.error.with_icon'
 
           def signin_credentials(username, password)

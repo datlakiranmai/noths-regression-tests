@@ -20,7 +20,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.03
+  @p1 @e2e @4.03
   Scenario:4.03 - Sign out on product details page via the header
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I hover my account via header
@@ -46,7 +46,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.06
+  @p1 @e2e @4.06
   Scenario:4.06 - Sign out on order completion page via the header
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -64,7 +64,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.07
+  @p1 @e2e @4.07
   Scenario: 4.07 - Sign out the cart page via the header
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket and do not want to checkout

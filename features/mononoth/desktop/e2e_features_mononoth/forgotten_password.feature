@@ -6,7 +6,7 @@ Feature: Forgotten password
   Background:
     Given I am on Home page
 
-  @e2e @8.01
+  @p1 @e2e @8.01
   Scenario: 8.01 - A customer should request a reset password email
     Given I register as a new user
     And I sign out from my account

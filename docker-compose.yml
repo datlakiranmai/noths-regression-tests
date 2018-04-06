@@ -23,11 +23,12 @@
     environment:
       HUB_PORT_4444_TCP_ADDR: seleniumhub
       HUB_PORT_4444_TCP_PORT: '4444'
+    volumes:
+      - /dev/shm:/dev/shm
 
   tests:
     build: .
     links:
       - chromenode
-      - firefoxnode
     volumes:
       - ./:/service

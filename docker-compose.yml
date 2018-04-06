@@ -16,6 +16,7 @@
 
   chromenode:
     image: selenium/node-chrome-debug
+    shm_size: 2g
     ports:
       - "3758:5900"
     links:
@@ -23,8 +24,6 @@
     environment:
       HUB_PORT_4444_TCP_ADDR: seleniumhub
       HUB_PORT_4444_TCP_PORT: '4444'
-    volumes:
-      - /dev/shm:/dev/shm
 
   tests:
     build: .

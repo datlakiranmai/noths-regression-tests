@@ -22,7 +22,7 @@ end
 
 
 Then(/^I should see a label as (.*)/)do |label_name|
-  @app.search.free_delivery_label.each {|label| label.text == label_name.upcase }
+  expect(@app.search.free_delivery_labels?).to eq(true)
 end
 
 

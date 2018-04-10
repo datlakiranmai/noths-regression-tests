@@ -42,6 +42,11 @@ module Noths
             checkboxes.select { |label| label.text == search_option }.first.click
           end
 
+          def free_delivery_labels?
+            wait_until_free_delivery_label_visible(10)
+            !free_delivery_label.any? {|label| label.text == "FREE DELIVERY" }
+          end
+
           def product_title_displayed?
             !product_details.any? {|title| title.text.empty? }
           end

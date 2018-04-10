@@ -37,6 +37,10 @@ module Noths
             payment_option.click
           end
 
+          def payment_page?
+            has_payment_option?
+          end
+
           def select_voucher_code
             voucher_code_toggler.click
           end

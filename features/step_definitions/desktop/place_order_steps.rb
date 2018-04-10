@@ -7,6 +7,7 @@ And(/^I add the product in my basket and do not want to checkout$/) do
 end
 
 And(/^I specify my card type$/) do
+  expect(@app.payment.payment_page?).to eq(true),"[Failed] - Payments page is not displayed!"
   @app.payment.select_card_type
 end
 

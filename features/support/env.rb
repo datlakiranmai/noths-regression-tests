@@ -54,11 +54,14 @@ Before do
   chrome_capabilities = Selenium::WebDriver::Remote::Capabilities.chrome
 
   Capybara.register_driver :chrome do |app|
+    client = Selenium::WebDriver::Remote::Http::Default.new
+    client.read_timeout = 180
     $driver = Capybara::Selenium::Driver.new(app,
                                              browser: :remote,
                                              url: 'http://172.17.0.2:4444/wd/hub',
-                                             desired_capabilities: chrome_capabilities
-    )
+                                             http_client: client,
+                                             desired_capabilities: chrome_capabilities)
+
   end
 
   # Capybara.register_driver :chrome do |app|

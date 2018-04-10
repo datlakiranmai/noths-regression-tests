@@ -15,6 +15,14 @@ And(/^I provide (.*) payment details$/) do |card_type|
 end
 
 
+And(/^I click on voucher code link$/) do
+  @app.payment.select_voucher_code
+end
+
+And(/^I apply my gift voucher code$/) do
+  @app.payment.apply_voucher_code(@app.my_orders.voucher_code)
+end
+
 Then(/^I should see (.*) as my delivery recipient$/) do |delivery_recipient|
   @delivery_recipient=delivery_recipient.downcase
   expect(@app.your_order.delivery_recipient.text.downcase).to have_text(@delivery_recipient)
@@ -76,3 +84,4 @@ end
 And(/^I choose to pay via paypal$/) do
   @app.payment.select_paypal
 end
+

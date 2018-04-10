@@ -90,3 +90,26 @@ Feature: Checkout Login
     And I should see the my email address in summary section
     And I provide VisaDebit payment details
     Then I should see order confirmation page
+
+  @p1 @smoke_tests @e2e @3.07
+  Scenario: 3.07 - Checkout E2E - A customer should be able to checkout a product using the gift card voucher and card payment together
+    When I navigate to home page
+    And I tap on the link gift vouchers in footer
+    And I enter my details in gift voucher form
+    And I checkout gift voucher
+    And I sign in with my new credentials
+    And I enter in my address details
+    And I should see the my email address in summary section
+    And I provide VisaDebit payment details
+    Then I should see order confirmation page
+    And I navigate to My accounts page
+    And I choose to view my orders page
+    And I check my giftcard voucher code
+    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I add the product in my basket
+    When I continue with my delivery address
+    And I click on voucher code link
+    And I apply my gift voucher code
+    And I specify my card type
+    And I provide VisaDebit payment details
+    Then I should see order confirmation page

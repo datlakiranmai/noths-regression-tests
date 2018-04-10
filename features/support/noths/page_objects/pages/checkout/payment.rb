@@ -17,8 +17,28 @@ module Noths
           element :paypal_payment_option, '#payment_medium_payment_form_paypal'
           element :paypal_section, '.hideable_form_section.js_hide.billing.paypal'
 
+          element :apply_voucher, '#apply_voucher'
+
+          element :voucher_code_toggler, '.voucher_codes_toggler'
+
+          element :giftcard_voucher_field, '#voucher_code_field'
+
+          element :enter_voucher_code, '#check_voucher'
+
+          def apply_voucher_code(voucher_code)
+            giftcard_voucher_field.set voucher_code
+            enter_voucher_code.click
+            sleep 0.5
+            apply_voucher.click
+
+          end
+
           def select_card_type
             payment_option.click
+          end
+
+          def select_voucher_code
+            voucher_code_toggler.click
           end
 
           def select_paypal

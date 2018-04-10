@@ -13,6 +13,10 @@ module Noths
         @pages[:mydetails_page] ||= Noths::PageObjects::Pages::MyDetails::MyDetails.new
       end
 
+      def my_orders
+        @pages[:myorders_page] ||= Noths::PageObjects::Pages::MyOrders::MyOrders.new
+      end
+
       def login
         @pages[:signin_page] ||= Noths::PageObjects::Pages::LoginPage::LoginPage.new
       end

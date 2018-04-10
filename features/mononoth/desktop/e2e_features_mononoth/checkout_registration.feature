@@ -61,3 +61,4 @@ Feature: Checkout Registration
     Then I enter my paypal login credentials
     And I continue with the paypal checkout
     Then I should see order confirmation page
+

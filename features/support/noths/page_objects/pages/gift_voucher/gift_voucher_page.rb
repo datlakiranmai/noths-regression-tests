@@ -18,7 +18,8 @@ module Noths
             if headless?
               try_until(20) { voucher_amount.first.trigger("click") }
             else
-              voucher_amount.last.click
+              wait_until_voucher_amount_visible(10)
+              voucher_amount.first.click
             end
             gift_card_to.set 'automation user 01'
             gift_card_from.set 'automation user 02'

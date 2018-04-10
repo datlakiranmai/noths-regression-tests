@@ -47,16 +47,16 @@ Then(/^I should see my name as delivery recipient$/) do
 end
 
 Then(/^I should see (.*) message$/) do |message|
-expect(@app.order_confirmation.order_completed_status).to have_text("YOUR ORDER HAS BEEN SUCCESSFUL")
+expect(@app.order_confirmation.order_completed_status).to have_text("YOUR ORDER HAS BEEN SUCCESSFUL"),"[Failed] - Order Completion Page is not displayed!"
 end
 
 
 Then(/^I should see order confirmation page$/) do
   if @app.registration.first_name
-    expect(@app.order_confirmation.title_order_completed.text.downcase).to eq("thank you for your order, #{@app.registration.first_name.downcase} #{@app.registration.last_name.downcase}")
+    expect(@app.order_confirmation.title_order_completed.text.downcase).to eq("thank you for your order, #{@app.registration.first_name.downcase} #{@app.registration.last_name.downcase}"),"[Failed] - Order Completion Page is not displayed!"
   end
-  expect(@app.order_confirmation.thank_you_for_order.text.downcase).to have_text("order completed")
-  expect(@app.order_confirmation.order_completed_status.text.downcase).to have_text("your order has been successful")
+  expect(@app.order_confirmation.thank_you_for_order.text.downcase).to have_text("order completed"),"[Failed] - Order Completion Page is not displayed!"
+  expect(@app.order_confirmation.order_completed_status.text.downcase).to have_text("your order has been successful"),"[Failed] - Order Completion Page is not displayed!"
 end
 
 

@@ -39,7 +39,8 @@ module Noths
           end
 
           def payment_option?
-            try_until(15) { has_payment_option? }
+            try_until(15) { @payment_option=has_payment_option? }
+            @payment_option
           end
 
           def select_voucher_code
@@ -54,7 +55,8 @@ module Noths
           end
 
           def credit_card_type?
-            try_until(15) { has_credit_card_type? }
+            try_until(15) { @credit_card_type = has_credit_card_type? }
+            @credit_card_type
           end
 
           def submit_payment(card_type)
@@ -79,7 +81,6 @@ module Noths
             credit_card_name.set 'Hans Peter Luhn'
             credit_card_expiry_month.select '8'
             credit_card_expiry_year.select '2018'
-
             skip_3d_secure.click
             payment_button.click
           end

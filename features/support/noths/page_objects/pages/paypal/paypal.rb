@@ -16,7 +16,8 @@ module Noths
           element :next_button, :id, 'btnNext'
 
           def paypal_signin_page?
-            try_until(20) { has_email? }
+            try_until(20) { @email = has_email? }
+            @email
           end
 
           def paypal_signin

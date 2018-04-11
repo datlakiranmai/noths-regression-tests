@@ -14,6 +14,11 @@ module Noths
 
           element :next_button, :id, 'btnNext'
 
+          def paypal_signin_page?
+            wait_until_email_visible(20)
+            has_email?
+          end
+
           def paypal_signin
             wait_until_preloader_spinner_invisible(30)
             #within_frame "injectedUl" do

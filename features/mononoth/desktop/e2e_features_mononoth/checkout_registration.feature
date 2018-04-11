@@ -22,7 +22,7 @@ Feature: Checkout Registration
     And I provide VisaDebit payment details
     Then I should see order confirmation page
 
-  @smoke_tests @e2e @5.02
+  @smoke_tests @payments @e2e @5.02
   Scenario: 5.02 - Checkout E2E - A customer should be able to register during the gift voucher checkout
     And I tap on the link gift vouchers in footer
     And I enter my details in gift voucher form

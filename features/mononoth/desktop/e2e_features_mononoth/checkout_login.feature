@@ -79,7 +79,7 @@ Feature: Checkout Login
     And I continue with the paypal checkout
     Then I should see order confirmation page
 
-  @smoke_tests @e2e @3.06
+  @payments @smoke_tests @e2e @3.06
   Scenario: 3.06 - Checkout E2E - A customer should be able to login during the gift voucher checkout
     When I navigate to home page
     And I tap on the link gift vouchers in footer
@@ -91,7 +91,7 @@ Feature: Checkout Login
     And I provide VisaDebit payment details
     Then I should see order confirmation page
 
-  @p1 @smoke_tests @e2e @3.07
+  @payments @p1 @smoke_tests @e2e @3.07
   Scenario: 3.07 - Checkout E2E - A customer should be able to checkout a product using the gift card voucher and card payment together
     When I navigate to home page
     And I tap on the link gift vouchers in footer

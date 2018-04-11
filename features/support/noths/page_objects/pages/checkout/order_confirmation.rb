@@ -20,8 +20,8 @@ module Noths
             end
           end
 
-
           def title_order_completed?
+            wait_until_title_order_completed_visible(30)
             has_title_order_completed?
           end
         end

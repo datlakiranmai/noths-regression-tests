@@ -4,6 +4,7 @@ module Noths
     module Pages
       module Payment
         class Payment < SitePrism::Page
+          include Poltergeist
 
           element :payment_option, '#payment_medium_payment_form_credit_card'
           element :credit_card_type, '#checkout_credit_card_type'
@@ -38,8 +39,7 @@ module Noths
           end
 
           def payment_option?
-            wait_until_payment_option_visible(10)
-            has_payment_option?
+            try_until(15) { has_payment_option? }
           end
 
           def select_voucher_code
@@ -54,8 +54,7 @@ module Noths
           end
 
           def credit_card_type?
-            wait_until_credit_card_type_visible(10)
-            has_credit_card_type?
+            try_until(15) { has_credit_card_type? }
           end
 
           def submit_payment(card_type)

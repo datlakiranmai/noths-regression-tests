@@ -4,6 +4,7 @@ module Noths
       module PaypalPage
         class PaypalPage < SitePrism::Page
           include Helper
+          include Poltergeist
 
           element :continue_btn, '#confirmButtonTop'
           element :preloader_spinner, '#preloaderSpinner'
@@ -15,8 +16,7 @@ module Noths
           element :next_button, :id, 'btnNext'
 
           def paypal_signin_page?
-            wait_until_email_visible(20)
-            has_email?
+            try_until(20) { has_email? }
           end
 
           def paypal_signin

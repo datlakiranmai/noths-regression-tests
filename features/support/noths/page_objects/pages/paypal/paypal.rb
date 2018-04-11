@@ -36,11 +36,12 @@ module Noths
 
           def continue
             wait_until_continue_btn_visible(30)
-            if chrome?
-              page.find('#confirmButtonTop').click
-            else
-              page.execute_script("document.querySelector('#confirmButtonTop').click();")
-            end
+            continue_btn.click
+            # if chrome?
+            #   page.find('#confirmButtonTop').click
+            # else
+            #   page.execute_script("document.querySelector('#confirmButtonTop').click();")
+            # end
           end
         end
       end

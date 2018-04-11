@@ -39,7 +39,7 @@ module Noths
           end
 
           def payment_option?
-            try_until(15) { @payment_option=has_payment_option? }
+            try_until(15) { @payment_option = has_payment_option? }
             @payment_option
           end
 

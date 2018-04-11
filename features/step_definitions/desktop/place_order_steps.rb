@@ -54,6 +54,7 @@ end
 
 Then(/^I should see order confirmation page$/) do
   if @app.registration.first_name
+    expect(@app.order_confirmation.title_order_completed?).to eq(true),"[Failed] - Order Completion page is not displayed!"
     expect(@app.order_confirmation.title_order_completed.text.downcase).to eq("thank you for your order, #{@app.registration.first_name.downcase} #{@app.registration.last_name.downcase}"),"[Failed] - Order Completion Page is not displayed!"
   end
   expect(@app.order_confirmation.thank_you_for_order.text.downcase).to have_text("order completed"),"[Failed] - Order Completion Page is not displayed!"

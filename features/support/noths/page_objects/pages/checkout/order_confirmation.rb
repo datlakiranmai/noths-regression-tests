@@ -19,6 +19,11 @@ module Noths
               end
             end
           end
+
+
+          def title_order_completed?
+            has_title_order_completed?
+          end
         end
       end
     end

@@ -110,6 +110,5 @@ Feature: Checkout Login
     When I continue with my delivery address
     And I click on voucher code link
     And I apply my gift voucher code
-    And I specify my card type
     And I provide VisaDebit payment details
     Then I should see order confirmation page

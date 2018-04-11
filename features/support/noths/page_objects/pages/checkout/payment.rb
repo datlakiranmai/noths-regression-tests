@@ -37,7 +37,8 @@ module Noths
             payment_option.click
           end
 
-          def payment_page?
+          def payment_option?
+            wait_until_payment_option_visible(10)
             has_payment_option?
           end
 
@@ -52,6 +53,11 @@ module Noths
             payment_button.click
           end
 
+          def credit_card_type?
+            wait_until_credit_card_type_visible(10)
+            has_credit_card_type?
+          end
+
           def submit_payment(card_type)
             case card_type
               when 'VisaDebit'
@@ -60,7 +66,7 @@ module Noths
                 card_verification_value.set '737'
               when 'MasterCard'
                 credit_card_type.select 'MasterCard'
-                credit_card_number.set '5100 2900 2900 2909'
+                credit_card_number.set '5555 4444 3333 1111'
                 card_verification_value.set '737'
               when 'Visa'
                 credit_card_type.select 'Visa'

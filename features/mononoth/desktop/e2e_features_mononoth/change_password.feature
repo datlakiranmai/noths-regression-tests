@@ -40,7 +40,8 @@ Feature: Change Password
     And I should see my email address in my accounts page
     And I provide valid current password
     And I submit my details form
-    Then I should see flash message saying your details have successfully been updated
+    Then I should get password error messages title saying Please check your details before continuing
+    And I should get password error message saying Please enter the same password twice
     And I sign out from my account
     And I navigate to home page
     And I click on Signin
@@ -155,8 +156,7 @@ Feature: Change Password
     And I provide a new password as qwertyuiop
     And I submit my details form
     Then I should get password error messages title saying Please check your details before continuing
-    And I should get password error message saying current password incorrect, please try again
-
+    And I should get password error message saying Please enter the same password twice
 
 #   TODO CONFIRM USER SPACES AS PASSWORDS
 #  @smoke_tests @cog_e2e @44.07

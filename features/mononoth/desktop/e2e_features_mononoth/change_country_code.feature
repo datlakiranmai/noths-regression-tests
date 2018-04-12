@@ -18,7 +18,7 @@ Feature: Change default country code
     And I should be taken to My details page
     And I should see my email address in my accounts page
     And I should see my country code as Germany [49]
-    And I should see my contact number as 069 299 571 109
+    And I should see my contact number as 069299571109
     And I sign out from my account
     And I navigate to home page
     When I click on Signin
@@ -28,7 +28,7 @@ Feature: Change default country code
     And I should be taken to My details page
     And I should see my email address in my accounts page
     And I should see my country code as Germany [49]
-    And I should see my contact number as 069 299 571 109
+    And I should see my contact number as 069299571109
 
   @e2e @11.02
   Scenario Outline: 11.02 - A potential customer is able to successfully register with a following British Isles via the header
@@ -42,8 +42,8 @@ Feature: Change default country code
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
-    And I should see my country code as <isle> [44]
-    And I should see my contact number as 07 92 99 57 11 0
+    And I should see my country code as United Kingdom [44]
+    And I should see my contact number as 07929957110
     And I sign out from my account
     And I navigate to home page
     When I click on Signin
@@ -52,8 +52,8 @@ Feature: Change default country code
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
-    And I should see my country code as <isle> [44]
-    And I should see my contact number as 07 92 99 57 11 0
+    And I should see my country code as United Kingdom [44]
+    And I should see my contact number as 07929957110
     Examples:
       | isle        |
       | Isle of Man |
@@ -72,8 +72,8 @@ Feature: Change default country code
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
-    And I should see my country code as Isle of Man [44]
-    And I should see my contact number as 077 92 99 57 11
+    And I should see my country code as United Kingdom [44]
+    And I should see my contact number as 07792995711
     And I select my country code as Jersey [44]
     And I provide my contact number as 077 92 99 57 22
     And I submit my details form
@@ -86,8 +86,8 @@ Feature: Change default country code
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
-    And I should see my country code as Jersey [44]
-    And I should see my contact number as 077 92 99 57 22
+    And I should see my country code as United Kingdom [44]
+    And I should see my contact number as 07792995722
 
   @e2e @11.04
   Scenario: 11.04 - A potential customer is able to successfully register with an Invalid phone number
@@ -101,4 +101,4 @@ Feature: Change default country code
     And I should be taken to My details page
     And I should see my email address in my accounts page
     And I should see my country code as United Kingdom [44]
-    And I should see my contact number as 077 92 99 57 11 12 13 14
+    And I should see my contact number as +447792995711121314

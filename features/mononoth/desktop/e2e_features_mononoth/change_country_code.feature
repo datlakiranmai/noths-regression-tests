@@ -86,8 +86,8 @@ Feature: Change default country code
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
-    And I should see my country code as United Kingdom [44]
-    And I should see my contact number as 07792995722
+    And I should see my country code as Jersey [44]
+    And I should see my contact number as 077 92 99 57 22
 
   @e2e @11.04
   Scenario: 11.04 - A potential customer is able to successfully register with an Invalid phone number
@@ -101,4 +101,4 @@ Feature: Change default country code
     And I should be taken to My details page
     And I should see my email address in my accounts page
     And I should see my country code as United Kingdom [44]
-    And I should see my contact number as +447792995711121314
+    And I should see my contact number as +4407792995711121314

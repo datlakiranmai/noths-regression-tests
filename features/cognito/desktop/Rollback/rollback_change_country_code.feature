@@ -39,6 +39,9 @@ Feature: Change default country code [Rollback New user]
     Given I enable the rollback flag ON as admin
     And I navigate to home page
     And I check my rollback flag is ON
+    Given I enable the cognito flag OFF as admin
+    And I navigate to home page
+    And I check my cognito flag is OFF
     When I click on Signin
     And I sign in with my new credentials
     Then I navigate to My accounts page

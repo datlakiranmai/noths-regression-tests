@@ -11,7 +11,7 @@ Feature: Search
     When I search for watches in search textfield
     And I click on Find
     Then I should be taken to search results
-    And I should see my page title as You searched for "watches"
+    And I should see my search page title as You searched for "watches"
     And I should see the respective products
 
   @demo @P1 @e2e @30.02
@@ -19,7 +19,7 @@ Feature: Search
     When I search for red flowers in search textfield
     And I click on Find
     Then I should be taken to search results
-    And I should see my page title as You searched for "red flowers"
+    And I should see my search page title as You searched for "red flowers"
     Then I should see images for all the products
     And I should see product title for all the products
     And I should see price tags for all the products
@@ -29,7 +29,7 @@ Feature: Search
     When I search for plants in search textfield
     And I click on Find
     Then I should be taken to search results
-    And I should see my page title as You searched for "plants"
+    And I should see my search page title as You searched for "plants"
     And I should see the respective products
     When I filter free delivery to mainland UK delivery option
     Then I should see a label as Free delivery

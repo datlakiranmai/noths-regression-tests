@@ -7,6 +7,10 @@ Then(/^I should see my page title as (.*)$/) do |category_name|
 end
 
 
+Then(/^I should see my search page title as (.*)$/) do |category_name|
+  expect(@app.search.search_page.text.downcase).to eq(category_name.downcase)
+end
+
 Then(/^I should see the respective products$/) do
   expect(@app.search.searched_products_count.to_s).to eq(@app.search.no_of_search_items)
 end

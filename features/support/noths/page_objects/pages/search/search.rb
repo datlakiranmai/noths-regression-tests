@@ -20,6 +20,7 @@ module Noths
 
           elements :current_GBP, '.currency_GBP'
 
+
           def search_page?
             page.has_css?('.page_title.search_title')
           end

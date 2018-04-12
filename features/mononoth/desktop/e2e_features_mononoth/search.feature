@@ -24,7 +24,7 @@ Feature: Search
     And I should see product title for all the products
     And I should see price tags for all the products
 
-  @p1 @P1 @30.03
+  @p1 @P1 @e2e @30.03
   Scenario: 30.03 - Filter out products which offers Free delivery
     When I search for plants in search textfield
     And I click on Find

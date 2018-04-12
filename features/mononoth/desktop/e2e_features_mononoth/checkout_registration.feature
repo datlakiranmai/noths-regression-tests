@@ -35,7 +35,7 @@ Feature: Checkout Registration
     And I provide VisaDebit payment details
     Then I should see order confirmation page
 
-  @paypal @payments @5.03
+  @paypal @e2e @payments @5.03
   Scenario: 5.03 - Checkout E2E - A customer should be able to checkout a standard product(Paypal express)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket and do not want to checkout

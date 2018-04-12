@@ -3,9 +3,9 @@ Feature: Sign out
   I want to sign out notonthehighstreet.com website
 
   Background:
-    Given I enable the cognito flag ON as admin
-    And I navigate to home page
-    And I check my cognito flag is ON
+#    Given I enable the cognito flag ON as admin
+#    And I navigate to home page
+#    And I check my cognito flag is ON
     And I register as a new user
 
   @error_msg_check @cog_e2e @41.01

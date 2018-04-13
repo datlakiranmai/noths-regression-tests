@@ -63,15 +63,15 @@ Before do
                                              desired_capabilities: chrome_capabilities)
   end
 
-  # Capybara.register_driver :chrome do |app|
-  #   client = Selenium::WebDriver::Remote::Http::Default.new
-  #    client.read_timeout = 180
-  #   $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, desired_capabilities: {
-  #     "chromeOptions" => {
-  #       "args" => %w{ no-sandbox start-fullscreen disable-impl-side-painting }
-  #     }
-  #   })
-  # end
+  Capybara.register_driver :local_chrome do |app|
+    client = Selenium::WebDriver::Remote::Http::Default.new
+     client.read_timeout = 180
+    $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, desired_capabilities: {
+      "chromeOptions" => {
+        "args" => %w{ no-sandbox start-fullscreen disable-impl-side-painting }
+      }
+    })
+  end
 
   Capybara.register_driver :mobile do |app|
     client = Selenium::WebDriver::Remote::Http::Default.new

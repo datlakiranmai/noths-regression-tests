@@ -75,5 +75,5 @@ Feature: Checkout Login [Rollback New user]
     And I expect NOT to see signin failure
     #And I enter in my address details
     And I should see the my email address in summary section
-    And I provide MasterCard payment details
+    And I provide MasterCard5X payment details
     Then I should see order confirmation page

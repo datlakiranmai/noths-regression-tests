@@ -29,7 +29,7 @@ Feature: Checkout Login [Legacy user]
     And I should see the my email address in summary section
     When I continue with my delivery address
     And I specify my card type
-    And I provide MasterCard payment details
+    And I provide MasterCard2X payment details
     Then I should see order confirmation page
     #Then I should see user created in cognito
     #And I should see user created in cognito account table
@@ -44,7 +44,7 @@ Feature: Checkout Login [Legacy user]
     And I sign in with my new credentials
     And I enter in my address details
     And I should see the my email address in summary section
-    And I provide MasterCard payment details
+    And I provide MasterCard5X payment details
     Then I should see order confirmation page
     #Then I should see user created in cognito
     #And I should see user created in cognito account table

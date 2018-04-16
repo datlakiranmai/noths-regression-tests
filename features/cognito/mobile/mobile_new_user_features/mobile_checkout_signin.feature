@@ -32,7 +32,7 @@ Feature: Mobile signin temporary
     And I choose to sign in
     And I sign in with my new credentials
     #And I specify my card type
-    And I provide MasterCard payment details
+    And I provide MasterCard5X payment details
     Then I should see Thank you for your order message
 
 

@@ -81,6 +81,10 @@ module Noths
         @pages[:paypal_page] ||= Noths::PageObjects::Pages::PaypalPage::PaypalPage.new
       end
 
+      def marketing_page
+        @pages[:marketing_page] ||= Noths::PageObjects::Pages::MarketingPage::MarketingPage.new
+      end
+
     end
   end
 end

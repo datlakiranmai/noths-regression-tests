@@ -26,6 +26,7 @@ Feature: Registration
     And I click on my favourites product image
     And I click on Favourite Register
     And I enter in my details in sign up form
+    And I check the privacy policy
     And I click Submit button
     And I navigate to My accounts page
     And I choose my details from my account section

@@ -16,23 +16,24 @@ module Noths
           element :signed_in_user, '.gc-header-myaccount__trigger.logged-in>span'
           element :favourite_btn, '.gc-header-favourites.gc-header__item.gc-header__item--favourites'
           elements :footer_link, '.gc-links-list__link'
-          elements :sign_out_btn, '.gc-button.gc-button--secondary'
+          elements :sign_out_btn, '.gc-button.gc-button--secondary.gc-header-myaccount__sign-out'
           elements :banner_img, '.desktop_only.desktop_banner'
-          element :forgotten_password_link, '.sign_in_forgotten_password.text_link'
+          element :forgotten_password_link, '.css-1f8a1tj'
 
           element :search_field, '#term'
           element :find_button, '.gc-button.gc-button--medium.gc-button--primary.gc-form__field.gc-form__field--submit'
 
-
           #favourites
           element :favourites_page_title, '.favourites_intro_header'
 
-
           #Welcome Screen
-          element :page_title, '.page_title'
+          element :page_title, '.css-1fysquf'
           element :info, '.message.info.with_icon'
-          element :new_customer, '#button_new_customer'
+          elements :new_customer, '.NFC-Button.NFC-Button--medium'
           element :sign_up_link, '#sign_up_link'
+
+          #legacy_page_title
+          element :legacy_page_title, '.page_title'
 
           #mobile
           elements :mobile_buttons, 'a.gc-button.gc-button--medium.gc-button--primary.gc-button--full-width'
@@ -41,6 +42,8 @@ module Noths
           #admin
           elements :site_features, '#new_feature'
           element :cms_sign_out, '#ext-gen161'
+
+
 
           def navigate(link=nil)
             retry_on_readtimeout(link)
@@ -171,7 +174,7 @@ module Noths
               when 'Sign up'
                 sign_up_link.click
               when 'Continue'
-                new_customer.click
+                new_customer.last.click
             end
           end
 

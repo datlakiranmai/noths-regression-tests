@@ -79,7 +79,7 @@ And(/^I sign in with my new credentials$/) do
 end
 
 And(/^I sign in with my existing credentials$/) do
-  @app.login.signin_credentials(@app.registration.email_address, @app.registration.password)
+  @app.login.signin(@app.registration.email_address, @app.registration.password)
 end
 
 
@@ -120,7 +120,7 @@ And(/^I should see sign in password textfield input should get cleared up$/) do
 end
 
 Then(/^I should see sign in failure with message (.*)$/) do |error_msg|
-  expect(@app.login.checkout_sign_in_error_msg.text).to eq(error_msg)
+  expect(@app.login.sign_in_error_msg.text).to eq(error_msg)
 end
 
 And(/^I sign in with my user name in capital letters$/) do

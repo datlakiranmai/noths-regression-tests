@@ -13,10 +13,14 @@ Feature: User registration with an already existing email address
     And I add the product in my basket
     And I click on Continue
     And I enter in existing details in your details form
+    And I choose to opt out for marketing emails communication
+    And I choose to opt out for direct post communication
+    And I check the privacy policy
+    And I should see the marketing emails checkbox is unchecked
+    And I should see the direct post checkbox is unchecked
+    And I should see the privacy policy checkbox is checked
     And I Continue to next page
-    Then I should see error title saying Please check your details before continuing
-    And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
-    And I should see info message saying To use this email address simply sign in before continuing.
+    Then I should see error title saying Please check your details before continuing. this email address has already been used to register an account. To use this email address, simply sign in before continuing.
     And I should see password text field input should get cleared up
 
   @smoke_tests @e2e @7.02

@@ -28,7 +28,7 @@ module Noths
 
           #Welcome Screen
           element :page_title, '.css-1fysquf'
-          element :info, '.message.info.with_icon'
+          element :info, 'css-qrn02x'
           elements :new_customer, '.NFC-Button.NFC-Button--medium'
           element :sign_up_link, '#sign_up_link'
 

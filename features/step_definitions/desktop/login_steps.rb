@@ -140,17 +140,17 @@ And(/^I sign in with my new password$/) do
 end
 
 And(/^I sign in with new current password$/) do
-  @app.login.signin_credentials(@app.registration.email_address, @invalid_current_password)
+  @app.login.signin(@app.registration.email_address, @invalid_current_password)
 end
 
 And(/^I sign in with my new password as (.*)$/) do |password|
-  @app.login.signin_credentials(@app.registration.email_address, password)
+  @app.login.signin_(@app.registration.email_address, password)
 end
 
 And(/^I sign in with my new email address$/) do
   puts "email address is #{@app.my_details.new_email_address}"
   puts "password is #{@app.registration.password}"
-  @app.login.signin_credentials(@app.my_details.new_email_address, @app.registration.password)
+  @app.login.signin(@app.my_details.new_email_address, @app.registration.password)
 end
 
 And(/^I enter a valid email and password$/) do

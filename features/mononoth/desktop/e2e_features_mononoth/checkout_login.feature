@@ -64,7 +64,7 @@ Feature: Checkout Login
     Then I should see order confirmation page
 
 
-  @paypal @e2e @3.05
+  @payments @paypal @e2e @3.05
   Scenario: 3.05 - Checkout E2E - Customer should be able to purchase a product as a customer (paypal Mark)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket

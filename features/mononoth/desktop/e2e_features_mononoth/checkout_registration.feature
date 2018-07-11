@@ -59,6 +59,10 @@ Feature: Checkout Registration
     And I add the product in my basket
     And I click on Continue
     And I enter in my details in your details form
+    And I check the privacy policy
+    And I should see the marketing emails checkbox is checked
+    And I should see the direct post checkbox is checked
+    And I should see the privacy policy checkbox is checked
     And I Continue to next page
     And I enter in my address details
     Then I should see my name as delivery recipient

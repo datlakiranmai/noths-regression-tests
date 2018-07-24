@@ -17,7 +17,7 @@ Feature: Checkout Login
     And  I should see Antony Roberts Estate Agents as my delivery address
     And I should see the my email address in summary section
     When I continue with my delivery address
-    #And I specify my card type
+    And I specify my card type
     And I provide VisaDebit payment details
     Then I should see order confirmation page
 
@@ -31,7 +31,7 @@ Feature: Checkout Login
     And  I should see Antony Roberts Estate Agents as my delivery address
     And I should see the my email address in summary section
     When I continue with my delivery address
-    #And I specify my card type
+    And I specify my card type
     And I provide MasterCard5X payment details
     Then I should see order confirmation page
 
@@ -45,7 +45,7 @@ Feature: Checkout Login
     And  I should see Antony Roberts Estate Agents as my delivery address
     And I should see the my email address in summary section
     When I continue with my delivery address
-    #And I specify my card type
+    And I specify my card type
     And I provide Visa payment details
     Then I should see order confirmation page
 
@@ -59,7 +59,7 @@ Feature: Checkout Login
     And  I should see Antony Roberts Estate Agents as my delivery address
     And I should see the my email address in summary section
     When I continue with my delivery address
-    #And I specify my card type
+    And I specify my card type
     And I provide AmericanExpress payment details
     Then I should see order confirmation page
 
@@ -124,6 +124,6 @@ Feature: Checkout Login
     And  I should see Antony Roberts Estate Agents as my delivery address
     And I should see the my email address in summary section
     When I continue with my delivery address
-    #And I specify my card type
+    And I specify my card type
     And I provide MasterCard2X payment details
     Then I should see order confirmation page

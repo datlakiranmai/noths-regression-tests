@@ -88,3 +88,11 @@ And(/^I choose to pay via paypal$/) do
   @app.payment.select_paypal
 end
 
+
+# Then(/^I should be redirected to the issuer's website$/) do
+#   @app.payment.
+# end
+
+And(/^I provide my credentials$/) do
+  @app.payment.secure_payment
+end

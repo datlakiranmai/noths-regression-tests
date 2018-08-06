@@ -5,6 +5,7 @@ module Noths
       module AddToBasket
         class AddToBasket < SitePrism::Page
           include Poltergeist
+          include Mobile
           include Helper
           elements :proceed_to_checkout, '.button.primary.medium.proceed_to_checkout_button'
           element :add_to_basket_button, '#add_to_cart'
@@ -47,8 +48,12 @@ module Noths
             close_survey_popup
             add_to_basket_button.click
             close_survey_popup
-            checkout_button.click
-            proceed_to_checkout.first.click
+            if mobile?
+              proceed_to_checkout.first.click
+            else
+              checkout_button.click
+              proceed_to_checkout.first.click
+            end
           end
 
           def add_the_product_to_wishlist

@@ -22,3 +22,11 @@ end
 And(/^I check my rollback flag is (.*)$/) do |status|
     expect(@app.home.check_rollback_flag(status)).to eq(true)
 end
+
+Given(/^the user_account flag is turn on$/) do
+    @app.home.navigate_to_admin
+    sleep 1
+    @app.login.admin_signin_credentials
+    @app.home.navigate_to_site_features
+    @app.home.turn_user_account_flag
+end

@@ -95,6 +95,21 @@ module Noths
             end
           end
 
+          def turn_user_account_flag
+            useGdpr = all('#new_feature').select {|l| l[:action].include? 'user_account/preview'}
+            useGdpr[0].find('#new_feature>input').click
+            sleep 1
+            if mobile?
+              page.driver.browser.manage.window.resize_to(1200, 768)
+              visit('admin#home')
+              cms_sign_out.click
+              page.driver.browser.manage.window.resize_to(375, 667)
+            else
+              retry_on_readtimeout('admin#home')
+              cms_sign_out.click
+            end
+          end
+
 
           def favourites_page?
             page.has_css?('.favourites_intro_header')

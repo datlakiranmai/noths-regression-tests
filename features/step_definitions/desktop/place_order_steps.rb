@@ -23,7 +23,7 @@ And(/^I click on voucher code link$/) do
 end
 
 And(/^I apply my gift voucher code$/) do
-  @app.payment.apply_voucher_code(@app.my_orders.voucher_code)
+  @app.payment.apply_voucher_code
 end
 
 Then(/^I should see (.*) as my delivery recipient$/) do |delivery_recipient|
@@ -89,3 +89,6 @@ And(/^I choose to pay via paypal$/) do
   @app.payment.select_paypal
 end
 
+And(/^I provide my credentials$/) do
+  @app.payment.secure_payment
+end

@@ -4,7 +4,9 @@ Feature: Sign In failure
   with an invalid password
 
   Background:
-    Given I register as a new user
+    Given I navigate to home page
+    And I check and enable the user_account flag
+    And I register as a new user
     And I sign out from my account
 
   @p1 @smoke_tests @e2e @6.01

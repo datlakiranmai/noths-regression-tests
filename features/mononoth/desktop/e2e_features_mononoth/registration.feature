@@ -4,7 +4,9 @@ Feature: Registration
   So that I can purchase gorgeous things online, create a wishlist and, receive exclusive news of special offers and updates
 
   Background:
-    Given I am on Home page
+    Given I navigate to home page
+    And I check and enable the user_account flag
+    And I am on Home page
 
   @smoke_tests @e2e @1.01
   Scenario: 1.01 - A potential customer is able to successfully register via the header

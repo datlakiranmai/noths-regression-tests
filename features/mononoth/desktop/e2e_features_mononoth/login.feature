@@ -4,7 +4,9 @@ Feature: Login
   I expect to land on my details page
 
   Background:
-    Given I register as a new user
+    Given I navigate to home page
+    And I check and enable the user_account flag
+    And I register as a new user
     And I sign out from my account
 
   @smoke_tests @e2e @no_poltergeist @2.01

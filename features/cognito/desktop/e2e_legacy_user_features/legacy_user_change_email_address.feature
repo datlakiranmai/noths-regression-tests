@@ -4,6 +4,12 @@ Feature: Update Email address [Legacy user]
   I should be able to update my email address via my details page
 
   Background:
+    Given I enable the rollback flag ON as admin
+    And I navigate to home page
+    And I check my rollback flag is ON
+    Given I enable the cognito flag OFF as admin
+    And I navigate to home page
+    And I check my cognito flag is OFF
     And I register as a new user
     And I sign out from my account
 

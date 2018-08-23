@@ -19,6 +19,11 @@ module Noths
               end
             end
           end
+
+          def title_order_completed?
+            try_until(40) { @title_order_completed = page.has_css?('.section_title') }
+            @title_order_completed
+          end
         end
       end
     end

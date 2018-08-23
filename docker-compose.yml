@@ -3,11 +3,12 @@
     image: selenium/hub
     ports:
       - "4563:4444"
+    shm_size: 4g
+    volumes:
+      - /dev/shm:/dev/shm
 
   firefoxnode:
-    image: selenium/node-firefox-debug
-    ports:
-      - "3754:5900"
+    image: selenium/node-firefox
     links:
       - seleniumhub
     environment:
@@ -16,10 +17,13 @@
 
   chromenode:
     image: selenium/node-chrome-debug
+    shm_size: 2g
     ports:
-      - "3758:5900"
+     - "3758:5900"
     links:
       - seleniumhub
+    volumes:
+      - /dev/shm:/dev/shm
     environment:
       HUB_PORT_4444_TCP_ADDR: seleniumhub
       HUB_PORT_4444_TCP_PORT: '4444'
@@ -28,6 +32,6 @@
     build: .
     links:
       - chromenode
-      - firefoxnode
     volumes:
       - ./:/service
+      - /dev/shm:/dev/shm

@@ -1,6 +1,7 @@
 require 'site_prism'
 require 'rspec/expectations'
 require 'nokogiri'
+require 'pry'
 
 module Noths
   module PageObjects
@@ -16,23 +17,24 @@ module Noths
           element :signed_in_user, '.gc-header-myaccount__trigger.logged-in>span'
           element :favourite_btn, '.gc-header-favourites.gc-header__item.gc-header__item--favourites'
           elements :footer_link, '.gc-links-list__link'
-          elements :sign_out_btn, '.gc-button.gc-button--secondary'
+          elements :sign_out_btn, '.gc-button.gc-button--secondary.gc-header-myaccount__sign-out'
           elements :banner_img, '.desktop_only.desktop_banner'
-          element :forgotten_password_link, '.sign_in_forgotten_password.text_link'
+          element :forgotten_password_link, '.css-1f8a1tj'
 
           element :search_field, '#term'
           element :find_button, '.gc-button.gc-button--medium.gc-button--primary.gc-form__field.gc-form__field--submit'
 
-
           #favourites
           element :favourites_page_title, '.favourites_intro_header'
 
-
           #Welcome Screen
-          element :page_title, '.page_title'
-          element :info, '.message.info.with_icon'
-          element :new_customer, '#button_new_customer'
+          element :page_title, '.css-1fysquf'
+          element :info, '.css-qrn02x'
+          elements :new_customer, '.NFC-Button.NFC-Button--medium'
           element :sign_up_link, '#sign_up_link'
+
+          #legacy_page_title
+          element :legacy_page_title, '.page_title'
 
           #mobile
           elements :mobile_buttons, 'a.gc-button.gc-button--medium.gc-button--primary.gc-button--full-width'
@@ -41,6 +43,8 @@ module Noths
           #admin
           elements :site_features, '#new_feature'
           element :cms_sign_out, '#ext-gen161'
+
+
 
           def navigate(link=nil)
             retry_on_readtimeout(link)
@@ -92,6 +96,20 @@ module Noths
             end
           end
 
+          def turn_user_account_flag
+            useGdpr = all('#new_feature').select {|l| l[:action].include? 'user_account/preview'}
+            useGdpr[0].find('#new_feature>input').click
+            sleep 1
+            if mobile?
+              page.driver.browser.manage.window.resize_to(1200, 768)
+              visit('admin#home')
+              cms_sign_out.click
+              page.driver.browser.manage.window.resize_to(375, 667)
+            else
+              retry_on_readtimeout('admin#home')
+              cms_sign_out.click
+            end
+          end
 
           def favourites_page?
             page.has_css?('.favourites_intro_header')
@@ -102,9 +120,22 @@ module Noths
             status == 'ON' ? page_source.include?('"useCognitoAuth":true') : page_source.include?('"useCognitoAuth":false')
           end
 
+          def turn_gift_cards_flag
+            usegiftcards = all('#new_feature').select {|l| l[:action].include? 'third_party_gift_cards/preview'}
+            usegiftcards[0].find('#new_feature>input').click
+            sleep 1
+            visit('admin#home')
+            cms_sign_out.click
+          end
+
           def check_rollback_flag(status)
             page_source = page.body
             status == 'ON' ? page_source.include?('"useCognitoRollback":true') : page_source.include?('"useCognitoRollback":false')
+          end
+
+          def check_user_account_flag
+            page_source = page.body
+            page_source.include?('"userAccount":true')
           end
 
           def hover_myaccounts
@@ -118,7 +149,7 @@ module Noths
           def navigate_to_myaccounts
             start_time=Time.now
             begin
-              page.find('.gc-header-myaccount__trigger.logged-in>span',wait: 10).click
+              page.find('.gc-header-myaccount__trigger.logged-in>span',wait: 20).click
             rescue Capybara::ElementNotFound
               p "Registartion/Sign In Failure - Redirection Timeout, Waited for #{Time.now-start_time}!"
             end
@@ -171,7 +202,7 @@ module Noths
               when 'Sign up'
                 sign_up_link.click
               when 'Continue'
-                new_customer.click
+                new_customer.last.click
             end
           end
 

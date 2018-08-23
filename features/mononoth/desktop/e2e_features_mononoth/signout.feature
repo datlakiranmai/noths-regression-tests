@@ -3,7 +3,9 @@ Feature: Sign out
   I want to sign out notonthehighstreet.com website
 
   Background:
-    Given I register as a new user
+    Given I navigate to home page
+    And I check and enable the user_account flag
+    And I register as a new user
 
    @e2e @4.01
   Scenario:4.01 - Sign out via the header
@@ -20,7 +22,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.03
+  @p1 @e2e @4.03
   Scenario:4.03 - Sign out on product details page via the header
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I hover my account via header
@@ -46,7 +48,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.06
+  @p1 @e2e @4.06
   Scenario:4.06 - Sign out on order completion page via the header
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
@@ -64,7 +66,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.07
+  @p1 @e2e @4.07
   Scenario: 4.07 - Sign out the cart page via the header
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket and do not want to checkout

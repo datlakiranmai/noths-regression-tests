@@ -4,9 +4,9 @@ Feature: Forgotten password [New User]
   I should be able to make email request for password reset via forgotten password form
 
   Background:
-    Given I enable the cognito flag ON as admin
-    And I navigate to home page
-    And I check my cognito flag is ON
+#    Given I enable the cognito flag ON as admin
+#    And I navigate to home page
+#    And I check my cognito flag is ON
     And I am on Home page
 
   @cog_e2e @43.01

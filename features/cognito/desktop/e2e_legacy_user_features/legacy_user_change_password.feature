@@ -6,6 +6,12 @@ Feature: Change Password [Legacy user]
 
   @smoke_tests @cog_e2e @30.01
   Scenario: [Legacy user] 30.01 - A customer should be able to reset their password on the my details page
+    Given I enable the rollback flag ON as admin
+    And I navigate to home page
+    And I check my rollback flag is ON
+    Given I enable the cognito flag OFF as admin
+    And I navigate to home page
+    And I check my cognito flag is OFF
     Given I register as a new user
     And I sign out from my account
     And I enable the cognito flag ON as admin
@@ -33,6 +39,12 @@ Feature: Change Password [Legacy user]
 
   @smoke_tests @cog_e2e @30.02
   Scenario: [Legacy user] 30.02 - A customer who is already signed in via Mononoth should be able to reset their password on the my details page
+    Given I enable the rollback flag ON as admin
+    And I navigate to home page
+    And I check my rollback flag is ON
+    Given I enable the cognito flag OFF as admin
+    And I navigate to home page
+    And I check my cognito flag is OFF
     Given I register as a new user
     And I sign out from my account
     When I navigate to home page

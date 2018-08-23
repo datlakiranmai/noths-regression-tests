@@ -5,9 +5,9 @@ Feature: Change default country code [Rollback New user]
   I expect to land on my details page
 
   Background:
-    Given I enable the cognito flag ON as admin
-    And I navigate to home page
-    And I check my cognito flag is ON
+#    Given I enable the cognito flag ON as admin
+#    And I navigate to home page
+#    And I check my cognito flag is ON
 
   @cog_e2e @176.01
   Scenario: [Rollback New user] 176.01 - A potential customer is able to successfully register with a custom country code via the header

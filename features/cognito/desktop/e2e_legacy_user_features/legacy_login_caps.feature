@@ -4,9 +4,15 @@ Feature: Login (username in uppercase) [Legacy User]
   I expect to land on my details page
 
   Background:
+    Given I enable the rollback flag ON as admin
+    And I navigate to home page
+    And I check my rollback flag is ON
+    Given I enable the cognito flag OFF as admin
+    And I navigate to home page
+    And I check my cognito flag is OFF
     Given I register as a new user
     And I sign out from my account
-    And I enable the cognito flag ON as admin
+    Given I enable the cognito flag ON as admin
     And I navigate to home page
     And I check my cognito flag is ON
 

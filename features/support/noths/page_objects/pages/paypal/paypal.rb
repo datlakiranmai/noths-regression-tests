@@ -4,6 +4,7 @@ module Noths
       module PaypalPage
         class PaypalPage < SitePrism::Page
           include Helper
+          include Poltergeist
 
           element :continue_btn, '#confirmButtonTop'
           element :preloader_spinner, '#preloaderSpinner'
@@ -12,27 +13,37 @@ module Noths
           element :password, "#password"
           element :signin_button, '#btnLogin'
 
-          def paypal_signin
-            wait_until_preloader_spinner_invisible(30)
+          element :login, '.btn.full.ng-binding'
 
-            within_frame "injectedUl" do
-              email.set Configuration.instance.username('paypal')
-              password.set Configuration.instance.password('paypal')
-              signin_button.click
-            end
+          element :next_button, :id, 'btnNext'
+
+          def paypal_signin_page?
+            try_until(40) { @email = has_email? }
+            @email
+          end
+
+          def paypal_signin
+            wait_until_preloader_spinner_invisible(60)
+            #within_frame "injectedUl" do
+            login.click
+            sleep 5
+            email.set Configuration.instance.username('paypal')
+            next_button.click
+            password.set Configuration.instance.password('paypal')
+            signin_button.click
+            #end
           end
 
           def wait_for_paypal_page
+            sleep 2
             wait_for_preloader_spinner(30)
           end
 
           def continue
-            wait_until_continue_btn_visible(30)
-            if chrome?
-              page.find('#confirmButtonTop').click
-            else
-              page.execute_script("document.querySelector('#confirmButtonTop').click();")
-            end
+            wait_until_continue_btn_visible(60)
+            page.execute_script("document.querySelector('#confirmButtonTop').click();")
+            sleep 3
+            page.execute_script("document.querySelector('#confirmButtonTop').click();")
           end
         end
       end

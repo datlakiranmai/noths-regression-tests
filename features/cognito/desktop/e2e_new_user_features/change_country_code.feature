@@ -5,9 +5,9 @@ Feature: Change default country code [New user]
   I expect to land on my details page
 
   Background:
-    Given I enable the cognito flag ON as admin
-    And I navigate to home page
-    And I check my cognito flag is ON
+#    Given I enable the cognito flag ON as admin
+#    And I navigate to home page
+#    And I check my cognito flag is ON
 
   @cog_e2e @47.01
   Scenario: [New user] 47.01 - A potential customer is able to successfully register with a custom country code via the header

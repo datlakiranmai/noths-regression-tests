@@ -6,6 +6,12 @@ Feature: Change default country code [Legacy user]
 
   @cog_e2e @33.01
   Scenario: [Legacy user] 33.01 - A potential customer is able to successfully register with a custom country code via the header
+    Given I enable the rollback flag ON as admin
+    And I navigate to home page
+    And I check my rollback flag is ON
+    Given I enable the cognito flag OFF as admin
+    And I navigate to home page
+    And I check my cognito flag is OFF
     Given I am on Home page
     And I click on Register
     And I enter in my details in sign up form
@@ -32,6 +38,12 @@ Feature: Change default country code [Legacy user]
 
   @cog_e2e @33.02
   Scenario Outline: [Legacy user] 33.02 - A potential customer is able to successfully register with a following British Isles via the header
+    Given I enable the rollback flag ON as admin
+    And I navigate to home page
+    And I check my rollback flag is ON
+    Given I enable the cognito flag OFF as admin
+    And I navigate to home page
+    And I check my cognito flag is OFF
     Given I am on Home page
     And I click on Register
     And I enter in my details in sign up form
@@ -55,8 +67,8 @@ Feature: Change default country code [Legacy user]
     And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
-    And I should see my country code as <isle_with_code>
-    And I should see my contact number as 06 92 99 57 11 09
+    And I should see my country code as United Kingdom [44]
+    And I should see my contact number as 069299571109
     Examples:
       | isle        | isle_with_code   |
       | Isle of Man | Isle of Man [44] |

@@ -4,9 +4,9 @@ Feature: Update Email address [New user]
   I should be able to update my email address via my details page
 
   Background:
-    Given I enable the cognito flag ON as admin
-    And I navigate to home page
-    And I check my cognito flag is ON
+#    Given I enable the cognito flag ON as admin
+#    And I navigate to home page
+#    And I check my cognito flag is ON
     And I register as a new user
     And I sign out from my account
 

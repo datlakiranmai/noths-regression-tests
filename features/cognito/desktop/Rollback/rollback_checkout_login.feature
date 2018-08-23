@@ -4,9 +4,9 @@ Feature: Checkout Login [Rollback New user]
   I want to signin during checkout process
 
   Background:
-    Given I enable the cognito flag ON as admin
-    And I navigate to home page
-    And I check my cognito flag is ON
+#    Given I enable the cognito flag ON as admin
+#    And I navigate to home page
+#    And I check my cognito flag is ON
     And I register as a new user
     And I sign out from my account
 
@@ -75,5 +75,5 @@ Feature: Checkout Login [Rollback New user]
     And I expect NOT to see signin failure
     #And I enter in my address details
     And I should see the my email address in summary section
-    And I provide MasterCard payment details
+    And I provide MasterCard5X payment details
     Then I should see order confirmation page

@@ -4,10 +4,12 @@ Feature: Sign In failure
   with an invalid password
 
   Background:
-    Given I register as a new user
+    Given I navigate to home page
+    And I check and enable the user_account flag
+    And I register as a new user
     And I sign out from my account
 
-  @smoke_tests @e2e @6.01
+  @p1 @smoke_tests @e2e @6.01
   Scenario: 6.01 - Password field should get cleared when a user signs in with an invalid password during checkout of standard products
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket

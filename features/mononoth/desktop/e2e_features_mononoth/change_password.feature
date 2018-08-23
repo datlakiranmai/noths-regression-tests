@@ -4,10 +4,12 @@ Feature: Change Password
   I should be able to change password via my details page
 
   Background:
+    Given I navigate to home page
+    And I check and enable the user_account flag
     And I register as a new user
     And I sign out from my account
 
-  @smoke_tests @e2e @9.01
+  @p1 @e2e @9.01
   Scenario: 9.01 - A customer should be able to reset their password on the my details page
     When I navigate to home page
     And I click on Signin
@@ -40,7 +42,8 @@ Feature: Change Password
     And I should see my email address in my accounts page
     And I provide valid current password
     And I submit my details form
-    Then I should see flash message saying your details have successfully been updated
+    Then I should get password error messages title saying Please check your details before continuing
+    And I should get password error message saying Please enter the same password twice
     And I sign out from my account
     And I navigate to home page
     And I click on Signin
@@ -155,8 +158,7 @@ Feature: Change Password
     And I provide a new password as qwertyuiop
     And I submit my details form
     Then I should get password error messages title saying Please check your details before continuing
-    And I should get password error message saying current password incorrect, please try again
-
+    And I should get password error message saying Please enter the same password twice
 
 #   TODO CONFIRM USER SPACES AS PASSWORDS
 #  @smoke_tests @cog_e2e @44.07

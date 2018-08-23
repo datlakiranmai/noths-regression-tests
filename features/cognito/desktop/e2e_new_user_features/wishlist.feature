@@ -3,9 +3,9 @@ Feature: Wish List [New user]
   I want to save a product in my wish list
 
   Background:
-    Given I enable the cognito flag ON as admin
-    And I navigate to home page
-    And I check my cognito flag is ON
+#    Given I enable the cognito flag ON as admin
+#    And I navigate to home page
+#    And I check my cognito flag is ON
 
   @104.01
   Scenario: 104.01 - A registered customer is able to save a product for later in the wish list.

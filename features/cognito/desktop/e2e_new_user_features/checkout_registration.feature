@@ -4,9 +4,9 @@ Feature: Checkout Registration
   I want to signup during checkout process
 
   Background:
-    Given I enable the cognito flag ON as admin
-    And I navigate to home page
-    And I check my cognito flag is ON
+#    Given I enable the cognito flag ON as admin
+#    And I navigate to home page
+#    And I check my cognito flag is ON
     And I am on Home page
 
   @cog_e2e @37.01

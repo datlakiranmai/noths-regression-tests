@@ -13,6 +13,10 @@ module Noths
         @pages[:mydetails_page] ||= Noths::PageObjects::Pages::MyDetails::MyDetails.new
       end
 
+      def my_orders
+        @pages[:myorders_page] ||= Noths::PageObjects::Pages::MyOrders::MyOrders.new
+      end
+
       def login
         @pages[:signin_page] ||= Noths::PageObjects::Pages::LoginPage::LoginPage.new
       end
@@ -75,6 +79,10 @@ module Noths
 
       def paypal_page
         @pages[:paypal_page] ||= Noths::PageObjects::Pages::PaypalPage::PaypalPage.new
+      end
+
+      def marketing_page
+        @pages[:marketing_page] ||= Noths::PageObjects::Pages::MarketingPage::MarketingPage.new
       end
 
     end

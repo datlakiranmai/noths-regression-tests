@@ -4,19 +4,25 @@ Feature: User registration with an already existing email address
   with an already existing email address
 
   Background:
-    Given I register as a new user
+    Given I navigate to home page
+    And I check and enable the user_account flag
+    And I register as a new user
     And I sign out from my account
 
-  @smoke_tests @e2e @7.01
+  @p1 @smoke_tests @e2e @7.01
   Scenario: 7.01 - A customer should see the 'user already exists' message if they use an existing registered email during the checkout of a standard product
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
     And I add the product in my basket
     And I click on Continue
     And I enter in existing details in your details form
+    And I choose to opt out for marketing emails communication
+    And I choose to opt out for direct post communication
+    And I check the privacy policy
+    And I should see the marketing emails checkbox is unchecked
+    And I should see the direct post checkbox is unchecked
+    And I should see the privacy policy checkbox is checked
     And I Continue to next page
-    Then I should see error title saying Please check your details before continuing
-    And I should see error message saying this email address has already been used to register an account. to use this email address, simply sign in before continuing.
-    And I should see info message saying To use this email address simply sign in before continuing.
+    Then I should see error title saying Please check your details before continuing. this email address has already been used to register an account. To use this email address, simply sign in before continuing.
     And I should see password text field input should get cleared up
 
   @smoke_tests @e2e @7.02

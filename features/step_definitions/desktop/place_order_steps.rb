@@ -1,3 +1,4 @@
+
 And(/^I add the product in my basket$/) do
   @app.add_to_basket.add_the_product_in_basket
 end
@@ -7,13 +8,23 @@ And(/^I add the product in my basket and do not want to checkout$/) do
 end
 
 And(/^I specify my card type$/) do
+  expect(@app.payment.payment_option?).to eq(true),"[Failed] - Payments options are not displayed!"
   @app.payment.select_card_type
 end
 
 And(/^I provide (.*) payment details$/) do |card_type|
+  #expect(@app.payment.credit_card_type?).to eq(true),"[Failed] - Payments page is not displayed!"
   @app.payment.submit_payment(card_type)
 end
 
+
+And(/^I click on voucher code link$/) do
+  @app.payment.select_voucher_code
+end
+
+And(/^I apply my gift voucher code$/) do
+  @app.payment.apply_voucher_code
+end
 
 Then(/^I should see (.*) as my delivery recipient$/) do |delivery_recipient|
   @delivery_recipient=delivery_recipient.downcase
@@ -39,16 +50,17 @@ Then(/^I should see my name as delivery recipient$/) do
 end
 
 Then(/^I should see (.*) message$/) do |message|
-expect(@app.order_confirmation.order_completed_status).to have_text("YOUR ORDER HAS BEEN SUCCESSFUL")
+expect(@app.order_confirmation.order_completed_status).to have_text("YOUR ORDER HAS BEEN SUCCESSFUL"),"[Failed] - Order Completion Page is not displayed!"
 end
 
 
 Then(/^I should see order confirmation page$/) do
   if @app.registration.first_name
-    expect(@app.order_confirmation.title_order_completed.text.downcase).to eq("thank you for your order, #{@app.registration.first_name.downcase} #{@app.registration.last_name.downcase}")
+    expect(@app.order_confirmation.title_order_completed?).to eq(true),"[Failed] - Order Completion page is not displayed!"
+    expect(@app.order_confirmation.title_order_completed.text.downcase).to eq("thank you for your order, #{@app.registration.first_name.downcase} #{@app.registration.last_name.downcase}"),"[Failed] - Order Completion Page is not displayed!"
   end
-  expect(@app.order_confirmation.thank_you_for_order.text.downcase).to have_text("order completed")
-  expect(@app.order_confirmation.order_completed_status.text.downcase).to have_text("your order has been successful")
+    expect(@app.order_confirmation.thank_you_for_order.text.downcase).to have_text("order completed"),"[Failed] - Order Completion Page is not displayed!"
+    expect(@app.order_confirmation.order_completed_status.text.downcase).to have_text("your order has been successful"),"[Failed] - Order Completion Page is not displayed!"
 end
 
 
@@ -75,4 +87,8 @@ end
 
 And(/^I choose to pay via paypal$/) do
   @app.payment.select_paypal
+end
+
+And(/^I provide my credentials$/) do
+  @app.payment.secure_payment
 end

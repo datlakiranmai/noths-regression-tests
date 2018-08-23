@@ -4,10 +4,12 @@ Feature: Update Email address
   I should be able to update my email address via my details page
 
   Background:
+    Given I navigate to home page
+    And I check and enable the user_account flag
     And I register as a new user
     And I sign out from my account
 
-  @e2e @12.01
+  @p1 @e2e @12.01
   Scenario: [New user] 46.01 - A customer should be able to update their email address on the my details page
     When I navigate to home page
     And I click on Signin

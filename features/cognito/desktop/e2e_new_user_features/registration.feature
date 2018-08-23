@@ -4,9 +4,9 @@ Feature: Registration
   So that I can purchase gorgeous things online, create a wishlist and, receive exclusive news of special offers and updates
 
  Background:
-    Given I enable the cognito flag ON as admin
-    And I navigate to home page
-    And I check my cognito flag is ON
+#    Given I enable the cognito flag ON as admin
+#    And I navigate to home page
+#    And I check my cognito flag is ON
     And I am on Home page
 
   @error_msg_check @cog_e2e @39.01

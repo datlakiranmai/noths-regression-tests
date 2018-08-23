@@ -41,8 +41,8 @@ module Noths
               my_details_options.select { |option| option.text == button_name }.first.trigger("click")
             else
               wait_until_my_details_options_visible(30)
-              my_details_options.select { |option| option.text == button_name }.first.click
-            end
+              my_details_options.select { |option| option.text == button_name}.first.click
+              end
           end
 
           def selected_country_code

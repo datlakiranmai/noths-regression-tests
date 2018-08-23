@@ -58,7 +58,7 @@ Before do
     client.read_timeout = 180
     $driver = Capybara::Selenium::Driver.new(app,
                                              browser: :remote,
-                                             url: 'http://172.17.0.2:4444/wd/hub',
+                                             url: 'http://seleniumhub:4444/wd/hub',
                                              http_client: client,
                                              desired_capabilities: chrome_capabilities)
   end

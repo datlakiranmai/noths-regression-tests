@@ -47,7 +47,6 @@ module Noths
         class LoginPage < SitePrism::Page
           include Poltergeist
 
-
           element :login_email, '#email'
           element :login_pwd, '#password'
           elements :signin_button, '.NFC-Button.NFC-Button--medium'

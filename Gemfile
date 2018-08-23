@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'cucumber'
-gem 'selenium-webdriver'
+gem 'selenium-webdriver', '3.9.0'
 gem 'chromedriver-helper'
 gem 'capybara'
 gem 'pry'

@@ -2,7 +2,7 @@
   seleniumhub:
     image: selenium/hub
     ports:
-      - "4444:4444"
+      - "4563:4444"
     shm_size: 4g
     volumes:
       - /dev/shm:/dev/shm
@@ -18,6 +18,8 @@
   chromenode:
     image: selenium/node-chrome-debug
     shm_size: 2g
+    ports:
+     - "3758:5900"
     links:
       - seleniumhub
     volumes:

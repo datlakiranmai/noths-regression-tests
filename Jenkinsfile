@@ -5,7 +5,7 @@ pipeline {
         string(defaultValue: 'cucumber -p p1', description: 'test command to execute', name: 'TEST_COMMAND')
     }
     triggers {
-        cron('15 00 * * 1-7')
+        cron('15 23 * * 1-7')
     }
     stages {
         stage ('Show parameters') {

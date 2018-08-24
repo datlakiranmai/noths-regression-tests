@@ -9,11 +9,13 @@ Feature: Login
     And I register as a new user
     And I sign out from my account
 
-  @smoke_tests @e2e @no_poltergeist @2.01
+  @p1 @smoke_tests @e2e @no_poltergeist @2.01
   Scenario: 2.01 - A customer is able to successfully login via the header
     When I navigate to home page
     And I click on Signin
     And I sign in with my new credentials
+    And I navigate to My accounts page
+    And I choose my details from my account section
     And I should be taken to My details page
     And I should see my email address in my accounts page
 

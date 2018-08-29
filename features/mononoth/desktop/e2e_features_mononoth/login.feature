@@ -19,7 +19,6 @@ Feature: Login
     And I should be taken to My details page
     And I should see my email address in my accounts page
 
-
   @p1 @smoke_tests @e2e @no_poltergeist @2.02
   Scenario: 2.02 - A customer is able to successfully login via favourites
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch

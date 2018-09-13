@@ -66,7 +66,7 @@ Before do
   Capybara.register_driver :local_chrome do |app|
     client = Selenium::WebDriver::Remote::Http::Default.new
      client.read_timeout = 180
-    $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, desired_capabilities: {
+    $driver=Capybara::Selenium::Driver.new(app, browser: :chrome, :http_client => client, :clear_session_storage => true, :clear_local_storage => true, desired_capabilities: {
       "chromeOptions" => {
         "args" => %w{ no-sandbox start-fullscreen disable-impl-side-painting }
       }
@@ -92,5 +92,5 @@ After do |scenario|
     AllureCucumber::DSL.attach_file("[FAILED]-#{scenario.name}", File.open(File.expand_path(path)))
   end
   #CognitoIdentityProviderPool.delete_identity($email_address) if !$email_address.nil?
-  $driver.quit if ENV['DRIVER'].nil?
+  $driver.quit
 end

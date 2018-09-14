@@ -97,6 +97,7 @@ module Noths
           end
 
           def turn_user_account_flag
+            sleep 2
             useGdpr = all('#new_feature').select {|l| l[:action].include? 'user_account/preview'}
             useGdpr[0].find('#new_feature>input').click
             sleep 1

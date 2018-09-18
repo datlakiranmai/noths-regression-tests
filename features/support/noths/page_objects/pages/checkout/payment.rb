@@ -23,6 +23,7 @@ module Noths
           element :voucher_code_toggler, '.voucher_codes_toggler'
 
           element :giftcard_voucher_field, '#voucher_code_field'
+          element :giftcard_voucher_pin, '#voucher_pin_field'
 
           element :enter_voucher_code, '#check_voucher'
 
@@ -33,10 +34,16 @@ module Noths
 
           def apply_voucher_code(voucher_code)
             giftcard_voucher_field.set voucher_code
+          element :username, 'input#username'
+          element :password, '#password'
+          element :submit_button, '.button.paySubmit'
+
+          def apply_voucher_code
+            giftcard_voucher_field.set "603628613282002252376"
+            giftcard_voucher_pin.set "8090"
             enter_voucher_code.click
             sleep 0.5
             apply_voucher.click
-
           end
 
           def select_card_type
@@ -65,10 +72,13 @@ module Noths
           end
 
           def secure_payment
-            wait_until_username_visible(10)
-            username.set 'user'
-            password.set 'password'
-            submit_button.click
+            within_frame "three_d_iframe" do
+              wait_until_username_visible(10)
+              username.set 'user'
+              password.set 'password'
+              submit_button.click
+              sleep 2
+            end
           end
 
           def submit_payment(card_type)
@@ -98,8 +108,8 @@ module Noths
                 card_verification_value.set '737'
             end
             credit_card_name.set 'Hans Peter Luhn'
-            credit_card_expiry_month.select '8'
-            credit_card_expiry_year.select '2018'
+            credit_card_expiry_month.select '10'
+            credit_card_expiry_year.select '2020'
             #skip_3d_secure.click
             payment_button.click
           end

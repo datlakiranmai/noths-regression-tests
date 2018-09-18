@@ -163,6 +163,7 @@ Given(/^I register as a new user via mobile$/) do
     When I navigate to my accounts
     And I click on Register
     And I enter in my details in sign up form
+    And I check the privacy policy
     And I click Submit button
   }
 end
@@ -179,7 +180,6 @@ Given(/^I sign in as QA Automation$/) do
      And I should be taken to My details page
      }
 end
-
 
 When(/^I tap on the link (.*) in footer$/) do |link_name|
   @app.home.click_on_link(link_name)

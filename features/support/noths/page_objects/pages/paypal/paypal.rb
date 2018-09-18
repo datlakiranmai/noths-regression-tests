@@ -29,6 +29,7 @@ module Noths
             sleep 5
             email.set Configuration.instance.username('paypal')
             next_button.click
+            sleep 1
             password.set Configuration.instance.password('paypal')
             signin_button.click
             #end
@@ -40,6 +41,12 @@ module Noths
 
           def continue
             wait_until_continue_btn_visible(120)
+            sleep 2
+            wait_for_preloader_spinner(30)
+          end
+
+          def continue
+            wait_until_continue_btn_visible(60)
             page.execute_script("document.querySelector('#confirmButtonTop').click();")
             sleep 3
             page.execute_script("document.querySelector('#confirmButtonTop').click();")

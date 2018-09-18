@@ -4,7 +4,9 @@ Feature: Forgotten password
   I should be able to make email request for password reset via forgotten password form
 
   Background:
-    Given I am on Home page
+    Given I navigate to home page
+    And I check and enable the user_account flag
+    And I am on Home page
 
   @p1 @e2e @8.01
   Scenario: 8.01 - A customer should request a reset password email

@@ -4,7 +4,9 @@ Feature: Checkout Login
   I want to signin during checkout process
 
   Background:
-    Given I register as a new user
+    Given I navigate to home page
+    And I check and enable the user_account flag
+    And I register as a new user
     And I sign out from my account
 
   @p1 @payments @e2e @3.01
@@ -79,38 +81,33 @@ Feature: Checkout Login
     And I continue with the paypal checkout
     Then I should see order confirmation page
 
-  @payments @smoke_tests @e2e @3.06
-  Scenario: 3.06 - Checkout E2E - A customer should be able to login during the gift voucher checkout
-    When I navigate to home page
-    And I tap on the link gift vouchers in footer
-    And I enter my details in gift voucher form
-    And I checkout gift voucher
-    And I sign in with my new credentials
-    And I enter in my address details
-    And I should see the my email address in summary section
-    And I provide VisaDebit payment details
-    Then I should see order confirmation page
-
-  @payments @p1 @smoke_tests @e2e @3.07
-  Scenario: 3.07 - Checkout E2E - A customer should be able to checkout a product using the gift card voucher and card payment together
-    When I navigate to home page
-    And I tap on the link gift vouchers in footer
-    And I enter my details in gift voucher form
-    And I checkout gift voucher
-    And I sign in with my new credentials
-    And I enter in my address details
-    And I should see the my email address in summary section
-    And I provide VisaDebit payment details
-    Then I should see order confirmation page
-    And I navigate to My accounts page
-    And I choose to view my orders page
-    And I check my giftcard voucher code
-    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+  @smoke_tests @e2e @3.06
+  Scenario: 3.06 - Checkout E2E - A customer should be able to checkout a product using the gift card and card payment together
+    When I navigate to a product detail page /marquisanddawe/product/charcoal-felt-stool-tray
     And I add the product in my basket
+    And I sign in with my new credentials
+    And I enter in my address details
+    Then I should see my name as delivery recipient
+    And  I should see Antony Roberts Estate Agents as my delivery address
+    And I should see the my email address in summary section
     When I continue with my delivery address
     And I click on voucher code link
     And I apply my gift voucher code
     And I provide VisaDebit payment details
+    Then I should see order confirmation page
+
+  @smoke_tests @e2e @3.07
+  Scenario: 3.07 - Checkout E2E - A customer should be able to checkout a product using the gift card
+    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    And I add the product in my basket
+    And I sign in with my new credentials
+    And I enter in my address details
+    Then I should see my name as delivery recipient
+    And  I should see Antony Roberts Estate Agents as my delivery address
+    And I should see the my email address in summary section
+    When I continue with my delivery address
+    And I click on voucher code link
+    And I apply my gift voucher code
     Then I should see order confirmation page
 
 
@@ -128,7 +125,6 @@ Feature: Checkout Login
     And I provide MasterCard2X payment details
     Then I should see order confirmation page
 
-
   @test @payments @e2e @3.09
   Scenario: 3.09 - Checkout E2E - Customer should be able to purchase a product as a customer (3D Secure Gift Card flow)
     When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
@@ -141,6 +137,5 @@ Feature: Checkout Login
     When I continue with my delivery address
     And I specify my card type
     And I provide 3DSecure payment details
-    #Then I should be redirected to the issuer's website
     And I provide my credentials
     Then I should see order confirmation page

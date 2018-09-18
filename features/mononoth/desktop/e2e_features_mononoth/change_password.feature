@@ -4,6 +4,8 @@ Feature: Change Password
   I should be able to change password via my details page
 
   Background:
+    Given I navigate to home page
+    And I check and enable the user_account flag
     And I register as a new user
     And I sign out from my account
 

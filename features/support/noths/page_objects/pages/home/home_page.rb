@@ -1,6 +1,7 @@
 require 'site_prism'
 require 'rspec/expectations'
 require 'nokogiri'
+require 'pry'
 
 module Noths
   module PageObjects
@@ -95,6 +96,21 @@ module Noths
             end
           end
 
+          def turn_user_account_flag
+            sleep 2
+            useGdpr = all('#new_feature').select {|l| l[:action].include? 'user_account/preview'}
+            useGdpr[0].find('#new_feature>input').click
+            sleep 1
+            if mobile?
+              page.driver.browser.manage.window.resize_to(1200, 768)
+              visit('admin#home')
+              cms_sign_out.click
+              page.driver.browser.manage.window.resize_to(375, 667)
+            else
+              retry_on_readtimeout('admin#home')
+              cms_sign_out.click
+            end
+          end
 
           def favourites_page?
             page.has_css?('.favourites_intro_header')
@@ -105,9 +121,22 @@ module Noths
             status == 'ON' ? page_source.include?('"useCognitoAuth":true') : page_source.include?('"useCognitoAuth":false')
           end
 
+          def turn_gift_cards_flag
+            usegiftcards = all('#new_feature').select {|l| l[:action].include? 'third_party_gift_cards/preview'}
+            usegiftcards[0].find('#new_feature>input').click
+            sleep 1
+            visit('admin#home')
+            cms_sign_out.click
+          end
+
           def check_rollback_flag(status)
             page_source = page.body
             status == 'ON' ? page_source.include?('"useCognitoRollback":true') : page_source.include?('"useCognitoRollback":false')
+          end
+
+          def check_user_account_flag
+            page_source = page.body
+            page_source.include?('"userAccount":true')
           end
 
           def hover_myaccounts

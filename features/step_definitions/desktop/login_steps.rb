@@ -144,7 +144,7 @@ And(/^I sign in with new current password$/) do
 end
 
 And(/^I sign in with my new password as (.*)$/) do |password|
-  @app.login.signin_(@app.registration.email_address, password)
+  @app.login.signin(@app.registration.email_address, password)
 end
 
 And(/^I sign in with my new email address$/) do

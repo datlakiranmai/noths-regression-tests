@@ -12,7 +12,7 @@ module Noths
           end
 
           def click_on_product_image
-            element = page.find("img[src$='/preview_bumble-bee-brooch.jpg']")
+            element = page.find("img[src$='/preview_tallulah-gold-distressed-table.jpg']")
             element.click
           end
 

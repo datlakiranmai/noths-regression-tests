@@ -37,6 +37,7 @@ And(/^I check and enable the user_account flag$/) do
     sleep 1
     @app.login.admin_signin_credentials
     @app.home.navigate_to_site_features
+    sleep 1
     @app.home.turn_user_account_flag
   end
 end

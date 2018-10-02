@@ -9,7 +9,7 @@ Feature: Change Password
     And I register as a new user
     And I sign out from my account
 
-  @p1 @e2e @9.01
+  @p1 @e2e @e2e_staging @9.01
   Scenario: 9.01 - A customer should be able to reset their password on the my details page
     When I navigate to home page
     And I click on Signin
@@ -31,7 +31,7 @@ Feature: Change Password
     Then I should see my email address in my accounts page
 
 
-  @smoke_tests @e2e @9.02
+  @smoke_tests @e2e @e2e_staging @9.02
   Scenario: 9.02 - A customer should only provide a valid current password in the change password section and then attempt to sign in with the current password
     When I navigate to home page
     And I click on Signin
@@ -54,7 +54,7 @@ Feature: Change Password
     Then I should see my email address in my accounts page
 
 
-  @smoke_tests @e2e @9.03
+  @smoke_tests @e2e @e2e_staging @9.03
   Scenario: 9.03 - A customer should not be able to submit a password with an invalid length
     When I navigate to home page
     And I click on Signin
@@ -68,7 +68,7 @@ Feature: Change Password
     And I submit my details form
     Then I should get password length validation error saying The value entered is too short. Please enter a value that is at least 8 characters long.
 
-  @smoke_tests @e2e @9.04
+  @smoke_tests @e2e @e2e_staging @9.04
   Scenario: 9.04 - A customer should not be able to change their password if a new and confirm password do not match
     When I navigate to home page
     And I click on Signin
@@ -84,7 +84,7 @@ Feature: Change Password
     Then I should get password mismatch validation error saying The values entered don't appear to match. Please check and try again.
 
 
-  @smoke_tests @e2e @9.05
+  @smoke_tests @e2e @e2e_staging @9.05
   Scenario: 9.05 - A customer should not be able to change their password if they do not supply confirm password value
     When I navigate to home page
     And I click on Signin
@@ -100,7 +100,7 @@ Feature: Change Password
     And I should get password error message saying Please enter the same password twice
 
 
-  @smoke_tests @e2e @9.06
+  @smoke_tests @e2e @e2e_staging @9.06
   Scenario: 9.06 - A customer should provide an invalid current password, valid new password and confirm new password in change password section
     When I navigate to home page
     And I click on Signin
@@ -119,11 +119,11 @@ Feature: Change Password
     And I navigate to home page
     And I click on Signin
     And I sign in with my new password as qwertyuiop
-    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
+    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts.
     And I should see sign in password textfield input should get cleared up
 
 
-  @smoke_tests @e2e @9.07
+  @smoke_tests @e2e @e2e_staging @9.07
   Scenario: 9.07 - A customer should provide an blank current password, valid new password and confirm new password in change password section
     When I navigate to home page
     And I click on Signin
@@ -141,11 +141,11 @@ Feature: Change Password
     And I navigate to home page
     And I click on Signin
     And I sign in with my new password as qwertyuiop
-    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts
+    Then I should see error message sorry, either the email address or the password you entered does not correspond with any of our accounts.
     And I should see sign in password textfield input should get cleared up
 
 
-  @smoke_tests @e2e @9.08
+  @smoke_tests @e2e @e2e_staging @9.08
   Scenario: 9.08 - A customer should provide an invalid current password, valid new password and blank confirm new password in change password section
     When I navigate to home page
     And I click on Signin

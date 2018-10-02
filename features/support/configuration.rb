@@ -17,10 +17,18 @@ class Configuration
   end
 
   def username(role)
-    @user_accounts[role]["username"]
+    if @env_id == "staging"
+        @user_accounts[role]["staging-username"]
+    else
+        @user_accounts[role]["username"]
+    end
   end
 
   def password(role)
-    @user_accounts[role]["password"]
+    if @env_id == "staging"
+      @user_accounts[role]["staging-password"]
+    else
+      @user_accounts[role]["password"]
+    end
   end
 end

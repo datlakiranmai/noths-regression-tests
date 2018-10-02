@@ -15,4 +15,5 @@ payments: 'features --format AllureCucumber::Formatter --out --guess <%= html_re
 headless: "DRIVER='headless' features --tag @e2e <%= html_report %>"
 rerun: '--guess @rerun.txt'
 p1: 'features --format AllureCucumber::Formatter --out --guess <%= html_report %> --tag @p1'
+e2e_staging: 'features --format AllureCucumber::Formatter --out --guess <%= html_report %> --tag @e2e_staging'
 #allure: '--format AllureCucumber::Formatter --out'

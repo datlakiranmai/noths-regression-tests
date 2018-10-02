@@ -43,6 +43,7 @@ module Noths
           #admin
           elements :site_features, '#new_feature'
           element :cms_sign_out, '#ext-gen161'
+          # element :cms_sign_out, :xpath, '/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[17]/table[1]/tbody[1]/tr[1]/td[2]/em[1]/a[1]'
 
 
 

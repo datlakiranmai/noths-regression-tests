@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(defaultValue: 'shared', description: 'QA ENV NAME', name: 'ENV_NAME')
+        string(defaultValue: 'shared', description: 'Enter the QA env name. Eg: For staging, enter "staging", For QA enter, "shared"', name: 'ENV_NAME')
         string(defaultValue: 'cucumber -p p1', description: 'test command to execute', name: 'TEST_COMMAND')
     }
     triggers {

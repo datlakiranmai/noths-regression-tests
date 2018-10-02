@@ -12,9 +12,16 @@ ENV['ENV_ID'] ||= 'dev'
 
 configuration = Configuration.instance
 
-APP_HOST = "http://www.public.#{configuration.env_id}.qa.noths.com"
 
-include AllureCucumber::DSL
+test_env_name = "#{configuration.env_id}"
+if test_env_name == "staging"
+ APP_HOST = "https://www.public.b.prod-eu-west-1.noths.com"
+else
+  APP_HOST = "https://www.public.#{test_env_name}.qa.noths.com"
+end
+
+
+  include AllureCucumber::DSL
 
 AllureCucumber.configure do |c|
   c.output_dir = "output/dir"

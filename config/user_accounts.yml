@@ -1,5 +1,9 @@
 
-admin:
+staging-admin:
+  username: 'nothsstagingtester@notonthehighstreet.com'
+  password: '6RbxjFWM93'
+
+QA-admin:
   username: 'admin@notonthehighstreet.com'
   password: 'logmein1'
 

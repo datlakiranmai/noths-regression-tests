@@ -1,3 +1,7 @@
+Then(/^I should see (.*) in the search field$/) do |search_text|
+  expect(@app.home.search_field.value).to eq(search_text)
+end
+
 Then(/^I should be taken to search results$/) do
   expect(@app.search.search_page?).to eq(true)
 end

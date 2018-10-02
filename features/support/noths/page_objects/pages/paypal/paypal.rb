@@ -23,7 +23,7 @@ module Noths
           end
 
           def paypal_signin
-            wait_until_preloader_spinner_invisible(60)
+            wait_until_preloader_spinner_invisible(120)
             #within_frame "injectedUl" do
             login.click
             sleep 5
@@ -44,7 +44,7 @@ module Noths
             wait_until_continue_btn_visible(60)
             page.execute_script("document.querySelector('#confirmButtonTop').click();")
             sleep 3
-            page.execute_script("document.querySelector('#confirmButtonTop').click();")
+            #page.execute_script("document.querySelector('#confirmButtonTop').click();")
           end
         end
       end

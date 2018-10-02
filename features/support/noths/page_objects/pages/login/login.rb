@@ -94,8 +94,13 @@ module Noths
 
           def admin_signin_credentials
             wait_until_login_email_visible(30)
-            login_email.set Configuration.instance.username('admin')
-            login_pwd.set Configuration.instance.password('admin')
+            if "#{Configuration.instance.env_id}" == "staging"
+              login_email.set Configuration.instance.username('staging-admin')
+              login_pwd.set Configuration.instance.password('staging-admin')
+            else
+              login_email.set Configuration.instance.username('QA-admin')
+              login_pwd.set Configuration.instance.password('QA-admin')
+            end
             admin_signin_button.click
           end
         end

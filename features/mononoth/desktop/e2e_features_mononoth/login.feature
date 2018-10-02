@@ -6,10 +6,10 @@ Feature: Login
   Background:
     Given I navigate to home page
     And I check and enable the user_account flag
-    And I register as a new user
+And I register as a new user
     And I sign out from my account
 
-  @p1 @smoke_tests @e2e @no_poltergeist @2.01
+  @p1 @smoke_tests @e2e @e2e_staging @no_poltergeist @2.01
   Scenario: 2.01 - A customer is able to successfully login via the header
     When I navigate to home page
     And I click on Signin
@@ -19,9 +19,9 @@ Feature: Login
     And I should be taken to My details page
     And I should see my email address in my accounts page
 
-  @p1 @smoke_tests @e2e @no_poltergeist @2.02
+  @p1 @smoke_tests @e2e_staging @e2e @no_poltergeist @2.02
   Scenario: 2.02 - A customer is able to successfully login via favourites
-    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my favourites
     When I click on Favourite
     And I am redirected to the My Favourites page

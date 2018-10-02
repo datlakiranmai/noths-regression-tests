@@ -7,14 +7,14 @@ Feature: Sign out
     And I check and enable the user_account flag
     And I register as a new user
 
-   @e2e @4.01
+   @e2e @e2e_staging @4.01
   Scenario:4.01 - Sign out via the header
    When I hover my account via header
    And I click on Sign out
    Then I should successfully sign out
    And I should see the message You have been signed out
 
-  @e2e @4.02
+  @e2e @e2e_staging @4.02
   Scenario:4.02 - Sign out via my details page
     When I navigate to My accounts page
     And I choose my details from my details section
@@ -22,15 +22,15 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @p1 @e2e @4.03
+  @p1 @e2e @e2e_staging @4.03
   Scenario:4.03 - Sign out on product details page via the header
-    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I hover my account via header
     And I click on Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.04
+  @e2e @e2e_staging @4.04
   Scenario:4.04 - Sign out on home page via the header
     And I navigate to home page
     And I hover my account via header
@@ -38,7 +38,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.05
+  @e2e @e2e_staging @4.05
   Scenario:4.05 - Sign out on favourites page via the header
     And I navigate to home page
     And I click on Favourite
@@ -48,9 +48,9 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @p1 @e2e @4.06
+  @p1 @e2e @e2e_staging @4.06
   Scenario:4.06 - Sign out on order completion page via the header
-    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket
     And I enter in my address details
     Then I should see my name as delivery recipient
@@ -66,9 +66,9 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @p1 @e2e @4.07
+  @p1 @e2e @e2e_staging @4.07
   Scenario: 4.07 - Sign out the cart page via the header
-    When I navigate to a product detail page /willbishopjewellerydesign/product/bumble-bee-brooch
+    When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket and do not want to checkout
     And I hover my account via header
     And I click on Sign out
@@ -84,7 +84,7 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.09
+  @e2e @e2e_staging @4.09
   Scenario: 4.09 - Sign out on a Home > Home Accessories category page via the header
     When I navigate to a product listings page home/home-accessories/
     Then I should see my page title as home accessories
@@ -93,16 +93,16 @@ Feature: Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.10
+  @e2e @e2e_staging @4.10
   Scenario: 4.10 - Sign out on a Home > Home Accessories > Art Pictures category page via the header
     When I navigate to a product listings page home/home-accessories/art-pictures
-    Then I should see my page title as art & pictures
+    Then I should see my page title as prints & art
     And I hover my account via header
     And I click on Sign out
     Then I should successfully sign out
     And I should see the message You have been signed out
 
-  @e2e @4.11
+  @e2e @e2e_staging @4.11
   Scenario: 4.11 - Sign out on the search results page via the header
     When I search for watches in search textfield
     And I click on Find

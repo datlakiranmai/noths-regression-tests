@@ -18,7 +18,7 @@ module Noths
           element :next_button, :id, 'btnNext'
 
           def paypal_signin_page?
-            try_until(40) { @email = has_email? }
+            try_until(120) { @email = has_email? }
             @email
           end
 
@@ -36,6 +36,11 @@ module Noths
           end
 
           def wait_for_paypal_page
+            wait_for_preloader_spinner(60)
+          end
+
+          def continue
+            wait_until_continue_btn_visible(120)
             sleep 2
             wait_for_preloader_spinner(30)
           end

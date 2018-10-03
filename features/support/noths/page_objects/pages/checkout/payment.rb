@@ -27,6 +27,13 @@ module Noths
 
           element :enter_voucher_code, '#check_voucher'
 
+          element :username, '#username'
+          element :password, '#password'
+          element :submit_button, '.button.paySubmit'
+
+
+          def apply_voucher_code(voucher_code)
+            giftcard_voucher_field.set voucher_code
           element :username, 'input#username'
           element :password, '#password'
           element :submit_button, '.button.paySubmit'

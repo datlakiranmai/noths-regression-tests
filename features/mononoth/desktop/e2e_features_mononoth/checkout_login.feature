@@ -125,7 +125,7 @@ Feature: Checkout Login
     And I provide MasterCard2X payment details
     Then I should see order confirmation page
 
-  @payments @e2e @3.09
+  @test @payments @e2e @3.09
   Scenario: 3.09 - Checkout E2E - Customer should be able to purchase a product as a customer (3D Secure Gift Card flow)
     When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket

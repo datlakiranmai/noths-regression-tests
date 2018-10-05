@@ -37,6 +37,7 @@ module Noths
           element :username, 'input#username'
           element :password, '#password'
           element :submit_button, '.button.paySubmit'
+            end
 
           def apply_voucher_code
             giftcard_voucher_field.set "603628613282002252376"

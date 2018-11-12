@@ -28,7 +28,7 @@ Feature: Checkout Registration
     And I provide VisaDebit payment details
     Then I should see order confirmation page
 
-  @payments @paypal @e2e @e2e_staging @5.03
+  @p1 @payments @paypal @e2e @e2e_staging @5.03
   Scenario: 5.03 - Checkout E2E - A customer should be able to checkout a standard product(Paypal express)
     When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket and do not want to checkout
@@ -38,7 +38,7 @@ Feature: Checkout Registration
     And I click on pay now button
     Then I should see order confirmation page
 
-  @payments @paypal @e2e @5.04
+  @p1 @payments @paypal @e2e @5.04
   Scenario: 5.04 - Checkout E2E - A customer should be able to checkout a standard product(Paypal Mark)
     When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket

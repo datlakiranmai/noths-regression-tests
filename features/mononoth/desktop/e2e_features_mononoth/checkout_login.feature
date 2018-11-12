@@ -23,7 +23,7 @@ Feature: Checkout Login
     And I provide VisaDebit payment details
     Then I should see order confirmation page
 
-  @payments @e2e @3.02
+  @p1 @payments @e2e @3.02
   Scenario: 3.02 - Checkout E2E - Customer should be able to purchase a product as a customer (MasterCard 5XX Card number)
     When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket
@@ -37,7 +37,7 @@ Feature: Checkout Login
     And I provide MasterCard5X payment details
     Then I should see order confirmation page
 
-  @payments @e2e @3.03
+  @p1 @payments @e2e @3.03
   Scenario: 3.03 - Checkout E2E - Customer should be able to purchase a product as a customer (Visa)
     When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket
@@ -51,7 +51,7 @@ Feature: Checkout Login
     And I provide Visa payment details
     Then I should see order confirmation page
 
-  @payments @e2e @3.04
+  @p1 @payments @e2e @3.04
   Scenario: 3.04 - Checkout E2E - Customer should be able to purchase a product as a customer (American Express)
     When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket
@@ -66,7 +66,7 @@ Feature: Checkout Login
     Then I should see order confirmation page
 
 
-  @payments @paypal @e2e @e2e_staging @3.05
+  @p1 @payments @paypal @e2e @e2e_staging @3.05
   Scenario: 3.05 - Checkout E2E - Customer should be able to purchase a product as a customer (paypal Mark)
     When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket
@@ -111,7 +111,7 @@ Feature: Checkout Login
 #    Then I should see order confirmation page
 
 
-  @payments @e2e @e2e_staging @3.08
+  @p1 @payments @e2e @e2e_staging @3.08
   Scenario: 3.08 - Checkout E2E - Customer should be able to purchase a product as a customer (MasterCard 2XX Card Number)
     When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket
@@ -125,7 +125,7 @@ Feature: Checkout Login
     And I provide MasterCard2X payment details
     Then I should see order confirmation page
 
-  @test @payments @e2e @3.09
+  @p1 @test @payments @e2e @3.09
   Scenario: 3.09 - Checkout E2E - Customer should be able to purchase a product as a customer (3D Secure Gift Card flow)
     When I navigate to a product detail page marquisanddawe/product/tallulah-gold-distressed-table
     And I add the product in my basket
